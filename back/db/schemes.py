@@ -10,6 +10,7 @@ users = sqlalchemy.Table(
     sqlalchemy.Column("id", sqlalchemy.Integer, primary_key=True, autoincrement=True),
     sqlalchemy.Column("username", sqlalchemy.String(64), unique=True),
     sqlalchemy.Column("email", sqlalchemy.String(64), unique=True, index=True),
+    sqlalchemy.Column("avatar", sqlalchemy.String(256), nullable=True),
     sqlalchemy.Column("password_hash", sqlalchemy.String(128)),
     sqlalchemy.Column("is_validated", sqlalchemy.Boolean),
     sqlalchemy.Column("is_banned", sqlalchemy.Boolean)
