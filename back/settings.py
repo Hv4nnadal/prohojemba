@@ -16,3 +16,12 @@ DATABASE_URI = "sqlite:///data.db"
 # Настройка сервиса сохранения изображений
 IMGBB_TOKEN = None
 IMAGES_DIR = "D:\\images"
+
+WALK_STATUSES = (
+    "not_played",
+    "in_progress",
+    "completed",
+    "full_completed"
+)
+
+TITLE_TYPES = ("game", "anime", "film", "series")

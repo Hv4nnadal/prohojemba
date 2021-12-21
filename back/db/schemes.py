@@ -12,8 +12,7 @@ users = sqlalchemy.Table(
     sqlalchemy.Column("email", sqlalchemy.String(64), unique=True, index=True),
     sqlalchemy.Column("avatar", sqlalchemy.String(256), nullable=True),
     sqlalchemy.Column("password_hash", sqlalchemy.String(128)),
-    sqlalchemy.Column("is_validated", sqlalchemy.Boolean),
-    sqlalchemy.Column("is_banned", sqlalchemy.Boolean)
+    sqlalchemy.Column("is_validated", sqlalchemy.Boolean)
 )
 
 
@@ -43,26 +42,26 @@ walks = sqlalchemy.Table(
                       sqlalchemy.Integer,
                       sqlalchemy.ForeignKey("titles.id", ondelete="CASCADE")
                       ),
-    # 1 - В процессе, 2 - Заброшено, 3 - Пройдено, 4 - 100%
-    sqlalchemy.Column("status",
-                      sqlalchemy.Integer,
-                      ),
-    sqlalchemy.Column("review_text", sqlalchemy.String(1024), nullable=True),
+    sqlalchemy.Column("status", sqlalchemy.String(16)), # Берется из WALK_STATUSES в настройках
+    sqlalchemy.Column("comment", sqlalchemy.String(1024), nullable=True),
 
     sqlalchemy.Column("rate", sqlalchemy.Boolean, nullable=True)
 )
 
 
+# Таблица тайтлов
 titles = sqlalchemy.Table(
     "titles",
     metadata,
     sqlalchemy.Column("id", sqlalchemy.Integer, primary_key=True, autoincrement=True),
     sqlalchemy.Column("name", sqlalchemy.String(128)),
     sqlalchemy.Column("cover", sqlalchemy.String(256)),
-    # 1 - Игра, 2 - Фильм, 3 - Сериал, 4 - Аниме
-    sqlalchemy.Column("type", sqlalchemy.Integer),
     sqlalchemy.Column("description", sqlalchemy.String(1024)),
 
-    sqlalchemy.Column("rates_count", sqlalchemy.Integer),
-    sqlalchemy.Column("positive_rates_count", sqlalchemy.Integer)
+    sqlalchemy.Column("type", sqlalchemy.String(16)),   # Тип берется из TITLE_GENRES в настройках
+    sqlalchemy.Column("release_year", sqlalchemy.Integer),
+
+    sqlalchemy.Column("positive_rates_count", sqlalchemy.Integer),
+    sqlalchemy.Column("negative_rates_count", sqlalchemy.Integer)
 )
+
