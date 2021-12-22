@@ -1,12 +1,13 @@
 from typing import Sequence, Optional
 
 from .base import BaseCRUD
-from back.models import auth, users
+from back.db.schemes import users
 
 
 class UsersCRUD(BaseCRUD):
-    async def create(self, user_data: auth.SignInModel) -> None:
-        pass
+    async def create(self, user_data: dict) -> None:
+        query = users.insert().values(**user_data.dict())
+        await self.database.execute(query)
 
     async def get_by_id(self, user_id: int) -> Optional[users.UserOutput]:
         pass 

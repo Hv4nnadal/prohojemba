@@ -1,30 +1,12 @@
 from typing import Optional
-from fastapi import APIRouter, Form, Depends, File, UploadFile ,status
+from fastapi import APIRouter, Form, Depends, status
 from fastapi.exceptions import HTTPException
 from pydantic import ValidationError
 
 from back.models.auth import SignInModel, LogInModel
+from back.services import auth_service
 
 auth_router = APIRouter()
-
-
-async def _parse_register_form(
-    username: str = Form(None),
-    email: str = Form(None),
-    password: str = Form(None)
-) -> SignInModel:
-    try:
-        return SignInModel(
-            username=username,
-            email=email,
-            password=password
-        )
-    except ValidationError as e:
-        raise HTTPException(
-            status_code=status.HTTP_422_UNPROCESSABLE_ENTITY,
-            detail=e.errors()
-        )
-
 
 async def _parse_login_form(
         email: str = Form(None),
@@ -45,9 +27,15 @@ async def _parse_login_form(
 # Регистрация нового пользователя
 @auth_router.post("/sign-in")
 async def sign_in(
-        auth_form: SignInModel = Depends(_parse_register_form),
+        auth_form: SignInModel = Depends(SignInModel.as_form),
 ):
-    pass
+    # Изменение поля пароля в модели пользователя на хэш текущего значения
+    auth_form.password = auth_service.generate_password_hash(auth_form.password)
+    # Сохранение модели пользователя
+    
+    # Отправка уведомления о том что регистрация прошла успешно и необходимо подтвердить профиль
+
+    return auth_form
 
 
 # Получение токенов пользователю по логину и паролю или по refresh_token

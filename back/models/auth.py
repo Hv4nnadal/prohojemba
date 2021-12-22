@@ -1,22 +1,23 @@
-from pydantic import BaseModel, EmailStr
+from pydantic import EmailStr
 
+from .form import FormModel
 
-class SignInModel(BaseModel):
+class SignInModel(FormModel):
     username: str
     email: EmailStr
     password: str
 
 
-class LogInModel(BaseModel):
+class LogInModel(FormModel):
     email: EmailStr
     password: str
 
 
-class ChangeEmailModel(BaseModel):
+class ChangeEmailModel(FormModel):
     email: EmailStr
     password: str
 
 
-class ChangePasswordModel(BaseModel):
+class ChangePasswordModel(FormModel):
     current_password: str
     new_password: str
