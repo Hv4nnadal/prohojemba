@@ -4,45 +4,42 @@ from fastapi.exceptions import HTTPException
 from pydantic import ValidationError
 
 from back.models.auth import SignInModel, LogInModel
+from back.crud import users
 from back.services import auth_service
 
 auth_router = APIRouter()
-
-async def _parse_login_form(
-        email: str = Form(None),
-        password: str = Form(None)
-) -> LogInModel:
-    try:
-        return LogInModel(
-            email=email,
-            password=password
-        )
-    except ValidationError as e:
-        raise HTTPException(
-            status_code=status.HTTP_422_UNPROCESSABLE_ENTITY,
-            detail=e.errors()
-        )
 
 
 # Регистрация нового пользователя
 @auth_router.post("/sign-in")
 async def sign_in(
         auth_form: SignInModel = Depends(SignInModel.as_form),
-):
+        ):
+    # todo Добавить генерацию кода, созданию соотношения code -> user в Redis, отправку email для активации профиля пользователя
     # Изменение поля пароля в модели пользователя на хэш текущего значения
     auth_form.password = auth_service.generate_password_hash(auth_form.password)
     # Сохранение модели пользователя
-    
-    # Отправка уведомления о том что регистрация прошла успешно и необходимо подтвердить профиль
+    data = auth_form.dict()
+
+    await users.create(data)
 
     return auth_form
 
 
+@auth_router.post("login")
+async def login(auth_form: Optional[LogInModel] = Depends(LogInModel.as_form)):
+    pass
+
+
 # Получение токенов пользователю по логину и паролю или по refresh_token
 @auth_router.post("/token")
-async def get_auth_tokens(auth_form: LogInModel = Depends(_parse_login_form)):
-    print(auth_form.email)
-    return {"status": True}
+async def get_auth_tokens(
+            auth_form: Optional[LogInModel] = Depends(LogInModel.as_form),
+            user_id: Optional[int] = Depends(auth_service.check_refresh_token)
+        ):
+    user_id = user_id if user_id else await users.get_by_email()
+
+    raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED)
 
 
 # Активация пользователя по коду, отправленному по почте

@@ -1,23 +1,63 @@
-from pydantic import EmailStr
+from pydantic import BaseModel, EmailStr, ValidationError
+from fastapi import Form, status
+from fastapi.exceptions import HTTPException
 
-from .form import FormModel
-
-class SignInModel(FormModel):
+class SignInModel(BaseModel):
     username: str
     email: EmailStr
     password: str
+    avatar: str = None
+    is_validated: bool = False
+
+    @classmethod
+    def as_form(cls,
+            username: str = Form(None),
+            email: EmailStr =  Form(None),
+            password: str = Form(None),
+            ):
+        try:
+            return cls(
+                username=username,
+                email=email,
+                password=password
+            )
+        except ValidationError as e:
+            raise HTTPException(
+                status_code=status.HTTP_422_UNPROCESSABLE_ENTITY,
+                detail=e.errors()
+            )
 
 
-class LogInModel(FormModel):
+class LogInModel(BaseModel):
+    email: EmailStr
+    password: str
+
+    @classmethod
+    def as_form(cls,
+            email: EmailStr =  Form(None),
+            password: str = Form(None),
+            ):
+            
+        if not email and not password:
+            return None
+
+        try:
+            return cls(
+                email=email,
+                password=password
+            )
+        except ValidationError as e:
+            raise HTTPException(
+                status_code=status.HTTP_422_UNPROCESSABLE_ENTITY,
+                detail=e.errors()
+            )
+
+
+class ChangeEmailModel(BaseModel):
     email: EmailStr
     password: str
 
 
-class ChangeEmailModel(FormModel):
-    email: EmailStr
-    password: str
-
-
-class ChangePasswordModel(FormModel):
+class ChangePasswordModel(BaseModel):
     current_password: str
     new_password: str

@@ -2,7 +2,12 @@
     Реализует работу с токенами и паролями
 """
 import jwt
+from typing import Optional
+from fastapi import Security
+from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
 from passlib.context import CryptContext
+
+security = HTTPBearer(auto_error=False)
 
 class AuthService:
     hasher = CryptContext(schemes=["bcrypt"])
@@ -25,8 +30,9 @@ class AuthService:
     async def generate_tokens(self, user) -> dict:
         pass
 
-    def validate_access_token(self, token: str) -> int:
-        pass
+    def check_access_token(self, credentials: HTTPAuthorizationCredentials = Security(security)) -> Optional[int]:
+        token = credentials.credentials
+        return token
 
-    async def validate_refresh_token(self, token: str) -> int:
+    async def check_refresh_token(self, token: str) -> int:
         pass
