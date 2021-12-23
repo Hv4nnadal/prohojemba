@@ -12,3 +12,4 @@ class UserOutput(BaseModel):
     username: str
     email: str
     is_validated: str
+    password: str

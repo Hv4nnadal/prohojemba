@@ -3,7 +3,7 @@ from fastapi import APIRouter, Form, Depends, status
 from fastapi.exceptions import HTTPException
 from pydantic import ValidationError
 
-from back.models.auth import SignInModel, LogInModel
+from back.models.auth import SignInModel, LogInModel, TokensResponse
 from back.crud import users
 from back.services import auth_service
 
@@ -11,7 +11,7 @@ auth_router = APIRouter()
 
 
 # Регистрация нового пользователя
-@auth_router.post("/sign-in")
+@auth_router.post("/signin")
 async def sign_in(
         auth_form: SignInModel = Depends(SignInModel.as_form),
         ):
@@ -26,20 +26,25 @@ async def sign_in(
     return auth_form
 
 
-@auth_router.post("login")
+# Получение токенов с email и паролем
+@auth_router.post("/login", response_model=TokensResponse)
 async def login(auth_form: Optional[LogInModel] = Depends(LogInModel.as_form)):
-    pass
+    user = await users.get_by_email(auth_form.email)
+    if user and auth_service.compare_passwords(auth_form.password, user.password):
+        return auth_service.generate_tokens(user.id)
+
+    raise HTTPException(
+        status_code=status.HTTP_401_UNAUTHORIZED,
+        detail="User email or password incorrect"
+    )
 
 
-# Получение токенов пользователю по логину и паролю или по refresh_token
+# Обновление токенов при помощи refresh токена
 @auth_router.post("/token")
 async def get_auth_tokens(
-            auth_form: Optional[LogInModel] = Depends(LogInModel.as_form),
-            user_id: Optional[int] = Depends(auth_service.check_refresh_token)
+            user_id: Optional[int] = Depends(auth_service.check_access_token)
         ):
-    user_id = user_id if user_id else await users.get_by_email()
-
-    raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED)
+    return {"status": True}
 
 
 # Активация пользователя по коду, отправленному по почте

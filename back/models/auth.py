@@ -1,3 +1,4 @@
+from re import L
 from pydantic import BaseModel, EmailStr, ValidationError
 from fastapi import Form, status
 from fastapi.exceptions import HTTPException
@@ -37,10 +38,6 @@ class LogInModel(BaseModel):
             email: EmailStr =  Form(None),
             password: str = Form(None),
             ):
-            
-        if not email and not password:
-            return None
-
         try:
             return cls(
                 email=email,
@@ -61,3 +58,9 @@ class ChangeEmailModel(BaseModel):
 class ChangePasswordModel(BaseModel):
     current_password: str
     new_password: str
+
+
+class TokensResponse(BaseModel):
+    access_token: str
+    refresh_token: str
+    token_type: str
