@@ -42,13 +42,13 @@ async def login(auth_form: Optional[LogInModel] = Depends(LogInModel.as_form)):
 # Обновление токенов при помощи refresh токена
 @auth_router.post("/token")
 async def get_auth_tokens(
-            user_id: Optional[int] = Depends(auth_service.check_access_token)
+            user_id: Optional[int] = Depends(auth_service.check_refresh_token)
         ):
-    return {"status": True}
+    return auth_service.generate_tokens(user_id)
 
 
 # Активация пользователя по коду, отправленному по почте
-@auth_router.get("/activate")
+@auth_router.post("/activate")
 async def activate_new_user():
     pass
 

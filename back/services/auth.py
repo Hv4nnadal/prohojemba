@@ -54,15 +54,22 @@ class AuthService:
             "token_type": "Bearer"
         }
 
-    def check_access_token(self, credentials: HTTPAuthorizationCredentials = Security(security)) -> Optional[int]:
+    def _parse_token(self, credentials: HTTPAuthorizationCredentials, token_type: str) -> Optional[int]:
         token = credentials.credentials
         try:
-            payload = jwt.decode(token, self.secret_key, algorithms=["HS256"])
-            return payload
+            payload = jwt.decode(token, self.secret_key, algorithms=["HS256"],)
+            if payload["scope"] == token_type:
+                return payload["user_id"]
+            raise jwt.InvalidTokenError
+
         except jwt.ExpiredSignatureError:
             raise HTTPException(status_code=401, detail='Token expired')
         except jwt.InvalidTokenError:
             raise HTTPException(status_code=401, detail='Invalid token')
 
-    async def check_refresh_token(self, token: str) -> int:
-        pass
+    def check_access_token(self, credentials: HTTPAuthorizationCredentials = Security(security)) -> Optional[int]:
+        return self._parse_token(credentials, "access_token")
+
+    def check_refresh_token(self, credentials: HTTPAuthorizationCredentials = Security(security)) -> Optional[int]:
+        return self._parse_token(credentials, "refresh_token")
+
