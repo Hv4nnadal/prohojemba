@@ -1,5 +1,5 @@
 from typing import Optional
-from fastapi import APIRouter, Form, Depends, status
+from fastapi import APIRouter, Depends, Query, status
 from fastapi.exceptions import HTTPException
 from pydantic import ValidationError
 
@@ -49,7 +49,8 @@ async def get_auth_tokens(
 
 # Активация пользователя по коду, отправленному по почте
 @auth_router.post("/activate")
-async def activate_new_user():
+async def activate_new_user(code: int):
+    # TODO получить id пользователя по коду активации в redis или словаре
     pass
 
 
