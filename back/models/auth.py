@@ -3,6 +3,7 @@ from pydantic import BaseModel, EmailStr, ValidationError
 from fastapi import Form, status
 from fastapi.exceptions import HTTPException
 
+
 class SignInModel(BaseModel):
     username: str
     email: EmailStr
@@ -12,10 +13,10 @@ class SignInModel(BaseModel):
 
     @classmethod
     def as_form(cls,
-            username: str = Form(None),
-            email: EmailStr =  Form(None),
-            password: str = Form(None),
-            ):
+                username: str = Form(None),
+                email: EmailStr = Form(None),
+                password: str = Form(None),
+                ):
         try:
             return cls(
                 username=username,
@@ -35,9 +36,9 @@ class LogInModel(BaseModel):
 
     @classmethod
     def as_form(cls,
-            email: EmailStr =  Form(None),
-            password: str = Form(None),
-            ):
+                email: EmailStr = Form(None),
+                password: str = Form(None),
+                ):
         try:
             return cls(
                 email=email,

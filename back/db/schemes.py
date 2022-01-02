@@ -24,6 +24,7 @@ sessions = sqlalchemy.Table(
                       sqlalchemy.Integer,
                       sqlalchemy.ForeignKey("users.id", ondelete="CASCADE")
                       ),
+    # sqlalchemy.Column("device_fingerprint", sqlalchemy.String(128), )
     sqlalchemy.Column("refresh_token", sqlalchemy.String(128), index=True),
     sqlalchemy.Column("expires_in", sqlalchemy.DateTime)
 )
