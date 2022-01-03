@@ -2,6 +2,8 @@
     Реализует работу с токенами и паролями
 """
 import jwt
+import random
+import string
 from datetime import datetime, timedelta
 from typing import Optional
 from fastapi import Security
@@ -11,8 +13,10 @@ from passlib.context import CryptContext
 
 security = HTTPBearer(auto_error=False)
 
+
 class AuthService:
     hasher = CryptContext(schemes=["bcrypt"])
+    numbers = string.digits
 
     def __init__(self, secret_key: str):
         self.secret_key = secret_key
@@ -22,6 +26,13 @@ class AuthService:
 
     def compare_passwords(self, raw_password: str, password_hash: str) -> bool:
         return self.hasher.verify(raw_password, password_hash)
+
+    def generate_code(self) -> str:
+        """
+        Генерирует вроде-как уникальный код
+        :return: строка кода
+        """
+        return "".join(random.choice(self.numbers) for i in range(8))
 
     def _generate_access_token(self, user_id: int) -> str:
         payload = {

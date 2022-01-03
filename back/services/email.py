@@ -17,9 +17,9 @@ class EmailService:
         """
         message = MessageSchema(
             subject="Prohojemba Authorization",
-            recipients=email,
+            recipients=[email],
             body=email_text,
-            subtype="html"
+            subtype="plain"
         )
         fm = FastMail(self.conf)
         await fm.send_message(message)

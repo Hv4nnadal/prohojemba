@@ -8,7 +8,6 @@ class SignInModel(BaseModel):
     username: str
     email: EmailStr
     password: str
-    avatar: str = None
     is_validated: bool = False
 
     @classmethod

@@ -4,10 +4,11 @@ from .base import BaseCRUD
 from back.db.schemes import users
 from back.models.users import UserOutput
 
+
 class UsersCRUD(BaseCRUD):
-    async def create(self, user_data: dict) -> None:
+    async def create(self, user_data: dict) -> int:
         query = users.insert().values(**user_data)
-        await self.database.execute(query)
+        return await self.database.execute(query)
 
     async def get_by_id(self, user_id: int):
         pass 

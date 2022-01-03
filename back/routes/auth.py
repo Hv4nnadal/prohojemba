@@ -5,25 +5,27 @@ from pydantic import ValidationError
 
 from back.models.auth import SignInModel, LogInModel, TokensResponse
 from back.crud import users
-from back.services import auth_service
+from back.services import auth_service, email_service
 
 auth_router = APIRouter()
 
 
-# Регистрация нового пользователя
 @auth_router.post("/signin")
 async def sign_in(
         auth_form: SignInModel = Depends(SignInModel.as_form),
-        ):
-    # todo Добавить генерацию кода, созданию соотношения code -> user в Redis, отправку email для активации профиля пользователя
-    # Изменение поля пароля в модели пользователя на хэш текущего значения
+):
+
     auth_form.password = auth_service.generate_password_hash(auth_form.password)
-    # Сохранение модели пользователя
     data = auth_form.dict()
+    user_id = await users.create(data)
+    print("АЙДИ ПОЛЬЗОВАТЕЛЯ: ", user_id)
 
-    await users.create(data)
+    activation_code = auth_service.generate_code()
+    await email_service.send_activate_profile_message(auth_form.email, auth_form.username, activation_code)
 
-    return auth_form
+    return {
+        "detail": "Профиль создан, необходима активация."
+    }
 
 
 # Получение токенов с email и паролем
@@ -42,8 +44,8 @@ async def login(auth_form: Optional[LogInModel] = Depends(LogInModel.as_form)):
 # Обновление токенов при помощи refresh токена
 @auth_router.post("/token")
 async def get_auth_tokens(
-            user_id: Optional[int] = Depends(auth_service.check_refresh_token)
-        ):
+        user_id: Optional[int] = Depends(auth_service.check_refresh_token)
+):
     return auth_service.generate_tokens(user_id)
 
 
