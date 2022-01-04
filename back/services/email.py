@@ -27,8 +27,11 @@ class EmailService:
     async def send_activate_profile_message(self, email_to_send: str, username: str, code: str) -> None:
         await self._send_email(
             email=email_to_send,
-            email_text="Тестовое сообщение: {}".format(code)
+            email_text="Код для регистрации аккаунта: {}".format(code)
         )
 
     async def send_update_email_message(self, email_to_send: str, username: str, code: str):
-        pass
+        await self._send_email(
+            email=email_to_send,
+            email_text="Код для обновления почты: {}".format(code)
+        )

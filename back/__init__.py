@@ -1,4 +1,5 @@
 from fastapi import FastAPI
+import uvicorn
 
 from . import settings
 from .db.base import database
@@ -27,4 +28,7 @@ app = FastAPI(
 # Подлключение обработчиков
 for path, router in routes.items():
     app.include_router(router, prefix=path)
+
+if __name__ == "__main__":
+    uvicorn.run(app)
 

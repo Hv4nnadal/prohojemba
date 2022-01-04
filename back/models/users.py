@@ -11,5 +11,5 @@ class UserOutput(BaseModel):
     id: int
     username: str
     email: str
-    is_validated: str
+    is_validated: bool
     password: str

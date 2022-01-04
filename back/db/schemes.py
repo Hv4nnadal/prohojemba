@@ -16,20 +16,6 @@ users = sqlalchemy.Table(
 )
 
 
-# Таблица refresh токенов пользователей
-sessions = sqlalchemy.Table(
-    "sessions",
-    metadata,
-    sqlalchemy.Column("user_id",
-                      sqlalchemy.Integer,
-                      sqlalchemy.ForeignKey("users.id", ondelete="CASCADE")
-                      ),
-    # sqlalchemy.Column("device_fingerprint", sqlalchemy.String(128), )
-    sqlalchemy.Column("refresh_token", sqlalchemy.String(128), index=True),
-    sqlalchemy.Column("expires_in", sqlalchemy.DateTime)
-)
-
-
 # Таблица прохождений пользователя
 walks = sqlalchemy.Table(
     "walks",
