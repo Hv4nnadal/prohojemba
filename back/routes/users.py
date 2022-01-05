@@ -1,18 +1,23 @@
-from fastapi import APIRouter
+from fastapi import APIRouter, Depends
+
+from back.crud import users
+from back.services import auth_service
 
 users_router = APIRouter()
 
 
 @users_router.get("/@me")
 async def get_current_user(
-
+        user_id: int = Depends(auth_service.check_access_token)
 ):
-    pass
+    return await users.get_by_id(user_id)
 
 
 @users_router.get("/{user_id}")
 async def get_user_by_id(
-        user_id: int
+        user_id: int,
+        current_user_id: int = Depends(auth_service.check_access_token),
+
 ):
     pass
 

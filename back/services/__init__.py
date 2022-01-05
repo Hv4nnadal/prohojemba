@@ -1,7 +1,6 @@
 from aioredis import Redis
 
 from .auth import AuthService
-from .cache import CacheService
 from .email import EmailService
 
 from back import settings
