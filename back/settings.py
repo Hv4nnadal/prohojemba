@@ -27,9 +27,12 @@ MAIL_CONFIG = {
 REDIS_HOST = "127.0.0.1"
 REDIS_PORT = 6379
 
-# Настройка сервиса сохранения изображений
+# Настройки сервиса сохранения изображений
+# Внешний сервис
 IMGBB_TOKEN = None  # Токен для работы с https://imgbb.com
-IMAGES_DIR = "D:\\images"  # Директория для сохранения изображений
+
+# Локальные настройки
+IMAGES_DIR = "/home/neka/github.com/prohojemba/images"  # Директория для сохранения изображений
 
 WALK_STATUSES = (
     "not_played",  # Пользователь даже не прикасался к продукту

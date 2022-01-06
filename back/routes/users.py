@@ -1,8 +1,9 @@
-from fastapi import APIRouter, Depends, status
+from fastapi import APIRouter, Depends, UploadFile, File, status
 from fastapi.exceptions import HTTPException
 
 from back.crud import users
-from back.services import auth_service
+from back.models.users import ChangeUserModel
+from back.services import auth_service, image_service
 
 users_router = APIRouter()
 
@@ -29,8 +30,13 @@ async def get_user_by_id(
     )
 
 
-@users_router.put("")
+@users_router.put("", status_code=status.HTTP_201_CREATED)
 async def update_user(
     current_user_id: int = Depends(auth_service.check_access_token),
+    form: ChangeUserModel = Depends(ChangeUserModel.as_form),
+    avatar: UploadFile = File(None)
 ):
-    pass
+    if avatar:
+        form.avatar = await image_service.save(avatar, "avatars")
+    
+    await users.update(current_user_id, form.dict())

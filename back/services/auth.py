@@ -92,11 +92,23 @@ class AuthService:
         )
 
     def check_access_token(self, credentials: HTTPAuthorizationCredentials = Security(security)) -> Optional[int]:
-        token = credentials.credentials
+        try:
+            token = credentials.credentials
+        except AttributeError:
+            raise HTTPException(
+                status_code=status.HTTP_401_UNAUTHORIZED,
+                detail="Access token not found."
+            )
         return self._parse_token(token, "access_token")
 
     async def check_refresh_token(self, credentials: HTTPAuthorizationCredentials = Security(security)) -> Optional[int]:
-        token = credentials.credentials
+        try:
+            token = credentials.credentials
+        except AttributeError:
+            raise HTTPException(
+                status_code=status.HTTP_401_UNAUTHORIZED,
+                detail="Refresh token not found."
+            )
         user_id = self._parse_token(token, "refresh_token")
         saved_token = await self.redis.get(user_id)
 
