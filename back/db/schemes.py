@@ -1,4 +1,7 @@
+from typing import Collection
 import sqlalchemy
+from sqlalchemy.sql.schema import Column
+from sqlalchemy.sql.sqltypes import Date
 
 from .base import metadata
 
@@ -31,8 +34,9 @@ walks = sqlalchemy.Table(
                       ),
     sqlalchemy.Column("status", sqlalchemy.String(16)), # Берется из WALK_STATUSES в настройках
     sqlalchemy.Column("comment", sqlalchemy.String(1024), nullable=True),
+    sqlalchemy.Column("rate", sqlalchemy.Boolean, nullable=True),
 
-    sqlalchemy.Column("rate", sqlalchemy.Boolean, nullable=True)
+    sqlalchemy.Column("created_at", sqlalchemy.Date)
 )
 
 
