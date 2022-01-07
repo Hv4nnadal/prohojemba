@@ -42,6 +42,7 @@ async def create_title(
     if cover:
         title_form.cover = await image_service.save(cover, "covers")
 
+    print(title_form)
     await titles.create(title_form.dict())
 
 
