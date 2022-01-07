@@ -1,4 +1,6 @@
-from typing import Optional, Literal
+from typing import Optional
+from fastapi import Form, status
+from fastapi.exceptions import HTTPException
 from pydantic import BaseModel, ValidationError
 
 from back import settings
@@ -9,6 +11,26 @@ class TitleForm(BaseModel):
     description: Optional[str]
     type: settings.TITLE_TYPES
     release_year: int
+
+    @classmethod
+    def as_form(cls,
+        name: str = Form(None),
+        description: str = Form(None),
+        type: str = Form(None),
+        release_year: int = Form(None)
+    ):
+        try:
+            return cls(
+                name=name,
+                description=description,
+                type=type,
+                release_year=release_year
+            )
+        except ValidationError as e:
+            raise HTTPException(
+                status_code=status.HTTP_422_UNPROCESSABLE_ENTITY,
+                detail=e.errors()
+            )
 
 
 class TitlePreview(BaseModel):
