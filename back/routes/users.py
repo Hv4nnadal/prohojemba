@@ -5,7 +5,7 @@ from back.crud import users
 from back.models.users import ChangeUserModel
 from back.services import auth_service, image_service
 
-users_router = APIRouter()
+users_router = APIRouter(tags=["Пользователи"])
 
 
 @users_router.get("/@me")

@@ -6,7 +6,7 @@ from back.models.titles import TitleForm
 from back.crud import titles
 from back.services import auth_service, image_service
 
-titles_router = APIRouter()
+titles_router = APIRouter(tags=["Тайтлы"])
 
 
 @titles_router.get("")
@@ -70,11 +70,3 @@ async def update_title(
         title_form.cover = await image_service.save(cover, "covers")
 
     await titles.update(title_id, title_form.dict())
-
-
-@titles_router.delete("/{title_id}", status_code=status.HTTP_201_CREATED)
-async def delete_title(
-    title_id: int,
-    user_id: int = Depends(auth_service.check_access_token)
-):
-    await titles.delete(title_id)

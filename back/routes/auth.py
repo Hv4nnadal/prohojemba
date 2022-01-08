@@ -7,7 +7,7 @@ from back.models.auth import SignInModel, LogInModel, ChangeEmailModel, ChangePa
 from back.crud import users
 from back.services import auth_service, email_service
 
-auth_router = APIRouter()
+auth_router = APIRouter(tags=["Авторизация и аутентификация"])
 
 
 @auth_router.post("/signin", status_code=status.HTTP_201_CREATED)

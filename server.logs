@@ -1,0 +1,47 @@
+2022-01-08 19:57:39,845 - INFO - Started server process [4628]
+2022-01-08 19:57:39,846 - INFO - Waiting for application startup.
+2022-01-08 19:57:39,847 - INFO - Connected to database sqlite:///debug.db
+2022-01-08 19:57:39,847 - INFO - Application startup complete.
+2022-01-08 19:57:39,848 - INFO - Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+2022-01-08 19:58:38,049 - INFO - Shutting down
+2022-01-08 19:58:38,152 - INFO - Waiting for application shutdown.
+2022-01-08 19:58:38,152 - INFO - Disconnected from database sqlite:///debug.db
+2022-01-08 19:58:38,152 - INFO - Application shutdown complete.
+2022-01-08 19:58:38,153 - INFO - Finished server process [4628]
+2022-01-08 19:58:39,638 - INFO - Started server process [10700]
+2022-01-08 19:58:39,639 - INFO - Waiting for application startup.
+2022-01-08 19:58:39,640 - INFO - Connected to database sqlite:///debug.db
+2022-01-08 19:58:39,640 - INFO - Application startup complete.
+2022-01-08 19:58:39,641 - INFO - Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+2022-01-08 19:59:49,299 - INFO - Shutting down
+2022-01-08 19:59:49,400 - INFO - Waiting for application shutdown.
+2022-01-08 19:59:49,400 - INFO - Disconnected from database sqlite:///debug.db
+2022-01-08 19:59:49,400 - INFO - Application shutdown complete.
+2022-01-08 19:59:49,401 - INFO - Finished server process [10700]
+2022-01-08 20:03:03,316 - INFO - Started server process [3840]
+2022-01-08 20:03:03,317 - INFO - Waiting for application startup.
+2022-01-08 20:03:03,318 - INFO - Connected to database sqlite:///debug.db
+2022-01-08 20:03:03,318 - INFO - Application startup complete.
+2022-01-08 20:03:03,319 - INFO - Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+2022-01-08 20:04:18,784 - INFO - Shutting down
+2022-01-08 20:04:18,886 - INFO - Waiting for application shutdown.
+2022-01-08 20:04:18,886 - INFO - Disconnected from database sqlite:///debug.db
+2022-01-08 20:04:18,886 - INFO - Application shutdown complete.
+2022-01-08 20:04:18,887 - INFO - Finished server process [3840]
+2022-01-08 20:04:20,482 - INFO - Started server process [11360]
+2022-01-08 20:04:20,482 - INFO - Waiting for application startup.
+2022-01-08 20:04:20,482 - INFO - Connected to database sqlite:///debug.db
+2022-01-08 20:04:20,483 - INFO - Application startup complete.
+2022-01-08 20:04:20,483 - INFO - Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+2022-01-08 20:09:20,879 - INFO - Shutting down
+2022-01-08 20:09:20,981 - INFO - Finished server process [11360]
+2022-01-08 20:09:20,982 - INFO - Disconnected from database sqlite:///debug.db
+2022-01-08 20:09:21,021 - ERROR - Traceback (most recent call last):
+  File "d:\github.com\prohojemba\venv\lib\site-packages\starlette\routing.py", line 624, in lifespan
+    await receive()
+  File "d:\github.com\prohojemba\venv\lib\site-packages\uvicorn\lifespan\on.py", line 135, in receive
+    return await self.receive_queue.get()
+  File "C:\Users\Umaruch\AppData\Local\Programs\Python\Python39\lib\asyncio\queues.py", line 166, in get
+    await getter
+asyncio.exceptions.CancelledError
+
