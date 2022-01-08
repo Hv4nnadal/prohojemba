@@ -11,8 +11,8 @@ class ChangeUserModel(BaseModel):
 
     @classmethod
     def as_form(cls,
-            username: str = Form(None)
-            ):
+                username: str = Form(None)
+                ):
         try:
             return cls(username=username)
         except ValidationError as e:

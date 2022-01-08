@@ -1,4 +1,6 @@
 from fastapi import APIRouter, Depends, UploadFile, File, status
+from fastapi.exceptions import HTTPException
+import logging
 
 from back.models.titles import TitleForm
 from back.crud import titles
@@ -17,6 +19,7 @@ async def get_page(
     Args:
         page (int, optional): Номер страницы. Defaults to 1.
     """
+    logging.info(f"Пользователь (ID:{user_id}) запросил страницу {page} с тайтлами")
     return await titles.all(page)
 
 
@@ -25,12 +28,19 @@ async def get_title(
     title_id: int,
     user_id: int = Depends(auth_service.check_access_token)
 ):
-    """Возвращает полную информацию о тайтле 
-    # TODO Добавить проверку на наличие
+    """Возвращает полную информацию о тайтле
+
     Args:
-        title_id (int): [description]
+        title_id (int): ID тайтла
     """
-    return await titles.get_by_id(title_id)   
+    title = await titles.get_by_id(title_id)
+    if title:
+        return await titles.get_by_id(title_id)
+
+    raise HTTPException(
+        status_code=status.HTTP_404_NOT_FOUND,
+        detail="Title not found"
+    )
 
 
 @titles_router.post("", status_code=status.HTTP_201_CREATED)
@@ -38,11 +48,14 @@ async def create_title(
     user_id: int = Depends(auth_service.check_access_token),
     title_form: TitleForm = Depends(TitleForm.as_form),
     cover: UploadFile = File(None)
-): 
+):
+    """Создание новой записи о тайтле
+
+    Args: (TitleForm) Форма с редактируемой информацией о тайтле
+    """
     if cover:
         title_form.cover = await image_service.save(cover, "covers")
 
-    print(title_form)
     await titles.create(title_form.dict())
 
 

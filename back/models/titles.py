@@ -13,11 +13,11 @@ class TitleForm(BaseModel):
 
     @classmethod
     def as_form(cls,
-        name: str = Form(None),
-        description: str = Form(None),
-        type: str = Form(None),
-        release_year: int = Form(None)
-    ):
+                name: str = Form(None),
+                description: str = Form(None),
+                type: str = Form(None),
+                release_year: int = Form(None)
+                ):
         try:
             return cls(
                 name=name,
@@ -41,6 +41,7 @@ class TitlePreview(BaseModel):
     positive_rates_count: int
     negative_rates_count: int
 
+
 class TitleInfo(BaseModel):
     id: int
     name: str
@@ -50,4 +51,3 @@ class TitleInfo(BaseModel):
     release_year: int
     positive_rates_count: int
     negative_rates_count: int
-    

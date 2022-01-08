@@ -1,9 +1,16 @@
 from fastapi import FastAPI
 import uvicorn
+import logging
 
 from . import settings
 from .db.base import database
 from .routes import routes
+
+logging.basicConfig(
+    filename="server.logs",
+    format="%(asctime)s - %(levelname)s - %(message)s",
+    level=logging.DEBUG
+)
 
 
 async def _on_startup():

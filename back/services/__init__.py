@@ -2,7 +2,8 @@ from aioredis import Redis
 
 from .auth import AuthService
 from .email import EmailService
-from .images import LocalImage, ImageBB
+from .images.local import LocalImage
+from .images.imagebb import ImageBB
 
 from back import settings
 
