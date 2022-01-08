@@ -29,3 +29,9 @@ class UserOutput(BaseModel):
     avatar: Optional[str]
     is_validated: bool
     password: str
+
+
+class UserPreview(BaseModel):
+    id: int
+    username: str
+    avatar: Optional[str]
