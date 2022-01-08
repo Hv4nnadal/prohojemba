@@ -26,7 +26,7 @@ async def get_title(
     user_id: int = Depends(auth_service.check_access_token)
 ):
     """Возвращает полную информацию о тайтле 
-
+    # TODO Добавить проверку на наличие
     Args:
         title_id (int): [description]
     """

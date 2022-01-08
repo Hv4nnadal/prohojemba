@@ -1,22 +1,14 @@
-from enum import Enum
 from typing import Optional
 from fastapi import Form, status
 from fastapi.exceptions import HTTPException
 from pydantic import BaseModel, ValidationError
 
 
-class TitleTypes(Enum):
-    game = "game"
-    anime = "anime"
-    film = "film"
-    series = "series"
-
-
 class TitleForm(BaseModel):
     name: str
     cover: Optional[str]
     description: Optional[str]
-    type: TitleTypes
+    type: str
     release_year: int
 
     @classmethod

@@ -7,7 +7,7 @@ from back.models.titles import TitlePreview, TitleInfo
 
 class TitlesCRUD(BaseCRUD):
     async def all(self, page: int) -> Optional[List[TitlePreview]]:
-        query = titles.select().limit().limit(10).offset((page-1)*10)
+        query = titles.select().limit(10).offset((page-1)*10)
         return [TitlePreview.parse_obj(data) for data in await self.database.fetch_all(query)]
 
     async def get_by_id(self, title_id: int) -> Optional[TitleInfo]:
@@ -15,6 +15,8 @@ class TitlesCRUD(BaseCRUD):
         return TitleInfo.parse_obj(data) if (data := await self.database.fetch_one(query)) else None
 
     async def create(self, title_data: dict) -> int:
+        title_data["positive_rates_count"] = 0
+        title_data["negative_rates_count"] = 0
         query = titles.insert().values(**title_data)
         return await self.database.execute(query)
 
