@@ -50,7 +50,7 @@ async def get_title_walks(
     return await walks.get_by_title_id(title_id)
 
 
-@titles_router.post("/{title_id}/walks")
+@titles_router.post("/{title_id}/walks", status_code=status.HTTP_201_CREATED)
 async def create_title_walk(
         title_id: int,
         user_id: int = Depends(auth_service.check_access_token),
