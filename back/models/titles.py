@@ -1,7 +1,7 @@
 from typing import Optional
 from fastapi import Form, status
 from fastapi.exceptions import HTTPException
-from pydantic import BaseModel, ValidationError
+from pydantic import BaseModel, ValidationError, Field
 
 
 class TitleForm(BaseModel):
@@ -40,6 +40,10 @@ class TitlePreview(BaseModel):
     release_year: int
     positive_rates_count: int
     negative_rates_count: int
+
+
+class TitleForWalk(TitlePreview):
+    id: int = Field(..., alias="title_id")
 
 
 class TitleInfo(BaseModel):

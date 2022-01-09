@@ -5,8 +5,8 @@ from fastapi import Form
 from fastapi import status as http_status
 from fastapi.exceptions import HTTPException
 
-from .users import UserPreview
-from .titles import TitlePreview
+from .users import UserForWalk
+from .titles import TitleForWalk
 
 
 class WalkForm(BaseModel):
@@ -41,7 +41,7 @@ class WalkBase(BaseModel):
 
 class WalkWithUserInfo(BaseModel):
     id: int
-    user: Optional[UserPreview]
+    user: Optional[UserForWalk]
     status: str
     comment: str
     rate: Optional[bool]
@@ -50,6 +50,6 @@ class WalkWithUserInfo(BaseModel):
 
 class WalkWithTitleInfo(BaseModel):
     id: int
-    title: Optional[TitlePreview]
+    title: Optional[TitleForWalk]
     status: str
     rate: Optional[bool]

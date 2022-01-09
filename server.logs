@@ -1933,3 +1933,580 @@ AttributeError: user_id
 2022-01-09 21:17:11,555 - DEBUG - operation functools.partial(<built-in method close of sqlite3.Cursor object at 0x000002332B02B0A0>) completed
 2022-01-09 21:17:11,555 - DEBUG - executing functools.partial(<built-in method close of sqlite3.Connection object at 0x000002332B023030>)
 2022-01-09 21:17:11,555 - DEBUG - operation functools.partial(<built-in method close of sqlite3.Connection object at 0x000002332B023030>) completed
+2022-01-09 21:45:41,109 - INFO - Пользователь (ID:1) запросил страницу 1 с тайтлами
+2022-01-09 21:45:41,110 - DEBUG - executing <function connect.<locals>.connector at 0x000002332AF7BC10>
+2022-01-09 21:45:41,113 - DEBUG - operation <function connect.<locals>.connector at 0x000002332AF7BC10> completed
+2022-01-09 21:45:41,115 - DEBUG - Query: SELECT titles.id, titles.name, titles.cover, titles.description, titles.type, titles.release_year, titles.positive_rates_count, titles.negative_rates_count FROM titles  LIMIT ? OFFSET ? Args: (10, 0)
+2022-01-09 21:45:41,115 - DEBUG - executing functools.partial(<built-in method execute of sqlite3.Connection object at 0x000002332AF23E40>, 'SELECT titles.id, titles.name, titles.cover, titles.description, titles.type, titles.release_year, titles.positive_rates_count, titles.negative_rates_count \nFROM titles\n LIMIT ? OFFSET ?', [10, 0])
+2022-01-09 21:45:41,116 - DEBUG - operation functools.partial(<built-in method execute of sqlite3.Connection object at 0x000002332AF23E40>, 'SELECT titles.id, titles.name, titles.cover, titles.description, titles.type, titles.release_year, titles.positive_rates_count, titles.negative_rates_count \nFROM titles\n LIMIT ? OFFSET ?', [10, 0]) completed
+2022-01-09 21:45:41,116 - DEBUG - executing functools.partial(<built-in method fetchall of sqlite3.Cursor object at 0x000002332AFA5F80>)
+2022-01-09 21:45:41,116 - DEBUG - operation functools.partial(<built-in method fetchall of sqlite3.Cursor object at 0x000002332AFA5F80>) completed
+2022-01-09 21:45:41,116 - DEBUG - executing functools.partial(<built-in method close of sqlite3.Cursor object at 0x000002332AFA5F80>)
+2022-01-09 21:45:41,116 - DEBUG - operation functools.partial(<built-in method close of sqlite3.Cursor object at 0x000002332AFA5F80>) completed
+2022-01-09 21:45:41,116 - DEBUG - executing functools.partial(<built-in method close of sqlite3.Connection object at 0x000002332AF23E40>)
+2022-01-09 21:45:41,116 - DEBUG - operation functools.partial(<built-in method close of sqlite3.Connection object at 0x000002332AF23E40>) completed
+2022-01-09 21:45:54,563 - DEBUG - Calling on_part_begin with no data
+2022-01-09 21:45:54,563 - DEBUG - Calling on_header_field with data[42:61]
+2022-01-09 21:45:54,563 - DEBUG - Calling on_header_value with data[63:120]
+2022-01-09 21:45:54,563 - DEBUG - Calling on_header_end with no data
+2022-01-09 21:45:54,563 - DEBUG - Calling on_header_field with data[122:134]
+2022-01-09 21:45:54,563 - DEBUG - Calling on_header_value with data[136:146]
+2022-01-09 21:45:54,563 - DEBUG - Calling on_header_end with no data
+2022-01-09 21:45:54,563 - DEBUG - Calling on_headers_finished with no data
+2022-01-09 21:45:54,564 - DEBUG - Calling on_part_data with data[150:49152]
+2022-01-09 21:45:54,564 - DEBUG - Calling on_part_data with data[0:65536]
+2022-01-09 21:45:54,565 - DEBUG - Calling on_part_data with data[0:20988]
+2022-01-09 21:45:54,565 - DEBUG - Calling on_part_data with data[0:1]
+2022-01-09 21:45:54,565 - DEBUG - Calling on_part_data with data[20989:61623]
+2022-01-09 21:45:54,565 - DEBUG - Calling on_part_data with data[0:1]
+2022-01-09 21:45:54,565 - DEBUG - Calling on_part_data with data[61624:65536]
+2022-01-09 21:45:54,566 - DEBUG - Calling on_part_data with data[0:65536]
+2022-01-09 21:45:54,567 - DEBUG - Calling on_part_data with data[0:65536]
+2022-01-09 21:45:54,567 - DEBUG - Calling on_part_data with data[0:12086]
+2022-01-09 21:45:54,567 - DEBUG - Calling on_part_data with data[0:1]
+2022-01-09 21:45:54,568 - DEBUG - Calling on_part_data with data[12087:65536]
+2022-01-09 21:45:54,568 - DEBUG - Calling on_part_data with data[0:65536]
+2022-01-09 21:45:54,569 - DEBUG - Calling on_part_data with data[0:7597]
+2022-01-09 21:45:54,569 - DEBUG - Calling on_part_data with data[0:1]
+2022-01-09 21:45:54,569 - DEBUG - Calling on_part_data with data[7598:23229]
+2022-01-09 21:45:54,569 - DEBUG - Calling on_part_data with data[0:1]
+2022-01-09 21:45:54,569 - DEBUG - Calling on_part_data with data[23230:27196]
+2022-01-09 21:45:54,569 - DEBUG - Calling on_part_data with data[0:1]
+2022-01-09 21:45:54,569 - DEBUG - Calling on_part_data with data[27197:65536]
+2022-01-09 21:45:54,570 - DEBUG - Calling on_part_data with data[0:6742]
+2022-01-09 21:45:54,570 - DEBUG - Calling on_part_data with data[0:1]
+2022-01-09 21:45:54,570 - DEBUG - Calling on_part_data with data[6743:35617]
+2022-01-09 21:45:54,570 - DEBUG - Calling on_part_data with data[0:1]
+2022-01-09 21:45:54,570 - DEBUG - Calling on_part_data with data[35618:44378]
+2022-01-09 21:45:54,570 - DEBUG - Calling on_part_data with data[0:1]
+2022-01-09 21:45:54,570 - DEBUG - Calling on_part_data with data[44379:58631]
+2022-01-09 21:45:54,571 - DEBUG - Calling on_part_end with no data
+2022-01-09 21:45:54,571 - DEBUG - Calling on_part_begin with no data
+2022-01-09 21:45:54,571 - DEBUG - Calling on_header_field with data[58675:58694]
+2022-01-09 21:45:54,571 - DEBUG - Calling on_header_value with data[58696:58718]
+2022-01-09 21:45:54,571 - DEBUG - Calling on_header_end with no data
+2022-01-09 21:45:54,571 - DEBUG - Calling on_headers_finished with no data
+2022-01-09 21:45:54,571 - DEBUG - Calling on_part_data with data[58722:58731]
+2022-01-09 21:45:54,571 - DEBUG - Calling on_part_end with no data
+2022-01-09 21:45:54,571 - DEBUG - Calling on_part_begin with no data
+2022-01-09 21:45:54,571 - DEBUG - Calling on_header_field with data[58775:58794]
+2022-01-09 21:45:54,571 - DEBUG - Calling on_header_value with data[58796:58825]
+2022-01-09 21:45:54,571 - DEBUG - Calling on_header_end with no data
+2022-01-09 21:45:54,571 - DEBUG - Calling on_headers_finished with no data
+2022-01-09 21:45:54,571 - DEBUG - Calling on_part_data with data[58829:58872]
+2022-01-09 21:45:54,571 - DEBUG - Calling on_part_end with no data
+2022-01-09 21:45:54,571 - DEBUG - Calling on_part_begin with no data
+2022-01-09 21:45:54,571 - DEBUG - Calling on_header_field with data[58916:58935]
+2022-01-09 21:45:54,571 - DEBUG - Calling on_header_value with data[58937:58959]
+2022-01-09 21:45:54,571 - DEBUG - Calling on_header_end with no data
+2022-01-09 21:45:54,572 - DEBUG - Calling on_headers_finished with no data
+2022-01-09 21:45:54,572 - DEBUG - Calling on_part_data with data[58963:58968]
+2022-01-09 21:45:54,572 - DEBUG - Calling on_part_end with no data
+2022-01-09 21:45:54,572 - DEBUG - Calling on_part_begin with no data
+2022-01-09 21:45:54,572 - DEBUG - Calling on_header_field with data[59012:59031]
+2022-01-09 21:45:54,572 - DEBUG - Calling on_header_value with data[59033:59063]
+2022-01-09 21:45:54,572 - DEBUG - Calling on_header_end with no data
+2022-01-09 21:45:54,572 - DEBUG - Calling on_headers_finished with no data
+2022-01-09 21:45:54,572 - DEBUG - Calling on_part_data with data[59067:59071]
+2022-01-09 21:45:54,572 - DEBUG - Calling on_part_end with no data
+2022-01-09 21:45:54,573 - DEBUG - Calling on_end with no data
+2022-01-09 21:45:54,575 - DEBUG - executing <function connect.<locals>.connector at 0x000002332AFD3E50>
+2022-01-09 21:45:54,575 - DEBUG - operation <function connect.<locals>.connector at 0x000002332AFD3E50> completed
+2022-01-09 21:45:54,577 - DEBUG - Query: INSERT INTO titles (name, cover, description, type, release_year, positive_rates_count, negative_rates_count) VALUES (?, ?, ?, ?, ?, ?, ?) Args: ('Persona 5', '/covers/Persona_5_Box_Art.jpg', 'JRPG про тупых школьников', 'games', 2017, 0, 0)
+2022-01-09 21:45:54,577 - DEBUG - executing functools.partial(<built-in method cursor of sqlite3.Connection object at 0x000002332AF23E40>)
+2022-01-09 21:45:54,577 - DEBUG - operation functools.partial(<built-in method cursor of sqlite3.Connection object at 0x000002332AF23E40>) completed
+2022-01-09 21:45:54,577 - DEBUG - executing functools.partial(<built-in method execute of sqlite3.Cursor object at 0x000002332B037180>, 'INSERT INTO titles (name, cover, description, type, release_year, positive_rates_count, negative_rates_count) VALUES (?, ?, ?, ?, ?, ?, ?)', ['Persona 5', '/covers/Persona_5_Box_Art.jpg', 'JRPG про тупых школьников', 'games', 2017, 0, 0])
+2022-01-09 21:45:54,663 - DEBUG - operation functools.partial(<built-in method execute of sqlite3.Cursor object at 0x000002332B037180>, 'INSERT INTO titles (name, cover, description, type, release_year, positive_rates_count, negative_rates_count) VALUES (?, ?, ?, ?, ?, ?, ?)', ['Persona 5', '/covers/Persona_5_Box_Art.jpg', 'JRPG про тупых школьников', 'games', 2017, 0, 0]) completed
+2022-01-09 21:45:54,663 - DEBUG - executing functools.partial(<built-in method close of sqlite3.Cursor object at 0x000002332B037180>)
+2022-01-09 21:45:54,663 - DEBUG - operation functools.partial(<built-in method close of sqlite3.Cursor object at 0x000002332B037180>) completed
+2022-01-09 21:45:54,663 - DEBUG - executing functools.partial(<built-in method close of sqlite3.Connection object at 0x000002332AF23E40>)
+2022-01-09 21:45:54,664 - DEBUG - operation functools.partial(<built-in method close of sqlite3.Connection object at 0x000002332AF23E40>) completed
+2022-01-09 21:46:43,361 - DEBUG - Calling on_part_begin with no data
+2022-01-09 21:46:43,361 - DEBUG - Calling on_header_field with data[42:61]
+2022-01-09 21:46:43,361 - DEBUG - Calling on_header_value with data[63:130]
+2022-01-09 21:46:43,361 - DEBUG - Calling on_header_end with no data
+2022-01-09 21:46:43,361 - DEBUG - Calling on_header_field with data[132:144]
+2022-01-09 21:46:43,361 - DEBUG - Calling on_header_value with data[146:156]
+2022-01-09 21:46:43,361 - DEBUG - Calling on_header_end with no data
+2022-01-09 21:46:43,361 - DEBUG - Calling on_headers_finished with no data
+2022-01-09 21:46:43,362 - DEBUG - Calling on_part_data with data[160:32768]
+2022-01-09 21:46:43,363 - DEBUG - Calling on_part_data with data[0:16384]
+2022-01-09 21:46:43,363 - DEBUG - Calling on_part_data with data[0:16370]
+2022-01-09 21:46:43,363 - DEBUG - Calling on_part_data with data[0:1]
+2022-01-09 21:46:43,363 - DEBUG - Calling on_part_data with data[16371:16384]
+2022-01-09 21:46:43,364 - DEBUG - Calling on_part_data with data[0:16383]
+2022-01-09 21:46:43,364 - DEBUG - Calling on_part_data with data[0:1]
+2022-01-09 21:46:43,364 - DEBUG - Calling on_part_data with data[0:5687]
+2022-01-09 21:46:43,364 - DEBUG - Calling on_part_data with data[0:1]
+2022-01-09 21:46:43,364 - DEBUG - Calling on_part_data with data[5688:7552]
+2022-01-09 21:46:43,364 - DEBUG - Calling on_part_data with data[0:1]
+2022-01-09 21:46:43,364 - DEBUG - Calling on_part_data with data[7553:16384]
+2022-01-09 21:46:43,365 - DEBUG - Calling on_part_data with data[0:49152]
+2022-01-09 21:46:43,365 - DEBUG - Calling on_part_data with data[0:11722]
+2022-01-09 21:46:43,365 - DEBUG - Calling on_part_end with no data
+2022-01-09 21:46:43,365 - DEBUG - Calling on_part_begin with no data
+2022-01-09 21:46:43,365 - DEBUG - Calling on_header_field with data[11766:11785]
+2022-01-09 21:46:43,365 - DEBUG - Calling on_header_value with data[11787:11809]
+2022-01-09 21:46:43,365 - DEBUG - Calling on_header_end with no data
+2022-01-09 21:46:43,366 - DEBUG - Calling on_headers_finished with no data
+2022-01-09 21:46:43,366 - DEBUG - Calling on_part_data with data[11813:11828]
+2022-01-09 21:46:43,366 - DEBUG - Calling on_part_end with no data
+2022-01-09 21:46:43,366 - DEBUG - Calling on_part_begin with no data
+2022-01-09 21:46:43,366 - DEBUG - Calling on_header_field with data[11872:11891]
+2022-01-09 21:46:43,366 - DEBUG - Calling on_header_value with data[11893:11922]
+2022-01-09 21:46:43,366 - DEBUG - Calling on_header_end with no data
+2022-01-09 21:46:43,366 - DEBUG - Calling on_headers_finished with no data
+2022-01-09 21:46:43,366 - DEBUG - Calling on_part_data with data[11926:11975]
+2022-01-09 21:46:43,366 - DEBUG - Calling on_part_end with no data
+2022-01-09 21:46:43,366 - DEBUG - Calling on_part_begin with no data
+2022-01-09 21:46:43,366 - DEBUG - Calling on_header_field with data[12019:12038]
+2022-01-09 21:46:43,366 - DEBUG - Calling on_header_value with data[12040:12062]
+2022-01-09 21:46:43,366 - DEBUG - Calling on_header_end with no data
+2022-01-09 21:46:43,366 - DEBUG - Calling on_headers_finished with no data
+2022-01-09 21:46:43,366 - DEBUG - Calling on_part_data with data[12066:12071]
+2022-01-09 21:46:43,366 - DEBUG - Calling on_part_end with no data
+2022-01-09 21:46:43,366 - DEBUG - Calling on_part_begin with no data
+2022-01-09 21:46:43,366 - DEBUG - Calling on_header_field with data[12115:12134]
+2022-01-09 21:46:43,366 - DEBUG - Calling on_header_value with data[12136:12166]
+2022-01-09 21:46:43,367 - DEBUG - Calling on_header_end with no data
+2022-01-09 21:46:43,367 - DEBUG - Calling on_headers_finished with no data
+2022-01-09 21:46:43,367 - DEBUG - Calling on_part_data with data[12170:12174]
+2022-01-09 21:46:43,367 - DEBUG - Calling on_part_end with no data
+2022-01-09 21:46:43,367 - DEBUG - Calling on_end with no data
+2022-01-09 21:46:43,370 - DEBUG - executing <function connect.<locals>.connector at 0x000002332AFD38B0>
+2022-01-09 21:46:43,377 - DEBUG - operation <function connect.<locals>.connector at 0x000002332AFD38B0> completed
+2022-01-09 21:46:43,378 - DEBUG - Query: INSERT INTO titles (name, cover, description, type, release_year, positive_rates_count, negative_rates_count) VALUES (?, ?, ?, ?, ?, ?, ?) Args: ('Clownfield 2042', '/covers/Без названия (1).jpg', 'Шутер для тупых школьников', 'games', 2017, 0, 0)
+2022-01-09 21:46:43,378 - DEBUG - executing functools.partial(<built-in method cursor of sqlite3.Connection object at 0x000002332AF23E40>)
+2022-01-09 21:46:43,379 - DEBUG - operation functools.partial(<built-in method cursor of sqlite3.Connection object at 0x000002332AF23E40>) completed
+2022-01-09 21:46:43,379 - DEBUG - executing functools.partial(<built-in method execute of sqlite3.Cursor object at 0x000002332B037260>, 'INSERT INTO titles (name, cover, description, type, release_year, positive_rates_count, negative_rates_count) VALUES (?, ?, ?, ?, ?, ?, ?)', ['Clownfield 2042', '/covers/Без названия (1).jpg', 'Шутер для тупых школьников', 'games', 2017, 0, 0])
+2022-01-09 21:46:43,453 - DEBUG - operation functools.partial(<built-in method execute of sqlite3.Cursor object at 0x000002332B037260>, 'INSERT INTO titles (name, cover, description, type, release_year, positive_rates_count, negative_rates_count) VALUES (?, ?, ?, ?, ?, ?, ?)', ['Clownfield 2042', '/covers/Без названия (1).jpg', 'Шутер для тупых школьников', 'games', 2017, 0, 0]) completed
+2022-01-09 21:46:43,453 - DEBUG - executing functools.partial(<built-in method close of sqlite3.Cursor object at 0x000002332B037260>)
+2022-01-09 21:46:43,453 - DEBUG - operation functools.partial(<built-in method close of sqlite3.Cursor object at 0x000002332B037260>) completed
+2022-01-09 21:46:43,453 - DEBUG - executing functools.partial(<built-in method close of sqlite3.Connection object at 0x000002332AF23E40>)
+2022-01-09 21:46:43,454 - DEBUG - operation functools.partial(<built-in method close of sqlite3.Connection object at 0x000002332AF23E40>) completed
+2022-01-09 21:47:06,821 - DEBUG - Calling on_part_begin with no data
+2022-01-09 21:47:06,822 - DEBUG - Calling on_header_field with data[42:61]
+2022-01-09 21:47:06,822 - DEBUG - Calling on_header_value with data[63:109]
+2022-01-09 21:47:06,822 - DEBUG - Calling on_header_end with no data
+2022-01-09 21:47:06,822 - DEBUG - Calling on_header_field with data[111:123]
+2022-01-09 21:47:06,822 - DEBUG - Calling on_header_value with data[125:135]
+2022-01-09 21:47:06,822 - DEBUG - Calling on_header_end with no data
+2022-01-09 21:47:06,822 - DEBUG - Calling on_headers_finished with no data
+2022-01-09 21:47:06,822 - DEBUG - Calling on_part_data with data[139:32768]
+2022-01-09 21:47:06,824 - DEBUG - Calling on_part_data with data[0:16384]
+2022-01-09 21:47:06,824 - DEBUG - Calling on_part_data with data[0:799]
+2022-01-09 21:47:06,824 - DEBUG - Calling on_part_data with data[0:1]
+2022-01-09 21:47:06,824 - DEBUG - Calling on_part_data with data[800:6066]
+2022-01-09 21:47:06,824 - DEBUG - Calling on_part_data with data[0:1]
+2022-01-09 21:47:06,824 - DEBUG - Calling on_part_data with data[6067:16384]
+2022-01-09 21:47:06,825 - DEBUG - Calling on_part_data with data[0:16384]
+2022-01-09 21:47:06,825 - DEBUG - Calling on_part_data with data[0:2446]
+2022-01-09 21:47:06,825 - DEBUG - Calling on_part_data with data[0:1]
+2022-01-09 21:47:06,825 - DEBUG - Calling on_part_data with data[2447:16369]
+2022-01-09 21:47:06,825 - DEBUG - Calling on_part_data with data[0:1]
+2022-01-09 21:47:06,825 - DEBUG - Calling on_part_data with data[16370:16384]
+2022-01-09 21:47:06,825 - DEBUG - Calling on_part_data with data[0:42745]
+2022-01-09 21:47:06,826 - DEBUG - Calling on_part_end with no data
+2022-01-09 21:47:06,826 - DEBUG - Calling on_part_begin with no data
+2022-01-09 21:47:06,826 - DEBUG - Calling on_header_field with data[42789:42808]
+2022-01-09 21:47:06,826 - DEBUG - Calling on_header_value with data[42810:42832]
+2022-01-09 21:47:06,826 - DEBUG - Calling on_header_end with no data
+2022-01-09 21:47:06,826 - DEBUG - Calling on_headers_finished with no data
+2022-01-09 21:47:06,826 - DEBUG - Calling on_part_data with data[42836:42861]
+2022-01-09 21:47:06,826 - DEBUG - Calling on_part_end with no data
+2022-01-09 21:47:06,826 - DEBUG - Calling on_part_begin with no data
+2022-01-09 21:47:06,826 - DEBUG - Calling on_header_field with data[42905:42924]
+2022-01-09 21:47:06,826 - DEBUG - Calling on_header_value with data[42926:42955]
+2022-01-09 21:47:06,826 - DEBUG - Calling on_header_end with no data
+2022-01-09 21:47:06,826 - DEBUG - Calling on_headers_finished with no data
+2022-01-09 21:47:06,827 - DEBUG - Calling on_part_data with data[42959:42997]
+2022-01-09 21:47:06,827 - DEBUG - Calling on_part_end with no data
+2022-01-09 21:47:06,827 - DEBUG - Calling on_part_begin with no data
+2022-01-09 21:47:06,827 - DEBUG - Calling on_header_field with data[43041:43060]
+2022-01-09 21:47:06,827 - DEBUG - Calling on_header_value with data[43062:43084]
+2022-01-09 21:47:06,827 - DEBUG - Calling on_header_end with no data
+2022-01-09 21:47:06,827 - DEBUG - Calling on_headers_finished with no data
+2022-01-09 21:47:06,827 - DEBUG - Calling on_part_data with data[43088:43093]
+2022-01-09 21:47:06,827 - DEBUG - Calling on_part_end with no data
+2022-01-09 21:47:06,827 - DEBUG - Calling on_part_begin with no data
+2022-01-09 21:47:06,827 - DEBUG - Calling on_header_field with data[43137:43156]
+2022-01-09 21:47:06,827 - DEBUG - Calling on_header_value with data[43158:43188]
+2022-01-09 21:47:06,827 - DEBUG - Calling on_header_end with no data
+2022-01-09 21:47:06,827 - DEBUG - Calling on_headers_finished with no data
+2022-01-09 21:47:06,827 - DEBUG - Calling on_part_data with data[43192:43196]
+2022-01-09 21:47:06,827 - DEBUG - Calling on_part_end with no data
+2022-01-09 21:47:06,827 - DEBUG - Calling on_end with no data
+2022-01-09 21:47:06,847 - DEBUG - executing <function connect.<locals>.connector at 0x000002332AFD3EE0>
+2022-01-09 21:47:06,853 - DEBUG - operation <function connect.<locals>.connector at 0x000002332AFD3EE0> completed
+2022-01-09 21:47:06,853 - DEBUG - Query: INSERT INTO titles (name, cover, description, type, release_year, positive_rates_count, negative_rates_count) VALUES (?, ?, ?, ?, ?, ?, ?) Args: ('Атака титанов', '/covers/mikasa.jpg', 'Аниме для школьников', 'anime', 2014, 0, 0)
+2022-01-09 21:47:06,854 - DEBUG - executing functools.partial(<built-in method cursor of sqlite3.Connection object at 0x000002332AF23E40>)
+2022-01-09 21:47:06,854 - DEBUG - operation functools.partial(<built-in method cursor of sqlite3.Connection object at 0x000002332AF23E40>) completed
+2022-01-09 21:47:06,854 - DEBUG - executing functools.partial(<built-in method execute of sqlite3.Cursor object at 0x000002332B037340>, 'INSERT INTO titles (name, cover, description, type, release_year, positive_rates_count, negative_rates_count) VALUES (?, ?, ?, ?, ?, ?, ?)', ['Атака титанов', '/covers/mikasa.jpg', 'Аниме для школьников', 'anime', 2014, 0, 0])
+2022-01-09 21:47:06,927 - DEBUG - operation functools.partial(<built-in method execute of sqlite3.Cursor object at 0x000002332B037340>, 'INSERT INTO titles (name, cover, description, type, release_year, positive_rates_count, negative_rates_count) VALUES (?, ?, ?, ?, ?, ?, ?)', ['Атака титанов', '/covers/mikasa.jpg', 'Аниме для школьников', 'anime', 2014, 0, 0]) completed
+2022-01-09 21:47:06,927 - DEBUG - executing functools.partial(<built-in method close of sqlite3.Cursor object at 0x000002332B037340>)
+2022-01-09 21:47:06,928 - DEBUG - operation functools.partial(<built-in method close of sqlite3.Cursor object at 0x000002332B037340>) completed
+2022-01-09 21:47:06,928 - DEBUG - executing functools.partial(<built-in method close of sqlite3.Connection object at 0x000002332AF23E40>)
+2022-01-09 21:47:06,928 - DEBUG - operation functools.partial(<built-in method close of sqlite3.Connection object at 0x000002332AF23E40>) completed
+2022-01-09 21:47:38,698 - DEBUG - executing <function connect.<locals>.connector at 0x000002332AFD38B0>
+2022-01-09 21:47:38,702 - DEBUG - operation <function connect.<locals>.connector at 0x000002332AFD38B0> completed
+2022-01-09 21:47:38,703 - DEBUG - Query: SELECT walks.id, walks.user_id, walks.title_id, walks.status, walks.comment, walks.rate, walks.created_at, users.id AS id_1, users.username, users.avatar FROM walks JOIN users ON users.id = walks.user_id WHERE walks.title_id = ? Args: (3,)
+2022-01-09 21:47:38,703 - DEBUG - executing functools.partial(<built-in method execute of sqlite3.Connection object at 0x000002332AF23E40>, 'SELECT walks.id, walks.user_id, walks.title_id, walks.status, walks.comment, walks.rate, walks.created_at, users.id AS id_1, users.username, users.avatar \nFROM walks JOIN users ON users.id = walks.user_id \nWHERE walks.title_id = ?', [3])
+2022-01-09 21:47:38,703 - DEBUG - operation functools.partial(<built-in method execute of sqlite3.Connection object at 0x000002332AF23E40>, 'SELECT walks.id, walks.user_id, walks.title_id, walks.status, walks.comment, walks.rate, walks.created_at, users.id AS id_1, users.username, users.avatar \nFROM walks JOIN users ON users.id = walks.user_id \nWHERE walks.title_id = ?', [3]) completed
+2022-01-09 21:47:38,704 - DEBUG - executing functools.partial(<built-in method fetchall of sqlite3.Cursor object at 0x000002332B037260>)
+2022-01-09 21:47:38,704 - DEBUG - operation functools.partial(<built-in method fetchall of sqlite3.Cursor object at 0x000002332B037260>) completed
+2022-01-09 21:47:38,705 - DEBUG - executing functools.partial(<built-in method close of sqlite3.Cursor object at 0x000002332B037260>)
+2022-01-09 21:47:38,705 - DEBUG - operation functools.partial(<built-in method close of sqlite3.Cursor object at 0x000002332B037260>) completed
+2022-01-09 21:47:38,706 - DEBUG - executing functools.partial(<built-in method close of sqlite3.Connection object at 0x000002332AF23E40>)
+2022-01-09 21:47:38,706 - DEBUG - operation functools.partial(<built-in method close of sqlite3.Connection object at 0x000002332AF23E40>) completed
+2022-01-09 21:48:25,749 - DEBUG - Calling on_field_start with no data
+2022-01-09 21:48:25,749 - DEBUG - Calling on_field_name with data[0:6]
+2022-01-09 21:48:25,749 - DEBUG - Calling on_field_data with data[7:18]
+2022-01-09 21:48:25,749 - DEBUG - Calling on_field_end with no data
+2022-01-09 21:48:25,750 - DEBUG - Calling on_field_start with no data
+2022-01-09 21:48:25,751 - DEBUG - Calling on_field_name with data[19:26]
+2022-01-09 21:48:25,751 - DEBUG - Calling on_field_data with data[27:72]
+2022-01-09 21:48:25,751 - DEBUG - Calling on_field_end with no data
+2022-01-09 21:48:25,751 - DEBUG - Calling on_field_start with no data
+2022-01-09 21:48:25,751 - DEBUG - Calling on_field_name with data[73:77]
+2022-01-09 21:48:25,751 - DEBUG - Calling on_field_data with data[78:82]
+2022-01-09 21:48:25,751 - DEBUG - Calling on_field_end with no data
+2022-01-09 21:48:25,751 - DEBUG - Calling on_end with no data
+2022-01-09 21:48:25,760 - DEBUG - executing <function connect.<locals>.connector at 0x000002332AFD3E50>
+2022-01-09 21:48:25,760 - DEBUG - operation <function connect.<locals>.connector at 0x000002332AFD3E50> completed
+2022-01-09 21:48:25,761 - DEBUG - Query: SELECT titles.id, titles.name, titles.cover, titles.description, titles.type, titles.release_year, titles.positive_rates_count, titles.negative_rates_count FROM titles WHERE titles.id = ? Args: (3,)
+2022-01-09 21:48:25,761 - DEBUG - executing functools.partial(<built-in method execute of sqlite3.Connection object at 0x000002332AF23E40>, 'SELECT titles.id, titles.name, titles.cover, titles.description, titles.type, titles.release_year, titles.positive_rates_count, titles.negative_rates_count \nFROM titles \nWHERE titles.id = ?', [3])
+2022-01-09 21:48:25,761 - DEBUG - operation functools.partial(<built-in method execute of sqlite3.Connection object at 0x000002332AF23E40>, 'SELECT titles.id, titles.name, titles.cover, titles.description, titles.type, titles.release_year, titles.positive_rates_count, titles.negative_rates_count \nFROM titles \nWHERE titles.id = ?', [3]) completed
+2022-01-09 21:48:25,762 - DEBUG - executing functools.partial(<built-in method fetchone of sqlite3.Cursor object at 0x000002332B0373B0>)
+2022-01-09 21:48:25,762 - DEBUG - operation functools.partial(<built-in method fetchone of sqlite3.Cursor object at 0x000002332B0373B0>) completed
+2022-01-09 21:48:25,762 - DEBUG - executing functools.partial(<built-in method close of sqlite3.Cursor object at 0x000002332B0373B0>)
+2022-01-09 21:48:25,762 - DEBUG - operation functools.partial(<built-in method close of sqlite3.Cursor object at 0x000002332B0373B0>) completed
+2022-01-09 21:48:25,762 - DEBUG - executing functools.partial(<built-in method close of sqlite3.Connection object at 0x000002332AF23E40>)
+2022-01-09 21:48:25,762 - DEBUG - operation functools.partial(<built-in method close of sqlite3.Connection object at 0x000002332AF23E40>) completed
+2022-01-09 21:48:25,763 - DEBUG - executing <function connect.<locals>.connector at 0x000002332B02A0D0>
+2022-01-09 21:48:25,763 - DEBUG - operation <function connect.<locals>.connector at 0x000002332B02A0D0> completed
+2022-01-09 21:48:25,764 - DEBUG - Query: UPDATE titles SET positive_rates_count=? WHERE titles.id = ? Args: (1, 3)
+2022-01-09 21:48:25,764 - DEBUG - executing functools.partial(<built-in method cursor of sqlite3.Connection object at 0x000002332AF23B70>)
+2022-01-09 21:48:25,764 - DEBUG - operation functools.partial(<built-in method cursor of sqlite3.Connection object at 0x000002332AF23B70>) completed
+2022-01-09 21:48:25,764 - DEBUG - executing functools.partial(<built-in method execute of sqlite3.Cursor object at 0x000002332B037180>, 'UPDATE titles SET positive_rates_count=? WHERE titles.id = ?', [1, 3])
+2022-01-09 21:48:25,832 - DEBUG - operation functools.partial(<built-in method execute of sqlite3.Cursor object at 0x000002332B037180>, 'UPDATE titles SET positive_rates_count=? WHERE titles.id = ?', [1, 3]) completed
+2022-01-09 21:48:25,833 - DEBUG - executing functools.partial(<built-in method close of sqlite3.Cursor object at 0x000002332B037180>)
+2022-01-09 21:48:25,833 - DEBUG - operation functools.partial(<built-in method close of sqlite3.Cursor object at 0x000002332B037180>) completed
+2022-01-09 21:48:25,833 - DEBUG - executing functools.partial(<built-in method close of sqlite3.Connection object at 0x000002332AF23B70>)
+2022-01-09 21:48:25,833 - DEBUG - operation functools.partial(<built-in method close of sqlite3.Connection object at 0x000002332AF23B70>) completed
+2022-01-09 21:48:25,834 - DEBUG - executing <function connect.<locals>.connector at 0x000002332AF7B040>
+2022-01-09 21:48:25,839 - DEBUG - operation <function connect.<locals>.connector at 0x000002332AF7B040> completed
+2022-01-09 21:48:25,839 - DEBUG - Query: INSERT INTO walks (user_id, title_id, status, comment, rate, created_at) VALUES (?, ?, ?, ?, ?, ?) Args: (1, 3, 'in_progress', 'Хочу еще', 1, '2022-01-09')
+2022-01-09 21:48:25,840 - DEBUG - executing functools.partial(<built-in method cursor of sqlite3.Connection object at 0x000002332AF23D50>)
+2022-01-09 21:48:25,840 - DEBUG - operation functools.partial(<built-in method cursor of sqlite3.Connection object at 0x000002332AF23D50>) completed
+2022-01-09 21:48:25,840 - DEBUG - executing functools.partial(<built-in method execute of sqlite3.Cursor object at 0x000002332B037030>, 'INSERT INTO walks (user_id, title_id, status, comment, rate, created_at) VALUES (?, ?, ?, ?, ?, ?)', [1, 3, 'in_progress', 'Хочу еще', 1, '2022-01-09'])
+2022-01-09 21:48:25,932 - DEBUG - operation functools.partial(<built-in method execute of sqlite3.Cursor object at 0x000002332B037030>, 'INSERT INTO walks (user_id, title_id, status, comment, rate, created_at) VALUES (?, ?, ?, ?, ?, ?)', [1, 3, 'in_progress', 'Хочу еще', 1, '2022-01-09']) completed
+2022-01-09 21:48:25,933 - DEBUG - executing functools.partial(<built-in method close of sqlite3.Cursor object at 0x000002332B037030>)
+2022-01-09 21:48:25,933 - DEBUG - operation functools.partial(<built-in method close of sqlite3.Cursor object at 0x000002332B037030>) completed
+2022-01-09 21:48:25,933 - DEBUG - executing functools.partial(<built-in method close of sqlite3.Connection object at 0x000002332AF23D50>)
+2022-01-09 21:48:25,933 - DEBUG - operation functools.partial(<built-in method close of sqlite3.Connection object at 0x000002332AF23D50>) completed
+2022-01-09 21:48:56,668 - DEBUG - Calling on_field_start with no data
+2022-01-09 21:48:56,668 - DEBUG - Calling on_field_name with data[0:6]
+2022-01-09 21:48:56,668 - DEBUG - Calling on_field_data with data[7:24]
+2022-01-09 21:48:56,668 - DEBUG - Calling on_field_end with no data
+2022-01-09 21:48:56,668 - DEBUG - Calling on_field_start with no data
+2022-01-09 21:48:56,668 - DEBUG - Calling on_field_name with data[25:32]
+2022-01-09 21:48:56,668 - DEBUG - Calling on_field_data with data[33:57]
+2022-01-09 21:48:56,668 - DEBUG - Calling on_field_end with no data
+2022-01-09 21:48:56,668 - DEBUG - Calling on_field_start with no data
+2022-01-09 21:48:56,668 - DEBUG - Calling on_field_name with data[58:62]
+2022-01-09 21:48:56,668 - DEBUG - Calling on_field_data with data[63:68]
+2022-01-09 21:48:56,668 - DEBUG - Calling on_field_end with no data
+2022-01-09 21:48:56,668 - DEBUG - Calling on_end with no data
+2022-01-09 21:48:56,670 - DEBUG - executing <function connect.<locals>.connector at 0x000002332AF7B280>
+2022-01-09 21:48:56,677 - DEBUG - operation <function connect.<locals>.connector at 0x000002332AF7B280> completed
+2022-01-09 21:48:56,677 - DEBUG - Query: SELECT titles.id, titles.name, titles.cover, titles.description, titles.type, titles.release_year, titles.positive_rates_count, titles.negative_rates_count FROM titles WHERE titles.id = ? Args: (2,)
+2022-01-09 21:48:56,678 - DEBUG - executing functools.partial(<built-in method execute of sqlite3.Connection object at 0x000002332AF23D50>, 'SELECT titles.id, titles.name, titles.cover, titles.description, titles.type, titles.release_year, titles.positive_rates_count, titles.negative_rates_count \nFROM titles \nWHERE titles.id = ?', [2])
+2022-01-09 21:48:56,678 - DEBUG - operation functools.partial(<built-in method execute of sqlite3.Connection object at 0x000002332AF23D50>, 'SELECT titles.id, titles.name, titles.cover, titles.description, titles.type, titles.release_year, titles.positive_rates_count, titles.negative_rates_count \nFROM titles \nWHERE titles.id = ?', [2]) completed
+2022-01-09 21:48:56,678 - DEBUG - executing functools.partial(<built-in method fetchone of sqlite3.Cursor object at 0x000002332B0372D0>)
+2022-01-09 21:48:56,678 - DEBUG - operation functools.partial(<built-in method fetchone of sqlite3.Cursor object at 0x000002332B0372D0>) completed
+2022-01-09 21:48:56,679 - DEBUG - executing functools.partial(<built-in method close of sqlite3.Cursor object at 0x000002332B0372D0>)
+2022-01-09 21:48:56,679 - DEBUG - operation functools.partial(<built-in method close of sqlite3.Cursor object at 0x000002332B0372D0>) completed
+2022-01-09 21:48:56,679 - DEBUG - executing functools.partial(<built-in method close of sqlite3.Connection object at 0x000002332AF23D50>)
+2022-01-09 21:48:56,679 - DEBUG - operation functools.partial(<built-in method close of sqlite3.Connection object at 0x000002332AF23D50>) completed
+2022-01-09 21:48:56,680 - DEBUG - executing <function connect.<locals>.connector at 0x000002332AF7B5E0>
+2022-01-09 21:48:56,680 - DEBUG - operation <function connect.<locals>.connector at 0x000002332AF7B5E0> completed
+2022-01-09 21:48:56,681 - DEBUG - Query: UPDATE titles SET negative_rates_count=? WHERE titles.id = ? Args: (1, 2)
+2022-01-09 21:48:56,681 - DEBUG - executing functools.partial(<built-in method cursor of sqlite3.Connection object at 0x000002332AF23E40>)
+2022-01-09 21:48:56,681 - DEBUG - operation functools.partial(<built-in method cursor of sqlite3.Connection object at 0x000002332AF23E40>) completed
+2022-01-09 21:48:56,681 - DEBUG - executing functools.partial(<built-in method execute of sqlite3.Cursor object at 0x000002332B037030>, 'UPDATE titles SET negative_rates_count=? WHERE titles.id = ?', [1, 2])
+2022-01-09 21:48:56,756 - DEBUG - operation functools.partial(<built-in method execute of sqlite3.Cursor object at 0x000002332B037030>, 'UPDATE titles SET negative_rates_count=? WHERE titles.id = ?', [1, 2]) completed
+2022-01-09 21:48:56,756 - DEBUG - executing functools.partial(<built-in method close of sqlite3.Cursor object at 0x000002332B037030>)
+2022-01-09 21:48:56,757 - DEBUG - operation functools.partial(<built-in method close of sqlite3.Cursor object at 0x000002332B037030>) completed
+2022-01-09 21:48:56,757 - DEBUG - executing functools.partial(<built-in method close of sqlite3.Connection object at 0x000002332AF23E40>)
+2022-01-09 21:48:56,757 - DEBUG - operation functools.partial(<built-in method close of sqlite3.Connection object at 0x000002332AF23E40>) completed
+2022-01-09 21:48:56,758 - DEBUG - executing <function connect.<locals>.connector at 0x000002332B02A0D0>
+2022-01-09 21:48:56,762 - DEBUG - operation <function connect.<locals>.connector at 0x000002332B02A0D0> completed
+2022-01-09 21:48:56,763 - DEBUG - Query: INSERT INTO walks (user_id, title_id, status, comment, rate, created_at) VALUES (?, ?, ?, ?, ?, ?) Args: (1, 2, 'full_completed"', 'Жопа', 0, '2022-01-09')
+2022-01-09 21:48:56,763 - DEBUG - executing functools.partial(<built-in method cursor of sqlite3.Connection object at 0x000002332AF23C60>)
+2022-01-09 21:48:56,763 - DEBUG - operation functools.partial(<built-in method cursor of sqlite3.Connection object at 0x000002332AF23C60>) completed
+2022-01-09 21:48:56,763 - DEBUG - executing functools.partial(<built-in method execute of sqlite3.Cursor object at 0x000002332B037340>, 'INSERT INTO walks (user_id, title_id, status, comment, rate, created_at) VALUES (?, ?, ?, ?, ?, ?)', [1, 2, 'full_completed"', 'Жопа', 0, '2022-01-09'])
+2022-01-09 21:48:56,848 - DEBUG - operation functools.partial(<built-in method execute of sqlite3.Cursor object at 0x000002332B037340>, 'INSERT INTO walks (user_id, title_id, status, comment, rate, created_at) VALUES (?, ?, ?, ?, ?, ?)', [1, 2, 'full_completed"', 'Жопа', 0, '2022-01-09']) completed
+2022-01-09 21:48:56,848 - DEBUG - executing functools.partial(<built-in method close of sqlite3.Cursor object at 0x000002332B037340>)
+2022-01-09 21:48:56,848 - DEBUG - operation functools.partial(<built-in method close of sqlite3.Cursor object at 0x000002332B037340>) completed
+2022-01-09 21:48:56,849 - DEBUG - executing functools.partial(<built-in method close of sqlite3.Connection object at 0x000002332AF23C60>)
+2022-01-09 21:48:56,849 - DEBUG - operation functools.partial(<built-in method close of sqlite3.Connection object at 0x000002332AF23C60>) completed
+2022-01-09 21:49:18,650 - DEBUG - Calling on_field_start with no data
+2022-01-09 21:49:18,650 - DEBUG - Calling on_field_name with data[0:6]
+2022-01-09 21:49:18,650 - DEBUG - Calling on_field_data with data[7:17]
+2022-01-09 21:49:18,650 - DEBUG - Calling on_field_end with no data
+2022-01-09 21:49:18,651 - DEBUG - Calling on_field_start with no data
+2022-01-09 21:49:18,651 - DEBUG - Calling on_field_name with data[18:25]
+2022-01-09 21:49:18,651 - DEBUG - Calling on_field_data with data[26:74]
+2022-01-09 21:49:18,651 - DEBUG - Calling on_field_end with no data
+2022-01-09 21:49:18,651 - DEBUG - Calling on_field_start with no data
+2022-01-09 21:49:18,651 - DEBUG - Calling on_field_name with data[75:79]
+2022-01-09 21:49:18,651 - DEBUG - Calling on_field_end with no data
+2022-01-09 21:49:18,651 - DEBUG - Calling on_end with no data
+2022-01-09 21:49:18,653 - DEBUG - executing <function connect.<locals>.connector at 0x000002332AFD3AF0>
+2022-01-09 21:49:18,659 - DEBUG - operation <function connect.<locals>.connector at 0x000002332AFD3AF0> completed
+2022-01-09 21:49:18,659 - DEBUG - Query: INSERT INTO walks (user_id, title_id, status, comment, rate, created_at) VALUES (?, ?, ?, ?, ?, ?) Args: (1, 1, 'not_played', 'Выхухоль', None, '2022-01-09')
+2022-01-09 21:49:18,659 - DEBUG - executing functools.partial(<built-in method cursor of sqlite3.Connection object at 0x000002332AF23C60>)
+2022-01-09 21:49:18,659 - DEBUG - operation functools.partial(<built-in method cursor of sqlite3.Connection object at 0x000002332AF23C60>) completed
+2022-01-09 21:49:18,659 - DEBUG - executing functools.partial(<built-in method execute of sqlite3.Cursor object at 0x000002332B0371F0>, 'INSERT INTO walks (user_id, title_id, status, comment, rate, created_at) VALUES (?, ?, ?, ?, ?, ?)', [1, 1, 'not_played', 'Выхухоль', None, '2022-01-09'])
+2022-01-09 21:49:18,731 - DEBUG - operation functools.partial(<built-in method execute of sqlite3.Cursor object at 0x000002332B0371F0>, 'INSERT INTO walks (user_id, title_id, status, comment, rate, created_at) VALUES (?, ?, ?, ?, ?, ?)', [1, 1, 'not_played', 'Выхухоль', None, '2022-01-09']) completed
+2022-01-09 21:49:18,731 - DEBUG - executing functools.partial(<built-in method close of sqlite3.Cursor object at 0x000002332B0371F0>)
+2022-01-09 21:49:18,732 - DEBUG - operation functools.partial(<built-in method close of sqlite3.Cursor object at 0x000002332B0371F0>) completed
+2022-01-09 21:49:18,732 - DEBUG - executing functools.partial(<built-in method close of sqlite3.Connection object at 0x000002332AF23C60>)
+2022-01-09 21:49:18,732 - DEBUG - operation functools.partial(<built-in method close of sqlite3.Connection object at 0x000002332AF23C60>) completed
+2022-01-09 21:49:54,145 - DEBUG - executing <function connect.<locals>.connector at 0x000002332AFD3C10>
+2022-01-09 21:49:54,150 - DEBUG - operation <function connect.<locals>.connector at 0x000002332AFD3C10> completed
+2022-01-09 21:49:54,150 - DEBUG - Query: SELECT walks.id, walks.user_id, walks.title_id, walks.status, walks.comment, walks.rate, walks.created_at, users.id AS id_1, users.username, users.avatar FROM walks JOIN users ON users.id = walks.user_id WHERE walks.title_id = ? Args: (3,)
+2022-01-09 21:49:54,151 - DEBUG - executing functools.partial(<built-in method execute of sqlite3.Connection object at 0x000002332AF23C60>, 'SELECT walks.id, walks.user_id, walks.title_id, walks.status, walks.comment, walks.rate, walks.created_at, users.id AS id_1, users.username, users.avatar \nFROM walks JOIN users ON users.id = walks.user_id \nWHERE walks.title_id = ?', [3])
+2022-01-09 21:49:54,151 - DEBUG - operation functools.partial(<built-in method execute of sqlite3.Connection object at 0x000002332AF23C60>, 'SELECT walks.id, walks.user_id, walks.title_id, walks.status, walks.comment, walks.rate, walks.created_at, users.id AS id_1, users.username, users.avatar \nFROM walks JOIN users ON users.id = walks.user_id \nWHERE walks.title_id = ?', [3]) completed
+2022-01-09 21:49:54,152 - DEBUG - executing functools.partial(<built-in method fetchall of sqlite3.Cursor object at 0x000002332B0372D0>)
+2022-01-09 21:49:54,152 - DEBUG - operation functools.partial(<built-in method fetchall of sqlite3.Cursor object at 0x000002332B0372D0>) completed
+2022-01-09 21:49:54,152 - DEBUG - executing functools.partial(<built-in method close of sqlite3.Cursor object at 0x000002332B0372D0>)
+2022-01-09 21:49:54,152 - DEBUG - operation functools.partial(<built-in method close of sqlite3.Cursor object at 0x000002332B0372D0>) completed
+2022-01-09 21:49:54,153 - DEBUG - executing functools.partial(<built-in method close of sqlite3.Connection object at 0x000002332AF23C60>)
+2022-01-09 21:49:54,153 - DEBUG - operation functools.partial(<built-in method close of sqlite3.Connection object at 0x000002332AF23C60>) completed
+2022-01-09 21:49:59,662 - DEBUG - executing <function connect.<locals>.connector at 0x000002332AFD3820>
+2022-01-09 21:49:59,662 - DEBUG - operation <function connect.<locals>.connector at 0x000002332AFD3820> completed
+2022-01-09 21:49:59,662 - DEBUG - Query: SELECT walks.id, walks.user_id, walks.title_id, walks.status, walks.comment, walks.rate, walks.created_at, titles.id AS id_1, titles.name, titles.cover, titles.type, titles.release_year, titles.positive_rates_count, titles.negative_rates_count FROM walks JOIN titles ON titles.id = walks.title_id WHERE walks.user_id = ? Args: (1,)
+2022-01-09 21:49:59,663 - DEBUG - executing functools.partial(<built-in method execute of sqlite3.Connection object at 0x000002332AF23C60>, 'SELECT walks.id, walks.user_id, walks.title_id, walks.status, walks.comment, walks.rate, walks.created_at, titles.id AS id_1, titles.name, titles.cover, titles.type, titles.release_year, titles.positive_rates_count, titles.negative_rates_count \nFROM walks JOIN titles ON titles.id = walks.title_id \nWHERE walks.user_id = ?', [1])
+2022-01-09 21:49:59,663 - DEBUG - operation functools.partial(<built-in method execute of sqlite3.Connection object at 0x000002332AF23C60>, 'SELECT walks.id, walks.user_id, walks.title_id, walks.status, walks.comment, walks.rate, walks.created_at, titles.id AS id_1, titles.name, titles.cover, titles.type, titles.release_year, titles.positive_rates_count, titles.negative_rates_count \nFROM walks JOIN titles ON titles.id = walks.title_id \nWHERE walks.user_id = ?', [1]) completed
+2022-01-09 21:49:59,663 - DEBUG - executing functools.partial(<built-in method fetchall of sqlite3.Cursor object at 0x000002332B0370A0>)
+2022-01-09 21:49:59,663 - DEBUG - operation functools.partial(<built-in method fetchall of sqlite3.Cursor object at 0x000002332B0370A0>) completed
+2022-01-09 21:49:59,663 - DEBUG - executing functools.partial(<built-in method close of sqlite3.Cursor object at 0x000002332B0370A0>)
+2022-01-09 21:49:59,664 - DEBUG - operation functools.partial(<built-in method close of sqlite3.Cursor object at 0x000002332B0370A0>) completed
+2022-01-09 21:49:59,664 - DEBUG - executing functools.partial(<built-in method close of sqlite3.Connection object at 0x000002332AF23C60>)
+2022-01-09 21:49:59,664 - DEBUG - operation functools.partial(<built-in method close of sqlite3.Connection object at 0x000002332AF23C60>) completed
+2022-01-09 21:59:34,574 - INFO - Shutting down
+2022-01-09 21:59:34,675 - INFO - Waiting for application shutdown.
+2022-01-09 21:59:34,675 - INFO - Disconnected from database sqlite:///debug.db
+2022-01-09 21:59:34,675 - INFO - Application shutdown complete.
+2022-01-09 21:59:34,675 - INFO - Finished server process [9968]
+2022-01-09 21:59:35,961 - INFO - Started server process [8064]
+2022-01-09 21:59:35,962 - INFO - Waiting for application startup.
+2022-01-09 21:59:35,963 - INFO - Connected to database sqlite:///debug.db
+2022-01-09 21:59:35,963 - INFO - Application startup complete.
+2022-01-09 21:59:35,964 - INFO - Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+2022-01-09 21:59:43,812 - DEBUG - executing <function connect.<locals>.connector at 0x0000023A9964BC10>
+2022-01-09 21:59:43,813 - DEBUG - operation <function connect.<locals>.connector at 0x0000023A9964BC10> completed
+2022-01-09 21:59:43,815 - DEBUG - Query: SELECT walks.id, walks.user_id, walks.title_id, walks.status, walks.comment, walks.rate, walks.created_at, titles.id AS id_1, titles.name, titles.cover, titles.type, titles.release_year, titles.positive_rates_count, titles.negative_rates_count FROM walks JOIN titles ON titles.id = walks.title_id WHERE walks.user_id = ? Args: (1,)
+2022-01-09 21:59:43,815 - DEBUG - executing functools.partial(<built-in method execute of sqlite3.Connection object at 0x0000023A995F36C0>, 'SELECT walks.id, walks.user_id, walks.title_id, walks.status, walks.comment, walks.rate, walks.created_at, titles.id AS id_1, titles.name, titles.cover, titles.type, titles.release_year, titles.positive_rates_count, titles.negative_rates_count \nFROM walks JOIN titles ON titles.id = walks.title_id \nWHERE walks.user_id = ?', [1])
+2022-01-09 21:59:43,815 - DEBUG - operation functools.partial(<built-in method execute of sqlite3.Connection object at 0x0000023A995F36C0>, 'SELECT walks.id, walks.user_id, walks.title_id, walks.status, walks.comment, walks.rate, walks.created_at, titles.id AS id_1, titles.name, titles.cover, titles.type, titles.release_year, titles.positive_rates_count, titles.negative_rates_count \nFROM walks JOIN titles ON titles.id = walks.title_id \nWHERE walks.user_id = ?', [1]) completed
+2022-01-09 21:59:43,816 - DEBUG - executing functools.partial(<built-in method fetchall of sqlite3.Cursor object at 0x0000023A99675490>)
+2022-01-09 21:59:43,816 - DEBUG - operation functools.partial(<built-in method fetchall of sqlite3.Cursor object at 0x0000023A99675490>) completed
+2022-01-09 21:59:43,816 - DEBUG - executing functools.partial(<built-in method close of sqlite3.Cursor object at 0x0000023A99675490>)
+2022-01-09 21:59:43,816 - DEBUG - operation functools.partial(<built-in method close of sqlite3.Cursor object at 0x0000023A99675490>) completed
+2022-01-09 21:59:43,816 - DEBUG - executing functools.partial(<built-in method close of sqlite3.Connection object at 0x0000023A995F36C0>)
+2022-01-09 21:59:43,817 - DEBUG - operation functools.partial(<built-in method close of sqlite3.Connection object at 0x0000023A995F36C0>) completed
+2022-01-09 21:59:43,817 - ERROR - Exception in ASGI application
+Traceback (most recent call last):
+  File "d:\github.com\prohojemba\venv\lib\site-packages\uvicorn\protocols\http\h11_impl.py", line 373, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "d:\github.com\prohojemba\venv\lib\site-packages\uvicorn\middleware\proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "d:\github.com\prohojemba\venv\lib\site-packages\fastapi\applications.py", line 208, in __call__
+    await super().__call__(scope, receive, send)
+  File "d:\github.com\prohojemba\venv\lib\site-packages\starlette\applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "d:\github.com\prohojemba\venv\lib\site-packages\starlette\middleware\errors.py", line 181, in __call__
+    raise exc
+  File "d:\github.com\prohojemba\venv\lib\site-packages\starlette\middleware\errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "d:\github.com\prohojemba\venv\lib\site-packages\starlette\exceptions.py", line 82, in __call__
+    raise exc
+  File "d:\github.com\prohojemba\venv\lib\site-packages\starlette\exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "d:\github.com\prohojemba\venv\lib\site-packages\starlette\routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "d:\github.com\prohojemba\venv\lib\site-packages\starlette\routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "d:\github.com\prohojemba\venv\lib\site-packages\starlette\routing.py", line 61, in app
+    response = await func(request)
+  File "d:\github.com\prohojemba\venv\lib\site-packages\fastapi\routing.py", line 226, in app
+    raw_response = await run_endpoint_function(
+  File "d:\github.com\prohojemba\venv\lib\site-packages\fastapi\routing.py", line 159, in run_endpoint_function
+    return await dependant.call(**values)
+  File "D:\github.com\prohojemba\.\back\routes\walks.py", line 18, in get_current_user_walks
+    return await walks.get_by_user_id(user_id)
+  File "D:\github.com\prohojemba\.\back\crud\walks.py", line 94, in get_by_user_id
+    return [self._parse_walk_result_with_title(d) for d in await self.database.fetch_all(query)]
+  File "D:\github.com\prohojemba\.\back\crud\walks.py", line 94, in <listcomp>
+    return [self._parse_walk_result_with_title(d) for d in await self.database.fetch_all(query)]
+  File "D:\github.com\prohojemba\.\back\crud\walks.py", line 58, in _parse_walk_result_with_title
+    [print(key, value) for key, value in data]
+  File "D:\github.com\prohojemba\.\back\crud\walks.py", line 58, in <listcomp>
+    [print(key, value) for key, value in data]
+TypeError: cannot unpack non-iterable int object
+2022-01-09 22:00:57,650 - INFO - Shutting down
+2022-01-09 22:00:57,751 - INFO - Waiting for application shutdown.
+2022-01-09 22:00:57,752 - INFO - Disconnected from database sqlite:///debug.db
+2022-01-09 22:00:57,752 - INFO - Application shutdown complete.
+2022-01-09 22:00:57,752 - INFO - Finished server process [8064]
+2022-01-09 22:00:59,310 - INFO - Started server process [8284]
+2022-01-09 22:00:59,311 - INFO - Waiting for application startup.
+2022-01-09 22:00:59,311 - INFO - Connected to database sqlite:///debug.db
+2022-01-09 22:00:59,311 - INFO - Application startup complete.
+2022-01-09 22:00:59,312 - INFO - Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+2022-01-09 22:01:00,102 - DEBUG - executing <function connect.<locals>.connector at 0x000001F81177BC10>
+2022-01-09 22:01:00,102 - DEBUG - operation <function connect.<locals>.connector at 0x000001F81177BC10> completed
+2022-01-09 22:01:00,104 - DEBUG - Query: SELECT walks.id, walks.user_id, walks.title_id, walks.status, walks.comment, walks.rate, walks.created_at, titles.id AS id_1, titles.name, titles.cover, titles.type, titles.release_year, titles.positive_rates_count, titles.negative_rates_count FROM walks JOIN titles ON titles.id = walks.title_id WHERE walks.user_id = ? Args: (1,)
+2022-01-09 22:01:00,105 - DEBUG - executing functools.partial(<built-in method execute of sqlite3.Connection object at 0x000001F8117236C0>, 'SELECT walks.id, walks.user_id, walks.title_id, walks.status, walks.comment, walks.rate, walks.created_at, titles.id AS id_1, titles.name, titles.cover, titles.type, titles.release_year, titles.positive_rates_count, titles.negative_rates_count \nFROM walks JOIN titles ON titles.id = walks.title_id \nWHERE walks.user_id = ?', [1])
+2022-01-09 22:01:00,105 - DEBUG - operation functools.partial(<built-in method execute of sqlite3.Connection object at 0x000001F8117236C0>, 'SELECT walks.id, walks.user_id, walks.title_id, walks.status, walks.comment, walks.rate, walks.created_at, titles.id AS id_1, titles.name, titles.cover, titles.type, titles.release_year, titles.positive_rates_count, titles.negative_rates_count \nFROM walks JOIN titles ON titles.id = walks.title_id \nWHERE walks.user_id = ?', [1]) completed
+2022-01-09 22:01:00,106 - DEBUG - executing functools.partial(<built-in method fetchall of sqlite3.Cursor object at 0x000001F8117A5490>)
+2022-01-09 22:01:00,106 - DEBUG - operation functools.partial(<built-in method fetchall of sqlite3.Cursor object at 0x000001F8117A5490>) completed
+2022-01-09 22:01:00,106 - DEBUG - executing functools.partial(<built-in method close of sqlite3.Cursor object at 0x000001F8117A5490>)
+2022-01-09 22:01:00,106 - DEBUG - operation functools.partial(<built-in method close of sqlite3.Cursor object at 0x000001F8117A5490>) completed
+2022-01-09 22:01:00,107 - DEBUG - executing functools.partial(<built-in method close of sqlite3.Connection object at 0x000001F8117236C0>)
+2022-01-09 22:01:00,107 - DEBUG - operation functools.partial(<built-in method close of sqlite3.Connection object at 0x000001F8117236C0>) completed
+2022-01-09 22:01:00,108 - ERROR - Exception in ASGI application
+Traceback (most recent call last):
+  File "d:\github.com\prohojemba\venv\lib\site-packages\uvicorn\protocols\http\h11_impl.py", line 373, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "d:\github.com\prohojemba\venv\lib\site-packages\uvicorn\middleware\proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "d:\github.com\prohojemba\venv\lib\site-packages\fastapi\applications.py", line 208, in __call__
+    await super().__call__(scope, receive, send)
+  File "d:\github.com\prohojemba\venv\lib\site-packages\starlette\applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "d:\github.com\prohojemba\venv\lib\site-packages\starlette\middleware\errors.py", line 181, in __call__
+    raise exc
+  File "d:\github.com\prohojemba\venv\lib\site-packages\starlette\middleware\errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "d:\github.com\prohojemba\venv\lib\site-packages\starlette\exceptions.py", line 82, in __call__
+    raise exc
+  File "d:\github.com\prohojemba\venv\lib\site-packages\starlette\exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "d:\github.com\prohojemba\venv\lib\site-packages\starlette\routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "d:\github.com\prohojemba\venv\lib\site-packages\starlette\routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "d:\github.com\prohojemba\venv\lib\site-packages\starlette\routing.py", line 61, in app
+    response = await func(request)
+  File "d:\github.com\prohojemba\venv\lib\site-packages\fastapi\routing.py", line 226, in app
+    raw_response = await run_endpoint_function(
+  File "d:\github.com\prohojemba\venv\lib\site-packages\fastapi\routing.py", line 159, in run_endpoint_function
+    return await dependant.call(**values)
+  File "D:\github.com\prohojemba\.\back\routes\walks.py", line 18, in get_current_user_walks
+    return await walks.get_by_user_id(user_id)
+  File "D:\github.com\prohojemba\.\back\crud\walks.py", line 94, in get_by_user_id
+    return [self._parse_walk_result_with_title(d) for d in await self.database.fetch_all(query)]
+  File "D:\github.com\prohojemba\.\back\crud\walks.py", line 94, in <listcomp>
+    return [self._parse_walk_result_with_title(d) for d in await self.database.fetch_all(query)]
+  File "D:\github.com\prohojemba\.\back\crud\walks.py", line 58, in _parse_walk_result_with_title
+    [print(key, value) for key, value in dict(data)]
+  File "D:\github.com\prohojemba\.\back\crud\walks.py", line 58, in <listcomp>
+    [print(key, value) for key, value in dict(data)]
+ValueError: too many values to unpack (expected 2)
+2022-01-09 22:01:22,062 - INFO - Shutting down
+2022-01-09 22:01:22,165 - INFO - Waiting for application shutdown.
+2022-01-09 22:01:22,165 - INFO - Disconnected from database sqlite:///debug.db
+2022-01-09 22:01:22,166 - INFO - Application shutdown complete.
+2022-01-09 22:01:22,166 - INFO - Finished server process [8284]
+2022-01-09 22:01:23,727 - INFO - Started server process [5784]
+2022-01-09 22:01:23,728 - INFO - Waiting for application startup.
+2022-01-09 22:01:23,728 - INFO - Connected to database sqlite:///debug.db
+2022-01-09 22:01:23,728 - INFO - Application startup complete.
+2022-01-09 22:01:23,729 - INFO - Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+2022-01-09 22:01:24,708 - DEBUG - executing <function connect.<locals>.connector at 0x000001B26C5BBC10>
+2022-01-09 22:01:24,709 - DEBUG - operation <function connect.<locals>.connector at 0x000001B26C5BBC10> completed
+2022-01-09 22:01:24,710 - DEBUG - Query: SELECT walks.id, walks.user_id, walks.title_id, walks.status, walks.comment, walks.rate, walks.created_at, titles.id AS id_1, titles.name, titles.cover, titles.type, titles.release_year, titles.positive_rates_count, titles.negative_rates_count FROM walks JOIN titles ON titles.id = walks.title_id WHERE walks.user_id = ? Args: (1,)
+2022-01-09 22:01:24,710 - DEBUG - executing functools.partial(<built-in method execute of sqlite3.Connection object at 0x000001B26C5636C0>, 'SELECT walks.id, walks.user_id, walks.title_id, walks.status, walks.comment, walks.rate, walks.created_at, titles.id AS id_1, titles.name, titles.cover, titles.type, titles.release_year, titles.positive_rates_count, titles.negative_rates_count \nFROM walks JOIN titles ON titles.id = walks.title_id \nWHERE walks.user_id = ?', [1])
+2022-01-09 22:01:24,711 - DEBUG - operation functools.partial(<built-in method execute of sqlite3.Connection object at 0x000001B26C5636C0>, 'SELECT walks.id, walks.user_id, walks.title_id, walks.status, walks.comment, walks.rate, walks.created_at, titles.id AS id_1, titles.name, titles.cover, titles.type, titles.release_year, titles.positive_rates_count, titles.negative_rates_count \nFROM walks JOIN titles ON titles.id = walks.title_id \nWHERE walks.user_id = ?', [1]) completed
+2022-01-09 22:01:24,711 - DEBUG - executing functools.partial(<built-in method fetchall of sqlite3.Cursor object at 0x000001B26C5E5420>)
+2022-01-09 22:01:24,711 - DEBUG - operation functools.partial(<built-in method fetchall of sqlite3.Cursor object at 0x000001B26C5E5420>) completed
+2022-01-09 22:01:24,712 - DEBUG - executing functools.partial(<built-in method close of sqlite3.Cursor object at 0x000001B26C5E5420>)
+2022-01-09 22:01:24,712 - DEBUG - operation functools.partial(<built-in method close of sqlite3.Cursor object at 0x000001B26C5E5420>) completed
+2022-01-09 22:01:24,712 - DEBUG - executing functools.partial(<built-in method close of sqlite3.Connection object at 0x000001B26C5636C0>)
+2022-01-09 22:01:24,712 - DEBUG - operation functools.partial(<built-in method close of sqlite3.Connection object at 0x000001B26C5636C0>) completed
+2022-01-09 22:20:58,800 - INFO - Shutting down
+2022-01-09 22:20:58,902 - INFO - Waiting for application shutdown.
+2022-01-09 22:20:58,903 - INFO - Disconnected from database sqlite:///debug.db
+2022-01-09 22:20:58,904 - INFO - Application shutdown complete.
+2022-01-09 22:20:58,905 - INFO - Finished server process [5784]
+2022-01-09 22:21:00,270 - INFO - Started server process [1696]
+2022-01-09 22:21:00,271 - INFO - Waiting for application startup.
+2022-01-09 22:21:00,271 - INFO - Connected to database sqlite:///debug.db
+2022-01-09 22:21:00,271 - INFO - Application startup complete.
+2022-01-09 22:21:00,272 - INFO - Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+2022-01-09 22:21:28,432 - DEBUG - executing <function connect.<locals>.connector at 0x000001A09EE9A1F0>
+2022-01-09 22:21:28,432 - DEBUG - operation <function connect.<locals>.connector at 0x000001A09EE9A1F0> completed
+2022-01-09 22:21:28,433 - DEBUG - Query: SELECT walks.id, walks.user_id, walks.title_id, walks.status, walks.comment, walks.rate, walks.created_at, titles.id AS id_1, titles.name, titles.cover, titles.type, titles.release_year, titles.positive_rates_count, titles.negative_rates_count FROM walks JOIN titles ON titles.id = walks.title_id WHERE walks.user_id = ? Args: (1,)
+2022-01-09 22:21:28,434 - DEBUG - executing functools.partial(<built-in method execute of sqlite3.Connection object at 0x000001A09EDE86C0>, 'SELECT walks.id, walks.user_id, walks.title_id, walks.status, walks.comment, walks.rate, walks.created_at, titles.id AS id_1, titles.name, titles.cover, titles.type, titles.release_year, titles.positive_rates_count, titles.negative_rates_count \nFROM walks JOIN titles ON titles.id = walks.title_id \nWHERE walks.user_id = ?', [1])
+2022-01-09 22:21:28,434 - DEBUG - operation functools.partial(<built-in method execute of sqlite3.Connection object at 0x000001A09EDE86C0>, 'SELECT walks.id, walks.user_id, walks.title_id, walks.status, walks.comment, walks.rate, walks.created_at, titles.id AS id_1, titles.name, titles.cover, titles.type, titles.release_year, titles.positive_rates_count, titles.negative_rates_count \nFROM walks JOIN titles ON titles.id = walks.title_id \nWHERE walks.user_id = ?', [1]) completed
+2022-01-09 22:21:28,434 - DEBUG - executing functools.partial(<built-in method fetchall of sqlite3.Cursor object at 0x000001A09EE6CD50>)
+2022-01-09 22:21:28,434 - DEBUG - operation functools.partial(<built-in method fetchall of sqlite3.Cursor object at 0x000001A09EE6CD50>) completed
+2022-01-09 22:21:28,435 - DEBUG - executing functools.partial(<built-in method close of sqlite3.Cursor object at 0x000001A09EE6CD50>)
+2022-01-09 22:21:28,435 - DEBUG - operation functools.partial(<built-in method close of sqlite3.Cursor object at 0x000001A09EE6CD50>) completed
+2022-01-09 22:21:28,435 - DEBUG - executing functools.partial(<built-in method close of sqlite3.Connection object at 0x000001A09EDE86C0>)
+2022-01-09 22:21:28,435 - DEBUG - operation functools.partial(<built-in method close of sqlite3.Connection object at 0x000001A09EDE86C0>) completed
+2022-01-09 22:23:06,038 - INFO - Shutting down
+2022-01-09 22:23:06,140 - INFO - Waiting for application shutdown.
+2022-01-09 22:23:06,141 - INFO - Disconnected from database sqlite:///debug.db
+2022-01-09 22:23:06,141 - INFO - Application shutdown complete.
+2022-01-09 22:23:06,142 - INFO - Finished server process [1696]
+2022-01-09 22:23:07,590 - INFO - Started server process [11840]
+2022-01-09 22:23:07,590 - INFO - Waiting for application startup.
+2022-01-09 22:23:07,591 - INFO - Connected to database sqlite:///debug.db
+2022-01-09 22:23:07,591 - INFO - Application startup complete.
+2022-01-09 22:23:07,591 - INFO - Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+2022-01-09 22:23:10,355 - DEBUG - executing <function connect.<locals>.connector at 0x000001C822EFEC10>
+2022-01-09 22:23:10,355 - DEBUG - operation <function connect.<locals>.connector at 0x000001C822EFEC10> completed
+2022-01-09 22:23:10,357 - DEBUG - Query: SELECT walks.id, walks.user_id, walks.title_id, walks.status, walks.comment, walks.rate, walks.created_at, titles.id AS id_1, titles.name, titles.cover, titles.type, titles.release_year, titles.positive_rates_count, titles.negative_rates_count FROM walks JOIN titles ON titles.id = walks.title_id WHERE walks.user_id = ? Args: (1,)
+2022-01-09 22:23:10,357 - DEBUG - executing functools.partial(<built-in method execute of sqlite3.Connection object at 0x000001C822EA86C0>, 'SELECT walks.id, walks.user_id, walks.title_id, walks.status, walks.comment, walks.rate, walks.created_at, titles.id AS id_1, titles.name, titles.cover, titles.type, titles.release_year, titles.positive_rates_count, titles.negative_rates_count \nFROM walks JOIN titles ON titles.id = walks.title_id \nWHERE walks.user_id = ?', [1])
+2022-01-09 22:23:10,358 - DEBUG - operation functools.partial(<built-in method execute of sqlite3.Connection object at 0x000001C822EA86C0>, 'SELECT walks.id, walks.user_id, walks.title_id, walks.status, walks.comment, walks.rate, walks.created_at, titles.id AS id_1, titles.name, titles.cover, titles.type, titles.release_year, titles.positive_rates_count, titles.negative_rates_count \nFROM walks JOIN titles ON titles.id = walks.title_id \nWHERE walks.user_id = ?', [1]) completed
+2022-01-09 22:23:10,358 - DEBUG - executing functools.partial(<built-in method fetchall of sqlite3.Cursor object at 0x000001C822F2C420>)
+2022-01-09 22:23:10,358 - DEBUG - operation functools.partial(<built-in method fetchall of sqlite3.Cursor object at 0x000001C822F2C420>) completed
+2022-01-09 22:23:10,359 - DEBUG - executing functools.partial(<built-in method close of sqlite3.Cursor object at 0x000001C822F2C420>)
+2022-01-09 22:23:10,359 - DEBUG - operation functools.partial(<built-in method close of sqlite3.Cursor object at 0x000001C822F2C420>) completed
+2022-01-09 22:23:10,359 - DEBUG - executing functools.partial(<built-in method close of sqlite3.Connection object at 0x000001C822EA86C0>)
+2022-01-09 22:23:10,359 - DEBUG - operation functools.partial(<built-in method close of sqlite3.Connection object at 0x000001C822EA86C0>) completed
+2022-01-09 22:23:34,085 - INFO - Shutting down
+2022-01-09 22:23:34,186 - INFO - Waiting for application shutdown.
+2022-01-09 22:23:34,186 - INFO - Disconnected from database sqlite:///debug.db
+2022-01-09 22:23:34,186 - INFO - Application shutdown complete.
+2022-01-09 22:23:34,187 - INFO - Finished server process [11840]
+2022-01-09 22:27:10,172 - INFO - Started server process [13960]
+2022-01-09 22:27:10,172 - INFO - Waiting for application startup.
+2022-01-09 22:27:10,173 - INFO - Connected to database sqlite:///debug.db
+2022-01-09 22:27:10,173 - INFO - Application startup complete.
+2022-01-09 22:27:10,173 - INFO - Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+2022-01-09 22:27:20,929 - DEBUG - executing <function connect.<locals>.connector at 0x000001CA345BCA60>
+2022-01-09 22:27:20,929 - DEBUG - operation <function connect.<locals>.connector at 0x000001CA345BCA60> completed
+2022-01-09 22:27:20,930 - DEBUG - Query: SELECT users.id, users.username, users.email, users.avatar, users.password, users.is_validated FROM users WHERE users.id = ? Args: (1,)
+2022-01-09 22:27:20,934 - DEBUG - executing functools.partial(<built-in method execute of sqlite3.Connection object at 0x000001CA3456B6C0>, 'SELECT users.id, users.username, users.email, users.avatar, users.password, users.is_validated \nFROM users \nWHERE users.id = ?', [1])
+2022-01-09 22:27:20,935 - DEBUG - operation functools.partial(<built-in method execute of sqlite3.Connection object at 0x000001CA3456B6C0>, 'SELECT users.id, users.username, users.email, users.avatar, users.password, users.is_validated \nFROM users \nWHERE users.id = ?', [1]) completed
+2022-01-09 22:27:20,936 - DEBUG - executing functools.partial(<built-in method fetchone of sqlite3.Cursor object at 0x000001CA343FE810>)
+2022-01-09 22:27:20,937 - DEBUG - operation functools.partial(<built-in method fetchone of sqlite3.Cursor object at 0x000001CA343FE810>) completed
+2022-01-09 22:27:20,941 - DEBUG - executing functools.partial(<built-in method close of sqlite3.Cursor object at 0x000001CA343FE810>)
+2022-01-09 22:27:20,941 - DEBUG - operation functools.partial(<built-in method close of sqlite3.Cursor object at 0x000001CA343FE810>) completed
+2022-01-09 22:27:20,941 - DEBUG - executing functools.partial(<built-in method close of sqlite3.Connection object at 0x000001CA3456B6C0>)
+2022-01-09 22:27:20,941 - DEBUG - operation functools.partial(<built-in method close of sqlite3.Connection object at 0x000001CA3456B6C0>) completed
+2022-01-09 22:27:28,322 - DEBUG - executing <function connect.<locals>.connector at 0x000001CA345BCF70>
+2022-01-09 22:27:28,323 - DEBUG - operation <function connect.<locals>.connector at 0x000001CA345BCF70> completed
+2022-01-09 22:27:28,323 - DEBUG - Query: SELECT users.id, users.username, users.email, users.avatar, users.password, users.is_validated FROM users WHERE users.id = ? Args: (1,)
+2022-01-09 22:27:28,323 - DEBUG - executing functools.partial(<built-in method execute of sqlite3.Connection object at 0x000001CA3456B6C0>, 'SELECT users.id, users.username, users.email, users.avatar, users.password, users.is_validated \nFROM users \nWHERE users.id = ?', [1])
+2022-01-09 22:27:28,324 - DEBUG - operation functools.partial(<built-in method execute of sqlite3.Connection object at 0x000001CA3456B6C0>, 'SELECT users.id, users.username, users.email, users.avatar, users.password, users.is_validated \nFROM users \nWHERE users.id = ?', [1]) completed
+2022-01-09 22:27:28,324 - DEBUG - executing functools.partial(<built-in method fetchone of sqlite3.Cursor object at 0x000001CA345E7D50>)
+2022-01-09 22:27:28,324 - DEBUG - operation functools.partial(<built-in method fetchone of sqlite3.Cursor object at 0x000001CA345E7D50>) completed
+2022-01-09 22:27:28,324 - DEBUG - executing functools.partial(<built-in method close of sqlite3.Cursor object at 0x000001CA345E7D50>)
+2022-01-09 22:27:28,325 - DEBUG - operation functools.partial(<built-in method close of sqlite3.Cursor object at 0x000001CA345E7D50>) completed
+2022-01-09 22:27:28,325 - DEBUG - executing functools.partial(<built-in method close of sqlite3.Connection object at 0x000001CA3456B6C0>)
+2022-01-09 22:27:28,325 - DEBUG - operation functools.partial(<built-in method close of sqlite3.Connection object at 0x000001CA3456B6C0>) completed

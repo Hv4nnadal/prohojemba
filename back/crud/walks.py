@@ -3,8 +3,8 @@ from sqlalchemy import select
 
 from .base import BaseCRUD
 from back.db.schemes import walks, users, titles
-from back.models.users import UserPreview
-from back.models.titles import TitlePreview
+from back.models.users import UserForWalk
+from back.models.titles import TitleForWalk, TitlePreview
 from back.models.walks import WalkWithUserInfo, WalkWithTitleInfo, WalkBase
 
 
@@ -48,14 +48,14 @@ class WalksCRUD(BaseCRUD):
 
     @staticmethod
     def _parse_walk_result_with_user(data) -> WalkWithUserInfo:
-        user = UserPreview.parse_obj(data)
+        user = UserForWalk.parse_obj(data)
         walk = WalkWithUserInfo.parse_obj(data)
         walk.user = user
         return walk
 
     @staticmethod
     def _parse_walk_result_with_title(data) -> WalkWithTitleInfo:
-        title = TitlePreview.parse_obj(data)
+        title = TitleForWalk.parse_obj(data)
         walk = WalkWithTitleInfo.parse_obj(data)
         walk.title = title
         return walk

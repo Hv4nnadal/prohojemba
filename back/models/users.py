@@ -1,6 +1,6 @@
 from typing import Optional
 from pydantic import BaseModel
-from pydantic import ValidationError
+from pydantic import ValidationError, Field
 from fastapi import Form, status
 from fastapi.exceptions import HTTPException
 
@@ -35,3 +35,7 @@ class UserPreview(BaseModel):
     id: int
     username: str
     avatar: Optional[str]
+
+
+class UserForWalk(UserPreview):
+    id: int = Field(..., alias="user_id")
