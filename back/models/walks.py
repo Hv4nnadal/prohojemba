@@ -33,6 +33,12 @@ class WalkForm(BaseModel):
             )
 
 
+class WalkBase(BaseModel):
+    id: int
+    title_id: int
+    rate: Optional[bool] = None
+
+
 class WalkWithUserInfo(BaseModel):
     id: int
     user: Optional[UserPreview]
@@ -41,15 +47,9 @@ class WalkWithUserInfo(BaseModel):
     rate: Optional[bool]
     created_at: date
 
-    class Config:
-        orm_mode = True
-
 
 class WalkWithTitleInfo(BaseModel):
     id: int
     title: Optional[TitlePreview]
     status: str
     rate: Optional[bool]
-
-    class Config:
-        orm_mode = True
