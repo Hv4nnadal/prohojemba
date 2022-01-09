@@ -32,7 +32,7 @@ REDIS_PORT = 6379
 IMGBB_TOKEN = None  # Токен для работы с https://imgbb.com
 
 # Локальные настройки
-IMAGES_DIR = "/home/neka/github.com/prohojemba/images"  # Директория для сохранения изображений
+IMAGES_DIR = "D:\\github.com\\prohojemba\\images"  # Директория для сохранения изображений
 
 WALK_STATUSES = (
     "not_played",  # Пользователь даже не прикасался к продукту

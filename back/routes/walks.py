@@ -10,14 +10,16 @@ from back.models.walks import WalkWithTitleInfo, WalkWithUserInfo, WalkForm
 from back.services import auth_service
 
 
-@users_router.get("/@me/walks", response_class=List[WalkWithTitleInfo])
+# response_class=List[WalkWithTitleInfo]
+@users_router.get("/@me/walks")
 async def get_current_user_walks(
         user_id: int = Depends(auth_service.check_access_token)
 ):
     return await walks.get_by_user_id(user_id)
 
 
-@users_router.get("/{user_id}/walks", response_class=List[WalkWithTitleInfo])
+#response_class=List[WalkWithTitleInfo]
+@users_router.get("/{user_id}/walks")
 async def get_user_walks(
         user_id: int,
         current_user_id: int = Depends(auth_service.check_access_token)
@@ -42,7 +44,8 @@ async def delete_current_user_walk(
     await walks.delete(walk_id)
 
 
-@titles_router.get("/{title_id}/walks", response_class=List[WalkWithUserInfo])
+# response_class=List[WalkWithUserInfo]
+@titles_router.get("/{title_id}/walks")
 async def get_title_walks(
         title_id: int,
         user_id: int = Depends(auth_service.check_access_token)

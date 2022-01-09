@@ -35,15 +35,21 @@ class WalkForm(BaseModel):
 
 class WalkWithUserInfo(BaseModel):
     id: int
-    user: UserPreview
+    user: Optional[UserPreview]
     status: str
     comment: str
     rate: Optional[bool]
     created_at: date
 
+    class Config:
+        orm_mode = True
+
 
 class WalkWithTitleInfo(BaseModel):
     id: int
-    title: TitlePreview
+    title: Optional[TitlePreview]
     status: str
     rate: Optional[bool]
+
+    class Config:
+        orm_mode = True

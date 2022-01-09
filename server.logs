@@ -45,3 +45,987 @@
     await getter
 asyncio.exceptions.CancelledError
 
+2022-01-09 03:16:10,927 - INFO - Started server process [5808]
+2022-01-09 03:16:10,928 - INFO - Waiting for application startup.
+2022-01-09 03:16:10,929 - INFO - Connected to database sqlite:///debug.db
+2022-01-09 03:16:10,929 - INFO - Application startup complete.
+2022-01-09 03:16:10,930 - INFO - Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+2022-01-09 03:16:31,771 - ERROR - Exception in ASGI application
+Traceback (most recent call last):
+  File "d:\github.com\prohojemba\venv\lib\site-packages\uvicorn\protocols\http\h11_impl.py", line 373, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "d:\github.com\prohojemba\venv\lib\site-packages\uvicorn\middleware\proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "d:\github.com\prohojemba\venv\lib\site-packages\fastapi\applications.py", line 208, in __call__
+    await super().__call__(scope, receive, send)
+  File "d:\github.com\prohojemba\venv\lib\site-packages\starlette\applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "d:\github.com\prohojemba\venv\lib\site-packages\starlette\middleware\errors.py", line 181, in __call__
+    raise exc
+  File "d:\github.com\prohojemba\venv\lib\site-packages\starlette\middleware\errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "d:\github.com\prohojemba\venv\lib\site-packages\starlette\exceptions.py", line 82, in __call__
+    raise exc
+  File "d:\github.com\prohojemba\venv\lib\site-packages\starlette\exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "d:\github.com\prohojemba\venv\lib\site-packages\starlette\routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "d:\github.com\prohojemba\venv\lib\site-packages\starlette\routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "d:\github.com\prohojemba\venv\lib\site-packages\starlette\routing.py", line 61, in app
+    response = await func(request)
+  File "d:\github.com\prohojemba\venv\lib\site-packages\fastapi\applications.py", line 161, in openapi
+    return JSONResponse(self.openapi())
+  File "d:\github.com\prohojemba\venv\lib\site-packages\fastapi\applications.py", line 136, in openapi
+    self.openapi_schema = get_openapi(
+  File "d:\github.com\prohojemba\venv\lib\site-packages\fastapi\openapi\utils.py", line 392, in get_openapi
+    result = get_openapi_path(route=route, model_name_map=model_name_map)
+  File "d:\github.com\prohojemba\venv\lib\site-packages\fastapi\openapi\utils.py", line 181, in get_openapi_path
+    route_response_media_type: Optional[str] = current_response_class.media_type
+  File "C:\Users\Umaruch\AppData\Local\Programs\Python\Python39\lib\typing.py", line 700, in __getattr__
+    return getattr(self.__origin__, attr)
+AttributeError: type object 'list' has no attribute 'media_type'
+2022-01-09 03:18:03,191 - INFO - Shutting down
+2022-01-09 03:18:03,292 - INFO - Waiting for application shutdown.
+2022-01-09 03:18:03,292 - INFO - Disconnected from database sqlite:///debug.db
+2022-01-09 03:18:03,292 - INFO - Application shutdown complete.
+2022-01-09 03:18:03,292 - INFO - Finished server process [5808]
+2022-01-09 03:18:04,814 - INFO - Started server process [12224]
+2022-01-09 03:18:04,814 - INFO - Waiting for application startup.
+2022-01-09 03:18:04,814 - INFO - Connected to database sqlite:///debug.db
+2022-01-09 03:18:04,815 - INFO - Application startup complete.
+2022-01-09 03:18:04,815 - INFO - Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+2022-01-09 03:18:38,803 - DEBUG - Calling on_field_start with no data
+2022-01-09 03:18:38,803 - DEBUG - Calling on_field_name with data[0:5]
+2022-01-09 03:18:38,803 - DEBUG - Calling on_field_data with data[6:27]
+2022-01-09 03:18:38,803 - DEBUG - Calling on_field_end with no data
+2022-01-09 03:18:38,803 - DEBUG - Calling on_field_start with no data
+2022-01-09 03:18:38,803 - DEBUG - Calling on_field_name with data[28:36]
+2022-01-09 03:18:38,803 - DEBUG - Calling on_field_data with data[37:45]
+2022-01-09 03:18:38,803 - DEBUG - Calling on_field_end with no data
+2022-01-09 03:18:38,803 - DEBUG - Calling on_field_start with no data
+2022-01-09 03:18:38,803 - DEBUG - Calling on_field_name with data[46:50]
+2022-01-09 03:18:38,803 - DEBUG - Calling on_field_end with no data
+2022-01-09 03:18:38,804 - DEBUG - Calling on_end with no data
+2022-01-09 03:18:38,831 - DEBUG - executing <function connect.<locals>.connector at 0x000001954B98B8B0>
+2022-01-09 03:18:38,832 - DEBUG - operation <function connect.<locals>.connector at 0x000001954B98B8B0> completed
+2022-01-09 03:18:38,834 - DEBUG - Query: SELECT users.id, users.username, users.email, users.avatar, users.password, users.is_validated FROM users WHERE users.email = ? Args: ('ezzik1998@gmail.com',)
+2022-01-09 03:18:38,834 - DEBUG - executing functools.partial(<built-in method execute of sqlite3.Connection object at 0x000001954B92E6C0>, 'SELECT users.id, users.username, users.email, users.avatar, users.password, users.is_validated \nFROM users \nWHERE users.email = ?', ['ezzik1998@gmail.com'])
+2022-01-09 03:18:38,835 - DEBUG - operation functools.partial(<built-in method execute of sqlite3.Connection object at 0x000001954B92E6C0>, 'SELECT users.id, users.username, users.email, users.avatar, users.password, users.is_validated \nFROM users \nWHERE users.email = ?', ['ezzik1998@gmail.com']) completed
+2022-01-09 03:18:38,836 - DEBUG - executing functools.partial(<built-in method fetchone of sqlite3.Cursor object at 0x000001954B9CDA40>)
+2022-01-09 03:18:38,836 - DEBUG - operation functools.partial(<built-in method fetchone of sqlite3.Cursor object at 0x000001954B9CDA40>) completed
+2022-01-09 03:18:38,836 - DEBUG - executing functools.partial(<built-in method close of sqlite3.Cursor object at 0x000001954B9CDA40>)
+2022-01-09 03:18:38,836 - DEBUG - operation functools.partial(<built-in method close of sqlite3.Cursor object at 0x000001954B9CDA40>) completed
+2022-01-09 03:18:38,836 - DEBUG - executing functools.partial(<built-in method close of sqlite3.Connection object at 0x000001954B92E6C0>)
+2022-01-09 03:18:38,837 - DEBUG - operation functools.partial(<built-in method close of sqlite3.Connection object at 0x000001954B92E6C0>) completed
+2022-01-09 03:19:03,969 - DEBUG - Calling on_field_start with no data
+2022-01-09 03:19:03,969 - DEBUG - Calling on_field_name with data[0:8]
+2022-01-09 03:19:03,969 - DEBUG - Calling on_field_data with data[9:17]
+2022-01-09 03:19:03,969 - DEBUG - Calling on_field_end with no data
+2022-01-09 03:19:03,969 - DEBUG - Calling on_field_start with no data
+2022-01-09 03:19:03,969 - DEBUG - Calling on_field_name with data[18:23]
+2022-01-09 03:19:03,969 - DEBUG - Calling on_field_data with data[24:45]
+2022-01-09 03:19:03,969 - DEBUG - Calling on_field_end with no data
+2022-01-09 03:19:03,970 - DEBUG - Calling on_field_start with no data
+2022-01-09 03:19:03,970 - DEBUG - Calling on_field_name with data[46:54]
+2022-01-09 03:19:03,970 - DEBUG - Calling on_field_data with data[55:63]
+2022-01-09 03:19:03,970 - DEBUG - Calling on_field_end with no data
+2022-01-09 03:19:03,970 - DEBUG - Calling on_end with no data
+2022-01-09 03:19:04,079 - DEBUG - detected 'bcrypt' backend, version '3.2.0'
+2022-01-09 03:19:04,087 - DEBUG - 'bcrypt' backend lacks $2$ support, enabling workaround
+2022-01-09 03:19:04,408 - DEBUG - executing <function connect.<locals>.connector at 0x000001954B98B550>
+2022-01-09 03:19:04,408 - DEBUG - operation <function connect.<locals>.connector at 0x000001954B98B550> completed
+2022-01-09 03:19:04,409 - DEBUG - Query: INSERT INTO users (username, email, password, is_validated) VALUES (?, ?, ?, ?) Args: ('username', 'ezzik1998@gmail.com', '$2b$12$oRCSzHqXPB4tw5fN5lRafeuH581E765bKL7sghfct54KECbGKvcPW', 0)
+2022-01-09 03:19:04,409 - DEBUG - executing functools.partial(<built-in method cursor of sqlite3.Connection object at 0x000001954B92EB70>)
+2022-01-09 03:19:04,409 - DEBUG - operation functools.partial(<built-in method cursor of sqlite3.Connection object at 0x000001954B92EB70>) completed
+2022-01-09 03:19:04,409 - DEBUG - executing functools.partial(<built-in method execute of sqlite3.Cursor object at 0x000001954B9F87A0>, 'INSERT INTO users (username, email, password, is_validated) VALUES (?, ?, ?, ?)', ['username', 'ezzik1998@gmail.com', '$2b$12$oRCSzHqXPB4tw5fN5lRafeuH581E765bKL7sghfct54KECbGKvcPW', 0])
+2022-01-09 03:19:04,542 - DEBUG - operation functools.partial(<built-in method execute of sqlite3.Cursor object at 0x000001954B9F87A0>, 'INSERT INTO users (username, email, password, is_validated) VALUES (?, ?, ?, ?)', ['username', 'ezzik1998@gmail.com', '$2b$12$oRCSzHqXPB4tw5fN5lRafeuH581E765bKL7sghfct54KECbGKvcPW', 0]) completed
+2022-01-09 03:19:04,543 - DEBUG - executing functools.partial(<built-in method close of sqlite3.Cursor object at 0x000001954B9F87A0>)
+2022-01-09 03:19:04,543 - DEBUG - operation functools.partial(<built-in method close of sqlite3.Cursor object at 0x000001954B9F87A0>) completed
+2022-01-09 03:19:04,543 - DEBUG - executing functools.partial(<built-in method close of sqlite3.Connection object at 0x000001954B92EB70>)
+2022-01-09 03:19:04,543 - DEBUG - operation functools.partial(<built-in method close of sqlite3.Connection object at 0x000001954B92EB70>) completed
+2022-01-09 03:19:16,268 - DEBUG - Calling on_field_start with no data
+2022-01-09 03:19:16,268 - DEBUG - Calling on_field_name with data[0:5]
+2022-01-09 03:19:16,268 - DEBUG - Calling on_field_data with data[6:27]
+2022-01-09 03:19:16,268 - DEBUG - Calling on_field_end with no data
+2022-01-09 03:19:16,268 - DEBUG - Calling on_field_start with no data
+2022-01-09 03:19:16,268 - DEBUG - Calling on_field_name with data[28:36]
+2022-01-09 03:19:16,268 - DEBUG - Calling on_field_data with data[37:45]
+2022-01-09 03:19:16,268 - DEBUG - Calling on_field_end with no data
+2022-01-09 03:19:16,268 - DEBUG - Calling on_field_start with no data
+2022-01-09 03:19:16,268 - DEBUG - Calling on_field_name with data[46:50]
+2022-01-09 03:19:16,268 - DEBUG - Calling on_field_end with no data
+2022-01-09 03:19:16,269 - DEBUG - Calling on_end with no data
+2022-01-09 03:19:16,271 - DEBUG - executing <function connect.<locals>.connector at 0x000001954BA36820>
+2022-01-09 03:19:16,277 - DEBUG - operation <function connect.<locals>.connector at 0x000001954BA36820> completed
+2022-01-09 03:19:16,278 - DEBUG - Query: SELECT users.id, users.username, users.email, users.avatar, users.password, users.is_validated FROM users WHERE users.email = ? Args: ('ezzik1998@gmail.com',)
+2022-01-09 03:19:16,278 - DEBUG - executing functools.partial(<built-in method execute of sqlite3.Connection object at 0x000001954B92EB70>, 'SELECT users.id, users.username, users.email, users.avatar, users.password, users.is_validated \nFROM users \nWHERE users.email = ?', ['ezzik1998@gmail.com'])
+2022-01-09 03:19:16,281 - DEBUG - operation functools.partial(<built-in method execute of sqlite3.Connection object at 0x000001954B92EB70>, 'SELECT users.id, users.username, users.email, users.avatar, users.password, users.is_validated \nFROM users \nWHERE users.email = ?', ['ezzik1998@gmail.com']) completed
+2022-01-09 03:19:16,282 - DEBUG - executing functools.partial(<built-in method fetchone of sqlite3.Cursor object at 0x000001954B9F88F0>)
+2022-01-09 03:19:16,282 - DEBUG - operation functools.partial(<built-in method fetchone of sqlite3.Cursor object at 0x000001954B9F88F0>) completed
+2022-01-09 03:19:16,283 - DEBUG - executing functools.partial(<built-in method close of sqlite3.Cursor object at 0x000001954B9F88F0>)
+2022-01-09 03:19:16,283 - DEBUG - operation functools.partial(<built-in method close of sqlite3.Cursor object at 0x000001954B9F88F0>) completed
+2022-01-09 03:19:16,283 - DEBUG - executing functools.partial(<built-in method close of sqlite3.Connection object at 0x000001954B92EB70>)
+2022-01-09 03:19:16,283 - DEBUG - operation functools.partial(<built-in method close of sqlite3.Connection object at 0x000001954B92EB70>) completed
+2022-01-09 03:19:36,660 - DEBUG - Calling on_field_start with no data
+2022-01-09 03:19:36,660 - DEBUG - Calling on_field_name with data[0:5]
+2022-01-09 03:19:36,660 - DEBUG - Calling on_field_data with data[6:27]
+2022-01-09 03:19:36,660 - DEBUG - Calling on_field_end with no data
+2022-01-09 03:19:36,660 - DEBUG - Calling on_field_start with no data
+2022-01-09 03:19:36,660 - DEBUG - Calling on_field_name with data[28:36]
+2022-01-09 03:19:36,660 - DEBUG - Calling on_field_data with data[37:45]
+2022-01-09 03:19:36,660 - DEBUG - Calling on_field_end with no data
+2022-01-09 03:19:36,660 - DEBUG - Calling on_field_start with no data
+2022-01-09 03:19:36,660 - DEBUG - Calling on_field_name with data[46:50]
+2022-01-09 03:19:36,660 - DEBUG - Calling on_field_data with data[51:57]
+2022-01-09 03:19:36,660 - DEBUG - Calling on_field_end with no data
+2022-01-09 03:19:36,661 - DEBUG - Calling on_end with no data
+2022-01-09 03:19:36,692 - DEBUG - executing <function connect.<locals>.connector at 0x000001954BA369D0>
+2022-01-09 03:19:36,692 - DEBUG - operation <function connect.<locals>.connector at 0x000001954BA369D0> completed
+2022-01-09 03:19:36,693 - DEBUG - Query: SELECT users.id, users.username, users.email, users.avatar, users.password, users.is_validated FROM users WHERE users.email = ? Args: ('ezzik1998@gmail.com',)
+2022-01-09 03:19:36,693 - DEBUG - executing functools.partial(<built-in method execute of sqlite3.Connection object at 0x000001954B92EB70>, 'SELECT users.id, users.username, users.email, users.avatar, users.password, users.is_validated \nFROM users \nWHERE users.email = ?', ['ezzik1998@gmail.com'])
+2022-01-09 03:19:36,693 - DEBUG - operation functools.partial(<built-in method execute of sqlite3.Connection object at 0x000001954B92EB70>, 'SELECT users.id, users.username, users.email, users.avatar, users.password, users.is_validated \nFROM users \nWHERE users.email = ?', ['ezzik1998@gmail.com']) completed
+2022-01-09 03:19:36,694 - DEBUG - executing functools.partial(<built-in method fetchone of sqlite3.Cursor object at 0x000001954B9F8CE0>)
+2022-01-09 03:19:36,694 - DEBUG - operation functools.partial(<built-in method fetchone of sqlite3.Cursor object at 0x000001954B9F8CE0>) completed
+2022-01-09 03:19:36,695 - DEBUG - executing functools.partial(<built-in method close of sqlite3.Cursor object at 0x000001954B9F8CE0>)
+2022-01-09 03:19:36,695 - DEBUG - operation functools.partial(<built-in method close of sqlite3.Cursor object at 0x000001954B9F8CE0>) completed
+2022-01-09 03:19:36,695 - DEBUG - executing functools.partial(<built-in method close of sqlite3.Connection object at 0x000001954B92EB70>)
+2022-01-09 03:19:36,695 - DEBUG - operation functools.partial(<built-in method close of sqlite3.Connection object at 0x000001954B92EB70>) completed
+2022-01-09 03:19:37,020 - DEBUG - executing <function connect.<locals>.connector at 0x000001954BA369D0>
+2022-01-09 03:19:37,021 - DEBUG - operation <function connect.<locals>.connector at 0x000001954BA369D0> completed
+2022-01-09 03:19:37,021 - DEBUG - Query: UPDATE users SET is_validated=? WHERE users.id = ? Args: (1, 1)
+2022-01-09 03:19:37,021 - DEBUG - executing functools.partial(<built-in method cursor of sqlite3.Connection object at 0x000001954B92EB70>)
+2022-01-09 03:19:37,021 - DEBUG - operation functools.partial(<built-in method cursor of sqlite3.Connection object at 0x000001954B92EB70>) completed
+2022-01-09 03:19:37,022 - DEBUG - executing functools.partial(<built-in method execute of sqlite3.Cursor object at 0x000001954B9F8CE0>, 'UPDATE users SET is_validated=? WHERE users.id = ?', [1, 1])
+2022-01-09 03:19:37,130 - DEBUG - operation functools.partial(<built-in method execute of sqlite3.Cursor object at 0x000001954B9F8CE0>, 'UPDATE users SET is_validated=? WHERE users.id = ?', [1, 1]) completed
+2022-01-09 03:19:37,130 - DEBUG - executing functools.partial(<built-in method close of sqlite3.Cursor object at 0x000001954B9F8CE0>)
+2022-01-09 03:19:37,130 - DEBUG - operation functools.partial(<built-in method close of sqlite3.Cursor object at 0x000001954B9F8CE0>) completed
+2022-01-09 03:19:37,130 - DEBUG - executing functools.partial(<built-in method close of sqlite3.Connection object at 0x000001954B92EB70>)
+2022-01-09 03:19:37,131 - DEBUG - operation functools.partial(<built-in method close of sqlite3.Connection object at 0x000001954B92EB70>) completed
+2022-01-09 03:19:53,388 - DEBUG - executing <function connect.<locals>.connector at 0x000001954BA36DC0>
+2022-01-09 03:19:53,394 - DEBUG - operation <function connect.<locals>.connector at 0x000001954BA36DC0> completed
+2022-01-09 03:19:53,395 - DEBUG - Query: SELECT users.id, users.username, users.email, users.avatar, users.password, users.is_validated FROM users WHERE users.id = ? Args: (1,)
+2022-01-09 03:19:53,399 - DEBUG - executing functools.partial(<built-in method execute of sqlite3.Connection object at 0x000001954B92EB70>, 'SELECT users.id, users.username, users.email, users.avatar, users.password, users.is_validated \nFROM users \nWHERE users.id = ?', [1])
+2022-01-09 03:19:53,400 - DEBUG - operation functools.partial(<built-in method execute of sqlite3.Connection object at 0x000001954B92EB70>, 'SELECT users.id, users.username, users.email, users.avatar, users.password, users.is_validated \nFROM users \nWHERE users.id = ?', [1]) completed
+2022-01-09 03:19:53,401 - DEBUG - executing functools.partial(<built-in method fetchone of sqlite3.Cursor object at 0x000001954B9F8C70>)
+2022-01-09 03:19:53,401 - DEBUG - operation functools.partial(<built-in method fetchone of sqlite3.Cursor object at 0x000001954B9F8C70>) completed
+2022-01-09 03:19:53,401 - DEBUG - executing functools.partial(<built-in method close of sqlite3.Cursor object at 0x000001954B9F8C70>)
+2022-01-09 03:19:53,402 - DEBUG - operation functools.partial(<built-in method close of sqlite3.Cursor object at 0x000001954B9F8C70>) completed
+2022-01-09 03:19:53,403 - DEBUG - executing functools.partial(<built-in method close of sqlite3.Connection object at 0x000001954B92EB70>)
+2022-01-09 03:19:53,404 - DEBUG - operation functools.partial(<built-in method close of sqlite3.Connection object at 0x000001954B92EB70>) completed
+2022-01-09 03:20:05,893 - INFO - Пользователь (ID:1) запросил страницу 1 с тайтлами
+2022-01-09 03:20:05,895 - DEBUG - executing <function connect.<locals>.connector at 0x000001954B98B8B0>
+2022-01-09 03:20:05,895 - DEBUG - operation <function connect.<locals>.connector at 0x000001954B98B8B0> completed
+2022-01-09 03:20:05,896 - DEBUG - Query: SELECT titles.id, titles.name, titles.cover, titles.description, titles.type, titles.release_year, titles.positive_rates_count, titles.negative_rates_count FROM titles  LIMIT ? OFFSET ? Args: (10, 0)
+2022-01-09 03:20:05,896 - DEBUG - executing functools.partial(<built-in method execute of sqlite3.Connection object at 0x000001954B92EB70>, 'SELECT titles.id, titles.name, titles.cover, titles.description, titles.type, titles.release_year, titles.positive_rates_count, titles.negative_rates_count \nFROM titles\n LIMIT ? OFFSET ?', [10, 0])
+2022-01-09 03:20:05,897 - DEBUG - operation functools.partial(<built-in method execute of sqlite3.Connection object at 0x000001954B92EB70>, 'SELECT titles.id, titles.name, titles.cover, titles.description, titles.type, titles.release_year, titles.positive_rates_count, titles.negative_rates_count \nFROM titles\n LIMIT ? OFFSET ?', [10, 0]) completed
+2022-01-09 03:20:05,897 - DEBUG - executing functools.partial(<built-in method fetchall of sqlite3.Cursor object at 0x000001954B9F8C70>)
+2022-01-09 03:20:05,897 - DEBUG - operation functools.partial(<built-in method fetchall of sqlite3.Cursor object at 0x000001954B9F8C70>) completed
+2022-01-09 03:20:05,897 - DEBUG - executing functools.partial(<built-in method close of sqlite3.Cursor object at 0x000001954B9F8C70>)
+2022-01-09 03:20:05,897 - DEBUG - operation functools.partial(<built-in method close of sqlite3.Cursor object at 0x000001954B9F8C70>) completed
+2022-01-09 03:20:05,898 - DEBUG - executing functools.partial(<built-in method close of sqlite3.Connection object at 0x000001954B92EB70>)
+2022-01-09 03:20:05,898 - DEBUG - operation functools.partial(<built-in method close of sqlite3.Connection object at 0x000001954B92EB70>) completed
+2022-01-09 03:21:25,384 - INFO - Shutting down
+2022-01-09 03:21:25,484 - INFO - Waiting for application shutdown.
+2022-01-09 03:21:25,484 - INFO - Disconnected from database sqlite:///debug.db
+2022-01-09 03:21:25,484 - INFO - Application shutdown complete.
+2022-01-09 03:21:25,485 - INFO - Finished server process [12224]
+2022-01-09 03:21:27,033 - INFO - Started server process [6468]
+2022-01-09 03:21:27,033 - INFO - Waiting for application startup.
+2022-01-09 03:21:27,034 - INFO - Connected to database sqlite:///debug.db
+2022-01-09 03:21:27,034 - INFO - Application startup complete.
+2022-01-09 03:21:27,035 - INFO - Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+2022-01-09 03:21:59,941 - DEBUG - Calling on_part_begin with no data
+2022-01-09 03:21:59,942 - DEBUG - Calling on_header_field with data[42:61]
+2022-01-09 03:21:59,942 - DEBUG - Calling on_header_value with data[63:114]
+2022-01-09 03:21:59,942 - DEBUG - Calling on_header_end with no data
+2022-01-09 03:21:59,942 - DEBUG - Calling on_header_field with data[116:128]
+2022-01-09 03:21:59,942 - DEBUG - Calling on_header_value with data[130:140]
+2022-01-09 03:21:59,942 - DEBUG - Calling on_header_end with no data
+2022-01-09 03:21:59,942 - DEBUG - Calling on_headers_finished with no data
+2022-01-09 03:21:59,942 - DEBUG - Calling on_part_data with data[144:16384]
+2022-01-09 03:21:59,943 - DEBUG - Calling on_part_data with data[0:46795]
+2022-01-09 03:21:59,943 - DEBUG - Calling on_part_data with data[0:1]
+2022-01-09 03:21:59,943 - DEBUG - Calling on_part_data with data[46796:49152]
+2022-01-09 03:21:59,944 - DEBUG - Calling on_part_data with data[0:16384]
+2022-01-09 03:21:59,944 - DEBUG - Calling on_part_data with data[0:16384]
+2022-01-09 03:21:59,945 - DEBUG - Calling on_part_data with data[0:16384]
+2022-01-09 03:21:59,945 - DEBUG - Calling on_part_data with data[0:16384]
+2022-01-09 03:21:59,946 - DEBUG - Calling on_part_data with data[0:16384]
+2022-01-09 03:21:59,948 - DEBUG - Calling on_part_data with data[0:16384]
+2022-01-09 03:21:59,948 - DEBUG - Calling on_part_data with data[0:16384]
+2022-01-09 03:21:59,949 - DEBUG - Calling on_part_data with data[0:4504]
+2022-01-09 03:21:59,949 - DEBUG - Calling on_part_data with data[0:1]
+2022-01-09 03:21:59,949 - DEBUG - Calling on_part_data with data[4505:32768]
+2022-01-09 03:21:59,950 - DEBUG - Calling on_part_data with data[0:49152]
+2022-01-09 03:21:59,950 - DEBUG - Calling on_part_data with data[0:33233]
+2022-01-09 03:21:59,951 - DEBUG - Calling on_part_data with data[0:1]
+2022-01-09 03:21:59,951 - DEBUG - Calling on_part_data with data[33234:49152]
+2022-01-09 03:21:59,952 - DEBUG - Calling on_part_data with data[0:35372]
+2022-01-09 03:21:59,952 - DEBUG - Calling on_part_data with data[0:1]
+2022-01-09 03:21:59,952 - DEBUG - Calling on_part_data with data[35373:35376]
+2022-01-09 03:21:59,952 - DEBUG - Calling on_part_end with no data
+2022-01-09 03:21:59,952 - DEBUG - Calling on_part_begin with no data
+2022-01-09 03:21:59,952 - DEBUG - Calling on_header_field with data[35420:35439]
+2022-01-09 03:21:59,952 - DEBUG - Calling on_header_value with data[35441:35463]
+2022-01-09 03:21:59,952 - DEBUG - Calling on_header_end with no data
+2022-01-09 03:21:59,952 - DEBUG - Calling on_headers_finished with no data
+2022-01-09 03:21:59,952 - DEBUG - Calling on_part_data with data[35467:35477]
+2022-01-09 03:21:59,952 - DEBUG - Calling on_part_end with no data
+2022-01-09 03:21:59,952 - DEBUG - Calling on_part_begin with no data
+2022-01-09 03:21:59,952 - DEBUG - Calling on_header_field with data[35521:35540]
+2022-01-09 03:21:59,952 - DEBUG - Calling on_header_value with data[35542:35571]
+2022-01-09 03:21:59,953 - DEBUG - Calling on_header_end with no data
+2022-01-09 03:21:59,953 - DEBUG - Calling on_headers_finished with no data
+2022-01-09 03:21:59,953 - DEBUG - Calling on_part_data with data[35575:35589]
+2022-01-09 03:21:59,953 - DEBUG - Calling on_part_end with no data
+2022-01-09 03:21:59,953 - DEBUG - Calling on_part_begin with no data
+2022-01-09 03:21:59,953 - DEBUG - Calling on_header_field with data[35633:35652]
+2022-01-09 03:21:59,953 - DEBUG - Calling on_header_value with data[35654:35676]
+2022-01-09 03:21:59,953 - DEBUG - Calling on_header_end with no data
+2022-01-09 03:21:59,953 - DEBUG - Calling on_headers_finished with no data
+2022-01-09 03:21:59,953 - DEBUG - Calling on_part_data with data[35680:35685]
+2022-01-09 03:21:59,953 - DEBUG - Calling on_part_end with no data
+2022-01-09 03:21:59,953 - DEBUG - Calling on_part_begin with no data
+2022-01-09 03:21:59,953 - DEBUG - Calling on_header_field with data[35729:35748]
+2022-01-09 03:21:59,954 - DEBUG - Calling on_header_value with data[35750:35780]
+2022-01-09 03:21:59,954 - DEBUG - Calling on_header_end with no data
+2022-01-09 03:21:59,954 - DEBUG - Calling on_headers_finished with no data
+2022-01-09 03:21:59,954 - DEBUG - Calling on_part_data with data[35784:35788]
+2022-01-09 03:21:59,954 - DEBUG - Calling on_part_end with no data
+2022-01-09 03:21:59,954 - DEBUG - Calling on_end with no data
+2022-01-09 03:21:59,966 - ERROR - Exception in ASGI application
+Traceback (most recent call last):
+  File "d:\github.com\prohojemba\venv\lib\site-packages\uvicorn\protocols\http\h11_impl.py", line 373, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "d:\github.com\prohojemba\venv\lib\site-packages\uvicorn\middleware\proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "d:\github.com\prohojemba\venv\lib\site-packages\fastapi\applications.py", line 208, in __call__
+    await super().__call__(scope, receive, send)
+  File "d:\github.com\prohojemba\venv\lib\site-packages\starlette\applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "d:\github.com\prohojemba\venv\lib\site-packages\starlette\middleware\errors.py", line 181, in __call__
+    raise exc
+  File "d:\github.com\prohojemba\venv\lib\site-packages\starlette\middleware\errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "d:\github.com\prohojemba\venv\lib\site-packages\starlette\exceptions.py", line 82, in __call__
+    raise exc
+  File "d:\github.com\prohojemba\venv\lib\site-packages\starlette\exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "d:\github.com\prohojemba\venv\lib\site-packages\starlette\routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "d:\github.com\prohojemba\venv\lib\site-packages\starlette\routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "d:\github.com\prohojemba\venv\lib\site-packages\starlette\routing.py", line 61, in app
+    response = await func(request)
+  File "d:\github.com\prohojemba\venv\lib\site-packages\fastapi\routing.py", line 226, in app
+    raw_response = await run_endpoint_function(
+  File "d:\github.com\prohojemba\venv\lib\site-packages\fastapi\routing.py", line 159, in run_endpoint_function
+    return await dependant.call(**values)
+  File "D:\github.com\prohojemba\.\back\routes\titles.py", line 57, in create_title
+    title_form.cover = await image_service.save(cover, "covers")
+  File "D:\github.com\prohojemba\.\back\services\images\local.py", line 13, in save
+    with open(f"{self.path}/{subdir}/{file.filename}", "wb") as f:
+FileNotFoundError: [Errno 2] No such file or directory: 'D:\\github.com\\prohojemba\\images\\avatars/covers/oNoXXl1rRkU.jpg'
+2022-01-09 03:22:12,796 - INFO - Shutting down
+2022-01-09 03:22:12,896 - INFO - Waiting for application shutdown.
+2022-01-09 03:22:12,896 - INFO - Disconnected from database sqlite:///debug.db
+2022-01-09 03:22:12,896 - INFO - Application shutdown complete.
+2022-01-09 03:22:12,897 - INFO - Finished server process [6468]
+2022-01-09 16:03:47,614 - INFO - Started server process [5764]
+2022-01-09 16:03:47,633 - INFO - Waiting for application startup.
+2022-01-09 16:03:47,634 - INFO - Connected to database sqlite:///debug.db
+2022-01-09 16:03:47,634 - INFO - Application startup complete.
+2022-01-09 16:03:47,634 - INFO - Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+2022-01-09 16:05:28,342 - DEBUG - Calling on_part_begin with no data
+2022-01-09 16:05:28,343 - DEBUG - Calling on_header_field with data[42:61]
+2022-01-09 16:05:28,343 - DEBUG - Calling on_header_value with data[63:114]
+2022-01-09 16:05:28,343 - DEBUG - Calling on_header_end with no data
+2022-01-09 16:05:28,343 - DEBUG - Calling on_header_field with data[116:128]
+2022-01-09 16:05:28,343 - DEBUG - Calling on_header_value with data[130:140]
+2022-01-09 16:05:28,343 - DEBUG - Calling on_header_end with no data
+2022-01-09 16:05:28,343 - DEBUG - Calling on_headers_finished with no data
+2022-01-09 16:05:28,343 - DEBUG - Calling on_part_data with data[144:32768]
+2022-01-09 16:05:28,344 - DEBUG - Calling on_part_data with data[0:1639]
+2022-01-09 16:05:28,344 - DEBUG - Calling on_part_data with data[0:1]
+2022-01-09 16:05:28,344 - DEBUG - Calling on_part_data with data[1640:30647]
+2022-01-09 16:05:28,344 - DEBUG - Calling on_part_data with data[0:1]
+2022-01-09 16:05:28,344 - DEBUG - Calling on_part_data with data[30648:49152]
+2022-01-09 16:05:28,345 - DEBUG - Calling on_part_data with data[0:39566]
+2022-01-09 16:05:28,345 - DEBUG - Calling on_part_data with data[0:1]
+2022-01-09 16:05:28,345 - DEBUG - Calling on_part_data with data[39567:56496]
+2022-01-09 16:05:28,345 - DEBUG - Calling on_part_data with data[0:1]
+2022-01-09 16:05:28,345 - DEBUG - Calling on_part_data with data[56497:65536]
+2022-01-09 16:05:28,346 - DEBUG - Calling on_part_data with data[0:65536]
+2022-01-09 16:05:28,347 - DEBUG - Calling on_part_data with data[0:65536]
+2022-01-09 16:05:28,347 - DEBUG - Calling on_part_data with data[0:65536]
+2022-01-09 16:05:28,348 - DEBUG - Calling on_part_data with data[0:2604]
+2022-01-09 16:05:28,348 - DEBUG - Calling on_part_data with data[0:1]
+2022-01-09 16:05:28,348 - DEBUG - Calling on_part_data with data[2605:2608]
+2022-01-09 16:05:28,348 - DEBUG - Calling on_part_end with no data
+2022-01-09 16:05:28,348 - DEBUG - Calling on_part_begin with no data
+2022-01-09 16:05:28,348 - DEBUG - Calling on_header_field with data[2652:2671]
+2022-01-09 16:05:28,348 - DEBUG - Calling on_header_value with data[2673:2695]
+2022-01-09 16:05:28,348 - DEBUG - Calling on_header_end with no data
+2022-01-09 16:05:28,348 - DEBUG - Calling on_headers_finished with no data
+2022-01-09 16:05:28,348 - DEBUG - Calling on_part_data with data[2699:2709]
+2022-01-09 16:05:28,348 - DEBUG - Calling on_part_end with no data
+2022-01-09 16:05:28,348 - DEBUG - Calling on_part_begin with no data
+2022-01-09 16:05:28,348 - DEBUG - Calling on_header_field with data[2753:2772]
+2022-01-09 16:05:28,349 - DEBUG - Calling on_header_value with data[2774:2803]
+2022-01-09 16:05:28,349 - DEBUG - Calling on_header_end with no data
+2022-01-09 16:05:28,349 - DEBUG - Calling on_headers_finished with no data
+2022-01-09 16:05:28,349 - DEBUG - Calling on_part_data with data[2807:2811]
+2022-01-09 16:05:28,349 - DEBUG - Calling on_part_end with no data
+2022-01-09 16:05:28,349 - DEBUG - Calling on_part_begin with no data
+2022-01-09 16:05:28,349 - DEBUG - Calling on_header_field with data[2855:2874]
+2022-01-09 16:05:28,349 - DEBUG - Calling on_header_value with data[2876:2898]
+2022-01-09 16:05:28,349 - DEBUG - Calling on_header_end with no data
+2022-01-09 16:05:28,349 - DEBUG - Calling on_headers_finished with no data
+2022-01-09 16:05:28,349 - DEBUG - Calling on_part_data with data[2902:2907]
+2022-01-09 16:05:28,349 - DEBUG - Calling on_part_end with no data
+2022-01-09 16:05:28,349 - DEBUG - Calling on_part_begin with no data
+2022-01-09 16:05:28,349 - DEBUG - Calling on_header_field with data[2951:2970]
+2022-01-09 16:05:28,349 - DEBUG - Calling on_header_value with data[2972:3002]
+2022-01-09 16:05:28,349 - DEBUG - Calling on_header_end with no data
+2022-01-09 16:05:28,349 - DEBUG - Calling on_headers_finished with no data
+2022-01-09 16:05:28,349 - DEBUG - Calling on_part_data with data[3006:3010]
+2022-01-09 16:05:28,349 - DEBUG - Calling on_part_end with no data
+2022-01-09 16:05:28,349 - DEBUG - Calling on_end with no data
+2022-01-09 16:05:57,384 - DEBUG - Calling on_field_start with no data
+2022-01-09 16:05:57,384 - DEBUG - Calling on_field_name with data[0:5]
+2022-01-09 16:05:57,384 - DEBUG - Calling on_field_data with data[6:27]
+2022-01-09 16:05:57,384 - DEBUG - Calling on_field_end with no data
+2022-01-09 16:05:57,384 - DEBUG - Calling on_field_start with no data
+2022-01-09 16:05:57,384 - DEBUG - Calling on_field_name with data[28:36]
+2022-01-09 16:05:57,384 - DEBUG - Calling on_field_data with data[37:45]
+2022-01-09 16:05:57,384 - DEBUG - Calling on_field_end with no data
+2022-01-09 16:05:57,384 - DEBUG - Calling on_field_start with no data
+2022-01-09 16:05:57,384 - DEBUG - Calling on_field_name with data[46:50]
+2022-01-09 16:05:57,384 - DEBUG - Calling on_field_end with no data
+2022-01-09 16:05:57,384 - DEBUG - Calling on_end with no data
+2022-01-09 16:05:57,386 - DEBUG - executing <function connect.<locals>.connector at 0x00000163BA3F0DC0>
+2022-01-09 16:05:57,387 - DEBUG - operation <function connect.<locals>.connector at 0x00000163BA3F0DC0> completed
+2022-01-09 16:05:57,388 - DEBUG - Query: SELECT users.id, users.username, users.email, users.avatar, users.password, users.is_validated FROM users WHERE users.email = ? Args: ('ezzik1998@gmail.com',)
+2022-01-09 16:05:57,388 - DEBUG - executing functools.partial(<built-in method execute of sqlite3.Connection object at 0x00000163BA3907B0>, 'SELECT users.id, users.username, users.email, users.avatar, users.password, users.is_validated \nFROM users \nWHERE users.email = ?', ['ezzik1998@gmail.com'])
+2022-01-09 16:05:57,389 - DEBUG - operation functools.partial(<built-in method execute of sqlite3.Connection object at 0x00000163BA3907B0>, 'SELECT users.id, users.username, users.email, users.avatar, users.password, users.is_validated \nFROM users \nWHERE users.email = ?', ['ezzik1998@gmail.com']) completed
+2022-01-09 16:05:57,389 - DEBUG - executing functools.partial(<built-in method fetchone of sqlite3.Cursor object at 0x00000163BA234EA0>)
+2022-01-09 16:05:57,389 - DEBUG - operation functools.partial(<built-in method fetchone of sqlite3.Cursor object at 0x00000163BA234EA0>) completed
+2022-01-09 16:05:57,390 - DEBUG - executing functools.partial(<built-in method close of sqlite3.Cursor object at 0x00000163BA234EA0>)
+2022-01-09 16:05:57,390 - DEBUG - operation functools.partial(<built-in method close of sqlite3.Cursor object at 0x00000163BA234EA0>) completed
+2022-01-09 16:05:57,390 - DEBUG - executing functools.partial(<built-in method close of sqlite3.Connection object at 0x00000163BA3907B0>)
+2022-01-09 16:05:57,390 - DEBUG - operation functools.partial(<built-in method close of sqlite3.Connection object at 0x00000163BA3907B0>) completed
+2022-01-09 16:05:57,452 - DEBUG - detected 'bcrypt' backend, version '3.2.0'
+2022-01-09 16:05:57,452 - DEBUG - 'bcrypt' backend lacks $2$ support, enabling workaround
+2022-01-09 16:06:13,327 - DEBUG - Calling on_part_begin with no data
+2022-01-09 16:06:13,327 - DEBUG - Calling on_header_field with data[42:61]
+2022-01-09 16:06:13,327 - DEBUG - Calling on_header_value with data[63:114]
+2022-01-09 16:06:13,327 - DEBUG - Calling on_header_end with no data
+2022-01-09 16:06:13,328 - DEBUG - Calling on_header_field with data[116:128]
+2022-01-09 16:06:13,328 - DEBUG - Calling on_header_value with data[130:140]
+2022-01-09 16:06:13,328 - DEBUG - Calling on_header_end with no data
+2022-01-09 16:06:13,328 - DEBUG - Calling on_headers_finished with no data
+2022-01-09 16:06:13,328 - DEBUG - Calling on_part_data with data[144:49152]
+2022-01-09 16:06:13,329 - DEBUG - Calling on_part_data with data[0:65536]
+2022-01-09 16:06:13,329 - DEBUG - Calling on_part_data with data[0:24703]
+2022-01-09 16:06:13,329 - DEBUG - Calling on_part_data with data[0:1]
+2022-01-09 16:06:13,329 - DEBUG - Calling on_part_data with data[24704:65536]
+2022-01-09 16:06:13,330 - DEBUG - Calling on_part_data with data[0:4504]
+2022-01-09 16:06:13,330 - DEBUG - Calling on_part_data with data[0:1]
+2022-01-09 16:06:13,330 - DEBUG - Calling on_part_data with data[4505:65536]
+2022-01-09 16:06:13,330 - DEBUG - Calling on_part_data with data[0:16919]
+2022-01-09 16:06:13,330 - DEBUG - Calling on_part_data with data[0:1]
+2022-01-09 16:06:13,331 - DEBUG - Calling on_part_data with data[16920:65536]
+2022-01-09 16:06:13,331 - DEBUG - Calling on_part_data with data[0:35372]
+2022-01-09 16:06:13,331 - DEBUG - Calling on_part_data with data[0:1]
+2022-01-09 16:06:13,331 - DEBUG - Calling on_part_data with data[35373:35376]
+2022-01-09 16:06:13,331 - DEBUG - Calling on_part_end with no data
+2022-01-09 16:06:13,332 - DEBUG - Calling on_part_begin with no data
+2022-01-09 16:06:13,332 - DEBUG - Calling on_header_field with data[35420:35439]
+2022-01-09 16:06:13,332 - DEBUG - Calling on_header_value with data[35441:35463]
+2022-01-09 16:06:13,332 - DEBUG - Calling on_header_end with no data
+2022-01-09 16:06:13,332 - DEBUG - Calling on_headers_finished with no data
+2022-01-09 16:06:13,332 - DEBUG - Calling on_part_data with data[35467:35477]
+2022-01-09 16:06:13,332 - DEBUG - Calling on_part_end with no data
+2022-01-09 16:06:13,332 - DEBUG - Calling on_part_begin with no data
+2022-01-09 16:06:13,332 - DEBUG - Calling on_header_field with data[35521:35540]
+2022-01-09 16:06:13,332 - DEBUG - Calling on_header_value with data[35542:35571]
+2022-01-09 16:06:13,332 - DEBUG - Calling on_header_end with no data
+2022-01-09 16:06:13,332 - DEBUG - Calling on_headers_finished with no data
+2022-01-09 16:06:13,332 - DEBUG - Calling on_part_data with data[35575:35579]
+2022-01-09 16:06:13,332 - DEBUG - Calling on_part_end with no data
+2022-01-09 16:06:13,332 - DEBUG - Calling on_part_begin with no data
+2022-01-09 16:06:13,332 - DEBUG - Calling on_header_field with data[35623:35642]
+2022-01-09 16:06:13,332 - DEBUG - Calling on_header_value with data[35644:35666]
+2022-01-09 16:06:13,332 - DEBUG - Calling on_header_end with no data
+2022-01-09 16:06:13,332 - DEBUG - Calling on_headers_finished with no data
+2022-01-09 16:06:13,333 - DEBUG - Calling on_part_data with data[35670:35675]
+2022-01-09 16:06:13,333 - DEBUG - Calling on_part_end with no data
+2022-01-09 16:06:13,333 - DEBUG - Calling on_part_begin with no data
+2022-01-09 16:06:13,333 - DEBUG - Calling on_header_field with data[35719:35738]
+2022-01-09 16:06:13,333 - DEBUG - Calling on_header_value with data[35740:35770]
+2022-01-09 16:06:13,333 - DEBUG - Calling on_header_end with no data
+2022-01-09 16:06:13,333 - DEBUG - Calling on_headers_finished with no data
+2022-01-09 16:06:13,333 - DEBUG - Calling on_part_data with data[35774:35778]
+2022-01-09 16:06:13,333 - DEBUG - Calling on_part_end with no data
+2022-01-09 16:06:13,333 - DEBUG - Calling on_end with no data
+2022-01-09 16:06:13,336 - DEBUG - executing <function connect.<locals>.connector at 0x00000163BA3F0B80>
+2022-01-09 16:06:13,336 - DEBUG - operation <function connect.<locals>.connector at 0x00000163BA3F0B80> completed
+2022-01-09 16:06:13,337 - DEBUG - Query: INSERT INTO titles (name, cover, description, type, release_year, positive_rates_count, negative_rates_count) VALUES (?, ?, ?, ?, ?, ?, ?) Args: ('Test title', '/covers/oNoXXl1rRkU.jpg', 'test', 'games', 2021, 0, 0)
+2022-01-09 16:06:13,337 - DEBUG - executing functools.partial(<built-in method cursor of sqlite3.Connection object at 0x00000163BA3907B0>)
+2022-01-09 16:06:13,337 - DEBUG - operation functools.partial(<built-in method cursor of sqlite3.Connection object at 0x00000163BA3907B0>) completed
+2022-01-09 16:06:13,338 - DEBUG - executing functools.partial(<built-in method execute of sqlite3.Cursor object at 0x00000163BA4628F0>, 'INSERT INTO titles (name, cover, description, type, release_year, positive_rates_count, negative_rates_count) VALUES (?, ?, ?, ?, ?, ?, ?)', ['Test title', '/covers/oNoXXl1rRkU.jpg', 'test', 'games', 2021, 0, 0])
+2022-01-09 16:06:13,438 - DEBUG - operation functools.partial(<built-in method execute of sqlite3.Cursor object at 0x00000163BA4628F0>, 'INSERT INTO titles (name, cover, description, type, release_year, positive_rates_count, negative_rates_count) VALUES (?, ?, ?, ?, ?, ?, ?)', ['Test title', '/covers/oNoXXl1rRkU.jpg', 'test', 'games', 2021, 0, 0]) completed
+2022-01-09 16:06:13,439 - DEBUG - executing functools.partial(<built-in method close of sqlite3.Cursor object at 0x00000163BA4628F0>)
+2022-01-09 16:06:13,439 - DEBUG - operation functools.partial(<built-in method close of sqlite3.Cursor object at 0x00000163BA4628F0>) completed
+2022-01-09 16:06:13,439 - DEBUG - executing functools.partial(<built-in method close of sqlite3.Connection object at 0x00000163BA3907B0>)
+2022-01-09 16:06:13,440 - DEBUG - operation functools.partial(<built-in method close of sqlite3.Connection object at 0x00000163BA3907B0>) completed
+2022-01-09 16:06:20,595 - INFO - Пользователь (ID:1) запросил страницу 1 с тайтлами
+2022-01-09 16:06:20,596 - DEBUG - executing <function connect.<locals>.connector at 0x00000163BA3F0430>
+2022-01-09 16:06:20,601 - DEBUG - operation <function connect.<locals>.connector at 0x00000163BA3F0430> completed
+2022-01-09 16:06:20,602 - DEBUG - Query: SELECT titles.id, titles.name, titles.cover, titles.description, titles.type, titles.release_year, titles.positive_rates_count, titles.negative_rates_count FROM titles  LIMIT ? OFFSET ? Args: (10, 0)
+2022-01-09 16:06:20,602 - DEBUG - executing functools.partial(<built-in method execute of sqlite3.Connection object at 0x00000163BA3907B0>, 'SELECT titles.id, titles.name, titles.cover, titles.description, titles.type, titles.release_year, titles.positive_rates_count, titles.negative_rates_count \nFROM titles\n LIMIT ? OFFSET ?', [10, 0])
+2022-01-09 16:06:20,603 - DEBUG - operation functools.partial(<built-in method execute of sqlite3.Connection object at 0x00000163BA3907B0>, 'SELECT titles.id, titles.name, titles.cover, titles.description, titles.type, titles.release_year, titles.positive_rates_count, titles.negative_rates_count \nFROM titles\n LIMIT ? OFFSET ?', [10, 0]) completed
+2022-01-09 16:06:20,603 - DEBUG - executing functools.partial(<built-in method fetchall of sqlite3.Cursor object at 0x00000163BA462880>)
+2022-01-09 16:06:20,603 - DEBUG - operation functools.partial(<built-in method fetchall of sqlite3.Cursor object at 0x00000163BA462880>) completed
+2022-01-09 16:06:20,603 - DEBUG - executing functools.partial(<built-in method close of sqlite3.Cursor object at 0x00000163BA462880>)
+2022-01-09 16:06:20,603 - DEBUG - operation functools.partial(<built-in method close of sqlite3.Cursor object at 0x00000163BA462880>) completed
+2022-01-09 16:06:20,604 - DEBUG - executing functools.partial(<built-in method close of sqlite3.Connection object at 0x00000163BA3907B0>)
+2022-01-09 16:06:20,604 - DEBUG - operation functools.partial(<built-in method close of sqlite3.Connection object at 0x00000163BA3907B0>) completed
+2022-01-09 16:08:28,454 - DEBUG - Calling on_field_start with no data
+2022-01-09 16:08:28,455 - DEBUG - Calling on_field_name with data[0:6]
+2022-01-09 16:08:28,455 - DEBUG - Calling on_field_data with data[7:17]
+2022-01-09 16:08:28,455 - DEBUG - Calling on_field_end with no data
+2022-01-09 16:08:28,455 - DEBUG - Calling on_field_start with no data
+2022-01-09 16:08:28,455 - DEBUG - Calling on_field_name with data[18:25]
+2022-01-09 16:08:28,455 - DEBUG - Calling on_field_data with data[26:134]
+2022-01-09 16:08:28,455 - DEBUG - Calling on_field_end with no data
+2022-01-09 16:08:28,455 - DEBUG - Calling on_field_start with no data
+2022-01-09 16:08:28,455 - DEBUG - Calling on_field_name with data[135:139]
+2022-01-09 16:08:28,455 - DEBUG - Calling on_field_data with data[140:144]
+2022-01-09 16:08:28,455 - DEBUG - Calling on_field_end with no data
+2022-01-09 16:08:28,455 - DEBUG - Calling on_end with no data
+2022-01-09 16:08:28,457 - DEBUG - executing <function connect.<locals>.connector at 0x00000163BA3F0B80>
+2022-01-09 16:08:28,457 - DEBUG - operation <function connect.<locals>.connector at 0x00000163BA3F0B80> completed
+2022-01-09 16:08:28,458 - DEBUG - Query: INSERT INTO walks (user_id, title_id, status, comment, rate, created_at) VALUES (?, ?, ?, ?, ?, ?) Args: (1, 1, 'not_played', 'Не могу в это играть', 1, '2022-01-09')
+2022-01-09 16:08:28,458 - DEBUG - executing functools.partial(<built-in method cursor of sqlite3.Connection object at 0x00000163BA3907B0>)
+2022-01-09 16:08:28,458 - DEBUG - operation functools.partial(<built-in method cursor of sqlite3.Connection object at 0x00000163BA3907B0>) completed
+2022-01-09 16:08:28,458 - DEBUG - executing functools.partial(<built-in method execute of sqlite3.Cursor object at 0x00000163BA462880>, 'INSERT INTO walks (user_id, title_id, status, comment, rate, created_at) VALUES (?, ?, ?, ?, ?, ?)', [1, 1, 'not_played', 'Не могу в это играть', 1, '2022-01-09'])
+2022-01-09 16:08:28,565 - DEBUG - operation functools.partial(<built-in method execute of sqlite3.Cursor object at 0x00000163BA462880>, 'INSERT INTO walks (user_id, title_id, status, comment, rate, created_at) VALUES (?, ?, ?, ?, ?, ?)', [1, 1, 'not_played', 'Не могу в это играть', 1, '2022-01-09']) completed
+2022-01-09 16:08:28,566 - DEBUG - executing functools.partial(<built-in method close of sqlite3.Cursor object at 0x00000163BA462880>)
+2022-01-09 16:08:28,566 - DEBUG - operation functools.partial(<built-in method close of sqlite3.Cursor object at 0x00000163BA462880>) completed
+2022-01-09 16:08:28,566 - DEBUG - executing functools.partial(<built-in method close of sqlite3.Connection object at 0x00000163BA3907B0>)
+2022-01-09 16:08:28,566 - DEBUG - operation functools.partial(<built-in method close of sqlite3.Connection object at 0x00000163BA3907B0>) completed
+2022-01-09 16:09:28,970 - DEBUG - executing <function connect.<locals>.connector at 0x00000163BA3F0A60>
+2022-01-09 16:09:28,975 - DEBUG - operation <function connect.<locals>.connector at 0x00000163BA3F0A60> completed
+2022-01-09 16:09:28,976 - DEBUG - Query: SELECT walks.id, walks.user_id, walks.title_id, walks.status, walks.comment, walks.rate, walks.created_at FROM walks JOIN users ON users.id = walks.user_id WHERE walks.title_id = ? Args: (1,)
+2022-01-09 16:09:28,976 - DEBUG - executing functools.partial(<built-in method execute of sqlite3.Connection object at 0x00000163BA3907B0>, 'SELECT walks.id, walks.user_id, walks.title_id, walks.status, walks.comment, walks.rate, walks.created_at \nFROM walks JOIN users ON users.id = walks.user_id \nWHERE walks.title_id = ?', [1])
+2022-01-09 16:09:28,979 - DEBUG - operation functools.partial(<built-in method execute of sqlite3.Connection object at 0x00000163BA3907B0>, 'SELECT walks.id, walks.user_id, walks.title_id, walks.status, walks.comment, walks.rate, walks.created_at \nFROM walks JOIN users ON users.id = walks.user_id \nWHERE walks.title_id = ?', [1]) completed
+2022-01-09 16:09:28,979 - DEBUG - executing functools.partial(<built-in method fetchall of sqlite3.Cursor object at 0x00000163BA462AB0>)
+2022-01-09 16:09:28,979 - DEBUG - operation functools.partial(<built-in method fetchall of sqlite3.Cursor object at 0x00000163BA462AB0>) completed
+2022-01-09 16:09:28,979 - DEBUG - executing functools.partial(<built-in method close of sqlite3.Cursor object at 0x00000163BA462AB0>)
+2022-01-09 16:09:28,979 - DEBUG - operation functools.partial(<built-in method close of sqlite3.Cursor object at 0x00000163BA462AB0>) completed
+2022-01-09 16:09:28,980 - DEBUG - executing functools.partial(<built-in method close of sqlite3.Connection object at 0x00000163BA3907B0>)
+2022-01-09 16:09:28,980 - DEBUG - operation functools.partial(<built-in method close of sqlite3.Connection object at 0x00000163BA3907B0>) completed
+2022-01-09 16:09:28,997 - ERROR - Exception in ASGI application
+Traceback (most recent call last):
+  File "d:\github.com\prohojemba\venv\lib\site-packages\uvicorn\protocols\http\h11_impl.py", line 373, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "d:\github.com\prohojemba\venv\lib\site-packages\uvicorn\middleware\proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "d:\github.com\prohojemba\venv\lib\site-packages\fastapi\applications.py", line 208, in __call__
+    await super().__call__(scope, receive, send)
+  File "d:\github.com\prohojemba\venv\lib\site-packages\starlette\applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "d:\github.com\prohojemba\venv\lib\site-packages\starlette\middleware\errors.py", line 181, in __call__
+    raise exc
+  File "d:\github.com\prohojemba\venv\lib\site-packages\starlette\middleware\errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "d:\github.com\prohojemba\venv\lib\site-packages\starlette\exceptions.py", line 82, in __call__
+    raise exc
+  File "d:\github.com\prohojemba\venv\lib\site-packages\starlette\exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "d:\github.com\prohojemba\venv\lib\site-packages\starlette\routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "d:\github.com\prohojemba\venv\lib\site-packages\starlette\routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "d:\github.com\prohojemba\venv\lib\site-packages\starlette\routing.py", line 61, in app
+    response = await func(request)
+  File "d:\github.com\prohojemba\venv\lib\site-packages\fastapi\routing.py", line 226, in app
+    raw_response = await run_endpoint_function(
+  File "d:\github.com\prohojemba\venv\lib\site-packages\fastapi\routing.py", line 159, in run_endpoint_function
+    return await dependant.call(**values)
+  File "D:\github.com\prohojemba\.\back\routes\walks.py", line 53, in get_title_walks
+    return await walks.get_by_title_id(title_id)
+  File "D:\github.com\prohojemba\.\back\crud\walks.py", line 26, in get_by_title_id
+    return [WalkWithUserInfo.parse_obj(d) for d in data]
+  File "D:\github.com\prohojemba\.\back\crud\walks.py", line 26, in <listcomp>
+    return [WalkWithUserInfo.parse_obj(d) for d in data]
+  File "pydantic\main.py", line 578, in pydantic.main.BaseModel.parse_obj
+  File "pydantic\main.py", line 406, in pydantic.main.BaseModel.__init__
+pydantic.error_wrappers.ValidationError: 1 validation error for WalkWithUserInfo
+user
+  field required (type=value_error.missing)
+2022-01-09 16:09:37,608 - INFO - Shutting down
+2022-01-09 16:09:37,708 - INFO - Waiting for application shutdown.
+2022-01-09 16:09:37,708 - INFO - Disconnected from database sqlite:///debug.db
+2022-01-09 16:09:37,708 - INFO - Application shutdown complete.
+2022-01-09 16:09:37,709 - INFO - Finished server process [5764]
+2022-01-09 16:10:55,160 - INFO - Started server process [7904]
+2022-01-09 16:10:55,160 - INFO - Waiting for application startup.
+2022-01-09 16:10:55,161 - INFO - Connected to database sqlite:///debug.db
+2022-01-09 16:10:55,161 - INFO - Application startup complete.
+2022-01-09 16:10:55,162 - INFO - Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+2022-01-09 16:10:59,579 - DEBUG - executing <function connect.<locals>.connector at 0x000002643129E790>
+2022-01-09 16:10:59,579 - DEBUG - operation <function connect.<locals>.connector at 0x000002643129E790> completed
+2022-01-09 16:10:59,580 - DEBUG - Query: SELECT walks.id, walks.user_id, walks.title_id, walks.status, walks.comment, walks.rate, walks.created_at FROM walks JOIN users ON users.id = walks.user_id WHERE walks.title_id = ? Args: (1,)
+2022-01-09 16:10:59,580 - DEBUG - executing functools.partial(<built-in method execute of sqlite3.Connection object at 0x00000264312406C0>, 'SELECT walks.id, walks.user_id, walks.title_id, walks.status, walks.comment, walks.rate, walks.created_at \nFROM walks JOIN users ON users.id = walks.user_id \nWHERE walks.title_id = ?', [1])
+2022-01-09 16:10:59,581 - DEBUG - operation functools.partial(<built-in method execute of sqlite3.Connection object at 0x00000264312406C0>, 'SELECT walks.id, walks.user_id, walks.title_id, walks.status, walks.comment, walks.rate, walks.created_at \nFROM walks JOIN users ON users.id = walks.user_id \nWHERE walks.title_id = ?', [1]) completed
+2022-01-09 16:10:59,581 - DEBUG - executing functools.partial(<built-in method fetchall of sqlite3.Cursor object at 0x00000264310E47A0>)
+2022-01-09 16:10:59,581 - DEBUG - operation functools.partial(<built-in method fetchall of sqlite3.Cursor object at 0x00000264310E47A0>) completed
+2022-01-09 16:10:59,582 - DEBUG - executing functools.partial(<built-in method close of sqlite3.Cursor object at 0x00000264310E47A0>)
+2022-01-09 16:10:59,582 - DEBUG - operation functools.partial(<built-in method close of sqlite3.Cursor object at 0x00000264310E47A0>) completed
+2022-01-09 16:10:59,582 - DEBUG - executing functools.partial(<built-in method close of sqlite3.Connection object at 0x00000264312406C0>)
+2022-01-09 16:10:59,582 - DEBUG - operation functools.partial(<built-in method close of sqlite3.Connection object at 0x00000264312406C0>) completed
+2022-01-09 16:10:59,584 - ERROR - Exception in ASGI application
+Traceback (most recent call last):
+  File "d:\github.com\prohojemba\venv\lib\site-packages\uvicorn\protocols\http\h11_impl.py", line 373, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "d:\github.com\prohojemba\venv\lib\site-packages\uvicorn\middleware\proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "d:\github.com\prohojemba\venv\lib\site-packages\fastapi\applications.py", line 208, in __call__
+    await super().__call__(scope, receive, send)
+  File "d:\github.com\prohojemba\venv\lib\site-packages\starlette\applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "d:\github.com\prohojemba\venv\lib\site-packages\starlette\middleware\errors.py", line 181, in __call__
+    raise exc
+  File "d:\github.com\prohojemba\venv\lib\site-packages\starlette\middleware\errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "d:\github.com\prohojemba\venv\lib\site-packages\starlette\exceptions.py", line 82, in __call__
+    raise exc
+  File "d:\github.com\prohojemba\venv\lib\site-packages\starlette\exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "d:\github.com\prohojemba\venv\lib\site-packages\starlette\routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "d:\github.com\prohojemba\venv\lib\site-packages\starlette\routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "d:\github.com\prohojemba\venv\lib\site-packages\starlette\routing.py", line 61, in app
+    response = await func(request)
+  File "d:\github.com\prohojemba\venv\lib\site-packages\fastapi\routing.py", line 226, in app
+    raw_response = await run_endpoint_function(
+  File "d:\github.com\prohojemba\venv\lib\site-packages\fastapi\routing.py", line 159, in run_endpoint_function
+    return await dependant.call(**values)
+  File "D:\github.com\prohojemba\.\back\routes\walks.py", line 53, in get_title_walks
+    return await walks.get_by_title_id(title_id)
+  File "D:\github.com\prohojemba\.\back\crud\walks.py", line 27, in get_by_title_id
+    return [WalkWithUserInfo.parse_obj(d) for d in data]
+  File "D:\github.com\prohojemba\.\back\crud\walks.py", line 27, in <listcomp>
+    return [WalkWithUserInfo.parse_obj(d) for d in data]
+  File "pydantic\main.py", line 578, in pydantic.main.BaseModel.parse_obj
+  File "pydantic\main.py", line 406, in pydantic.main.BaseModel.__init__
+pydantic.error_wrappers.ValidationError: 1 validation error for WalkWithUserInfo
+user
+  field required (type=value_error.missing)
+2022-01-09 16:14:29,628 - INFO - Shutting down
+2022-01-09 16:14:29,730 - INFO - Waiting for application shutdown.
+2022-01-09 16:14:29,731 - INFO - Disconnected from database sqlite:///debug.db
+2022-01-09 16:14:29,732 - INFO - Application shutdown complete.
+2022-01-09 16:14:29,733 - INFO - Finished server process [7904]
+2022-01-09 16:19:29,580 - INFO - Started server process [5920]
+2022-01-09 16:19:29,580 - INFO - Waiting for application startup.
+2022-01-09 16:19:29,580 - INFO - Connected to database sqlite:///debug.db
+2022-01-09 16:19:29,580 - INFO - Application startup complete.
+2022-01-09 16:19:29,581 - INFO - Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+2022-01-09 16:19:37,101 - DEBUG - executing <function connect.<locals>.connector at 0x000001C88DC8E820>
+2022-01-09 16:19:37,102 - DEBUG - operation <function connect.<locals>.connector at 0x000001C88DC8E820> completed
+2022-01-09 16:19:37,103 - DEBUG - Query: SELECT walks.id, walks.user_id, walks.title_id, walks.status, walks.comment, walks.rate, walks.created_at, users.id AS id_1, users.username, users.email, users.avatar, users.password, users.is_validated FROM walks JOIN users ON users.id = walks.user_id WHERE walks.title_id = ? Args: (1,)
+2022-01-09 16:19:37,103 - DEBUG - executing functools.partial(<built-in method execute of sqlite3.Connection object at 0x000001C88DC306C0>, 'SELECT walks.id, walks.user_id, walks.title_id, walks.status, walks.comment, walks.rate, walks.created_at, users.id AS id_1, users.username, users.email, users.avatar, users.password, users.is_validated \nFROM walks JOIN users ON users.id = walks.user_id \nWHERE walks.title_id = ?', [1])
+2022-01-09 16:19:37,104 - DEBUG - operation functools.partial(<built-in method execute of sqlite3.Connection object at 0x000001C88DC306C0>, 'SELECT walks.id, walks.user_id, walks.title_id, walks.status, walks.comment, walks.rate, walks.created_at, users.id AS id_1, users.username, users.email, users.avatar, users.password, users.is_validated \nFROM walks JOIN users ON users.id = walks.user_id \nWHERE walks.title_id = ?', [1]) completed
+2022-01-09 16:19:37,104 - DEBUG - executing functools.partial(<built-in method fetchall of sqlite3.Cursor object at 0x000001C88DCB3AB0>)
+2022-01-09 16:19:37,105 - DEBUG - operation functools.partial(<built-in method fetchall of sqlite3.Cursor object at 0x000001C88DCB3AB0>) completed
+2022-01-09 16:19:37,105 - DEBUG - executing functools.partial(<built-in method close of sqlite3.Cursor object at 0x000001C88DCB3AB0>)
+2022-01-09 16:19:37,105 - DEBUG - operation functools.partial(<built-in method close of sqlite3.Cursor object at 0x000001C88DCB3AB0>) completed
+2022-01-09 16:19:37,105 - DEBUG - executing functools.partial(<built-in method close of sqlite3.Connection object at 0x000001C88DC306C0>)
+2022-01-09 16:19:37,105 - DEBUG - operation functools.partial(<built-in method close of sqlite3.Connection object at 0x000001C88DC306C0>) completed
+2022-01-09 16:19:37,107 - ERROR - Exception in ASGI application
+Traceback (most recent call last):
+  File "d:\github.com\prohojemba\venv\lib\site-packages\uvicorn\protocols\http\h11_impl.py", line 373, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "d:\github.com\prohojemba\venv\lib\site-packages\uvicorn\middleware\proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "d:\github.com\prohojemba\venv\lib\site-packages\fastapi\applications.py", line 208, in __call__
+    await super().__call__(scope, receive, send)
+  File "d:\github.com\prohojemba\venv\lib\site-packages\starlette\applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "d:\github.com\prohojemba\venv\lib\site-packages\starlette\middleware\errors.py", line 181, in __call__
+    raise exc
+  File "d:\github.com\prohojemba\venv\lib\site-packages\starlette\middleware\errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "d:\github.com\prohojemba\venv\lib\site-packages\starlette\exceptions.py", line 82, in __call__
+    raise exc
+  File "d:\github.com\prohojemba\venv\lib\site-packages\starlette\exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "d:\github.com\prohojemba\venv\lib\site-packages\starlette\routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "d:\github.com\prohojemba\venv\lib\site-packages\starlette\routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "d:\github.com\prohojemba\venv\lib\site-packages\starlette\routing.py", line 61, in app
+    response = await func(request)
+  File "d:\github.com\prohojemba\venv\lib\site-packages\fastapi\routing.py", line 226, in app
+    raw_response = await run_endpoint_function(
+  File "d:\github.com\prohojemba\venv\lib\site-packages\fastapi\routing.py", line 159, in run_endpoint_function
+    return await dependant.call(**values)
+  File "D:\github.com\prohojemba\.\back\routes\walks.py", line 53, in get_title_walks
+    return await walks.get_by_title_id(title_id)
+  File "D:\github.com\prohojemba\.\back\crud\walks.py", line 28, in get_by_title_id
+    return [WalkWithUserInfo.parse_obj(d) for d in data]
+  File "D:\github.com\prohojemba\.\back\crud\walks.py", line 28, in <listcomp>
+    return [WalkWithUserInfo.parse_obj(d) for d in data]
+  File "pydantic\main.py", line 578, in pydantic.main.BaseModel.parse_obj
+  File "pydantic\main.py", line 406, in pydantic.main.BaseModel.__init__
+pydantic.error_wrappers.ValidationError: 1 validation error for WalkWithUserInfo
+user
+  field required (type=value_error.missing)
+2022-01-09 16:23:08,713 - INFO - Shutting down
+2022-01-09 16:23:08,816 - INFO - Waiting for application shutdown.
+2022-01-09 16:23:08,817 - INFO - Disconnected from database sqlite:///debug.db
+2022-01-09 16:23:08,817 - INFO - Application shutdown complete.
+2022-01-09 16:23:08,818 - INFO - Finished server process [5920]
+2022-01-09 16:23:10,189 - INFO - Started server process [8848]
+2022-01-09 16:23:10,189 - INFO - Waiting for application startup.
+2022-01-09 16:23:10,190 - INFO - Connected to database sqlite:///debug.db
+2022-01-09 16:23:10,190 - INFO - Application startup complete.
+2022-01-09 16:23:10,190 - INFO - Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+2022-01-09 16:23:16,484 - DEBUG - executing <function connect.<locals>.connector at 0x000001747ED30790>
+2022-01-09 16:23:16,485 - DEBUG - operation <function connect.<locals>.connector at 0x000001747ED30790> completed
+2022-01-09 16:23:16,486 - DEBUG - Query: SELECT walks.id, walks.user_id, walks.title_id, walks.status, walks.comment, walks.rate, walks.created_at, users.id AS id_1, users.username, users.avatar FROM walks JOIN users ON users.id = walks.user_id WHERE walks.title_id = ? Args: (1,)
+2022-01-09 16:23:16,486 - DEBUG - executing functools.partial(<built-in method execute of sqlite3.Connection object at 0x000001747ECD06C0>, 'SELECT walks.id, walks.user_id, walks.title_id, walks.status, walks.comment, walks.rate, walks.created_at, users.id AS id_1, users.username, users.avatar \nFROM walks JOIN users ON users.id = walks.user_id \nWHERE walks.title_id = ?', [1])
+2022-01-09 16:23:16,487 - DEBUG - operation functools.partial(<built-in method execute of sqlite3.Connection object at 0x000001747ECD06C0>, 'SELECT walks.id, walks.user_id, walks.title_id, walks.status, walks.comment, walks.rate, walks.created_at, users.id AS id_1, users.username, users.avatar \nFROM walks JOIN users ON users.id = walks.user_id \nWHERE walks.title_id = ?', [1]) completed
+2022-01-09 16:23:16,487 - DEBUG - executing functools.partial(<built-in method fetchall of sqlite3.Cursor object at 0x000001747ED48A40>)
+2022-01-09 16:23:16,487 - DEBUG - operation functools.partial(<built-in method fetchall of sqlite3.Cursor object at 0x000001747ED48A40>) completed
+2022-01-09 16:23:16,487 - DEBUG - executing functools.partial(<built-in method close of sqlite3.Cursor object at 0x000001747ED48A40>)
+2022-01-09 16:23:16,487 - DEBUG - operation functools.partial(<built-in method close of sqlite3.Cursor object at 0x000001747ED48A40>) completed
+2022-01-09 16:23:16,488 - DEBUG - executing functools.partial(<built-in method close of sqlite3.Connection object at 0x000001747ECD06C0>)
+2022-01-09 16:23:16,488 - DEBUG - operation functools.partial(<built-in method close of sqlite3.Connection object at 0x000001747ECD06C0>) completed
+2022-01-09 16:23:16,489 - ERROR - Exception in ASGI application
+Traceback (most recent call last):
+  File "d:\github.com\prohojemba\venv\lib\site-packages\uvicorn\protocols\http\h11_impl.py", line 373, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "d:\github.com\prohojemba\venv\lib\site-packages\uvicorn\middleware\proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "d:\github.com\prohojemba\venv\lib\site-packages\fastapi\applications.py", line 208, in __call__
+    await super().__call__(scope, receive, send)
+  File "d:\github.com\prohojemba\venv\lib\site-packages\starlette\applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "d:\github.com\prohojemba\venv\lib\site-packages\starlette\middleware\errors.py", line 181, in __call__
+    raise exc
+  File "d:\github.com\prohojemba\venv\lib\site-packages\starlette\middleware\errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "d:\github.com\prohojemba\venv\lib\site-packages\starlette\exceptions.py", line 82, in __call__
+    raise exc
+  File "d:\github.com\prohojemba\venv\lib\site-packages\starlette\exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "d:\github.com\prohojemba\venv\lib\site-packages\starlette\routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "d:\github.com\prohojemba\venv\lib\site-packages\starlette\routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "d:\github.com\prohojemba\venv\lib\site-packages\starlette\routing.py", line 61, in app
+    response = await func(request)
+  File "d:\github.com\prohojemba\venv\lib\site-packages\fastapi\routing.py", line 226, in app
+    raw_response = await run_endpoint_function(
+  File "d:\github.com\prohojemba\venv\lib\site-packages\fastapi\routing.py", line 159, in run_endpoint_function
+    return await dependant.call(**values)
+  File "D:\github.com\prohojemba\.\back\routes\walks.py", line 53, in get_title_walks
+    return await walks.get_by_title_id(title_id)
+  File "D:\github.com\prohojemba\.\back\crud\walks.py", line 27, in get_by_title_id
+    print(data.__dict__)
+AttributeError: 'list' object has no attribute '__dict__'
+2022-01-09 16:25:16,246 - INFO - Shutting down
+2022-01-09 16:25:16,347 - INFO - Waiting for application shutdown.
+2022-01-09 16:25:16,348 - INFO - Disconnected from database sqlite:///debug.db
+2022-01-09 16:25:16,348 - INFO - Application shutdown complete.
+2022-01-09 16:25:16,349 - INFO - Finished server process [8848]
+2022-01-09 16:25:17,855 - INFO - Started server process [6372]
+2022-01-09 16:25:17,856 - INFO - Waiting for application startup.
+2022-01-09 16:25:17,856 - INFO - Connected to database sqlite:///debug.db
+2022-01-09 16:25:17,857 - INFO - Application startup complete.
+2022-01-09 16:25:17,857 - INFO - Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+2022-01-09 16:25:23,901 - INFO - Shutting down
+2022-01-09 16:25:24,002 - INFO - Waiting for application shutdown.
+2022-01-09 16:25:24,002 - INFO - Disconnected from database sqlite:///debug.db
+2022-01-09 16:25:24,002 - INFO - Application shutdown complete.
+2022-01-09 16:25:24,003 - INFO - Finished server process [6372]
+2022-01-09 16:25:25,593 - INFO - Started server process [5480]
+2022-01-09 16:25:25,593 - INFO - Waiting for application startup.
+2022-01-09 16:25:25,594 - INFO - Connected to database sqlite:///debug.db
+2022-01-09 16:25:25,594 - INFO - Application startup complete.
+2022-01-09 16:25:25,595 - INFO - Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+2022-01-09 16:25:27,700 - DEBUG - executing <function connect.<locals>.connector at 0x000001B757310700>
+2022-01-09 16:25:27,701 - DEBUG - operation <function connect.<locals>.connector at 0x000001B757310700> completed
+2022-01-09 16:25:27,702 - DEBUG - Query: SELECT walks.id, walks.user_id, walks.title_id, walks.status, walks.comment, walks.rate, walks.created_at, users.id AS id_1, users.username, users.avatar FROM walks JOIN users ON users.id = walks.user_id WHERE walks.title_id = ? Args: (1,)
+2022-01-09 16:25:27,702 - DEBUG - executing functools.partial(<built-in method execute of sqlite3.Connection object at 0x000001B7572B06C0>, 'SELECT walks.id, walks.user_id, walks.title_id, walks.status, walks.comment, walks.rate, walks.created_at, users.id AS id_1, users.username, users.avatar \nFROM walks JOIN users ON users.id = walks.user_id \nWHERE walks.title_id = ?', [1])
+2022-01-09 16:25:27,703 - DEBUG - operation functools.partial(<built-in method execute of sqlite3.Connection object at 0x000001B7572B06C0>, 'SELECT walks.id, walks.user_id, walks.title_id, walks.status, walks.comment, walks.rate, walks.created_at, users.id AS id_1, users.username, users.avatar \nFROM walks JOIN users ON users.id = walks.user_id \nWHERE walks.title_id = ?', [1]) completed
+2022-01-09 16:25:27,703 - DEBUG - executing functools.partial(<built-in method fetchall of sqlite3.Cursor object at 0x000001B7571546C0>)
+2022-01-09 16:25:27,703 - DEBUG - operation functools.partial(<built-in method fetchall of sqlite3.Cursor object at 0x000001B7571546C0>) completed
+2022-01-09 16:25:27,704 - DEBUG - executing functools.partial(<built-in method close of sqlite3.Cursor object at 0x000001B7571546C0>)
+2022-01-09 16:25:27,704 - DEBUG - operation functools.partial(<built-in method close of sqlite3.Cursor object at 0x000001B7571546C0>) completed
+2022-01-09 16:25:27,704 - DEBUG - executing functools.partial(<built-in method close of sqlite3.Connection object at 0x000001B7572B06C0>)
+2022-01-09 16:25:27,704 - DEBUG - operation functools.partial(<built-in method close of sqlite3.Connection object at 0x000001B7572B06C0>) completed
+2022-01-09 16:25:27,706 - ERROR - Exception in ASGI application
+Traceback (most recent call last):
+  File "pydantic\main.py", line 574, in pydantic.main.BaseModel.parse_obj
+ValueError: dictionary update sequence element #0 has length 10; 2 is required
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "d:\github.com\prohojemba\venv\lib\site-packages\uvicorn\protocols\http\h11_impl.py", line 373, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "d:\github.com\prohojemba\venv\lib\site-packages\uvicorn\middleware\proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "d:\github.com\prohojemba\venv\lib\site-packages\fastapi\applications.py", line 208, in __call__
+    await super().__call__(scope, receive, send)
+  File "d:\github.com\prohojemba\venv\lib\site-packages\starlette\applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "d:\github.com\prohojemba\venv\lib\site-packages\starlette\middleware\errors.py", line 181, in __call__
+    raise exc
+  File "d:\github.com\prohojemba\venv\lib\site-packages\starlette\middleware\errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "d:\github.com\prohojemba\venv\lib\site-packages\starlette\exceptions.py", line 82, in __call__
+    raise exc
+  File "d:\github.com\prohojemba\venv\lib\site-packages\starlette\exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "d:\github.com\prohojemba\venv\lib\site-packages\starlette\routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "d:\github.com\prohojemba\venv\lib\site-packages\starlette\routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "d:\github.com\prohojemba\venv\lib\site-packages\starlette\routing.py", line 61, in app
+    response = await func(request)
+  File "d:\github.com\prohojemba\venv\lib\site-packages\fastapi\routing.py", line 226, in app
+    raw_response = await run_endpoint_function(
+  File "d:\github.com\prohojemba\venv\lib\site-packages\fastapi\routing.py", line 159, in run_endpoint_function
+    return await dependant.call(**values)
+  File "D:\github.com\prohojemba\.\back\routes\walks.py", line 53, in get_title_walks
+    return await walks.get_by_title_id(title_id)
+  File "D:\github.com\prohojemba\.\back\crud\walks.py", line 28, in get_by_title_id
+    user = UserPreview.parse_obj(data)
+  File "pydantic\main.py", line 577, in pydantic.main.BaseModel.parse_obj
+pydantic.error_wrappers.ValidationError: 1 validation error for UserPreview
+__root__
+  UserPreview expected dict not list (type=type_error)
+2022-01-09 16:26:06,168 - INFO - Shutting down
+2022-01-09 16:26:06,269 - INFO - Waiting for application shutdown.
+2022-01-09 16:26:06,270 - INFO - Disconnected from database sqlite:///debug.db
+2022-01-09 16:26:06,271 - INFO - Application shutdown complete.
+2022-01-09 16:26:06,272 - INFO - Finished server process [5480]
+2022-01-09 16:26:07,898 - INFO - Started server process [1484]
+2022-01-09 16:26:07,898 - INFO - Waiting for application startup.
+2022-01-09 16:26:07,899 - INFO - Connected to database sqlite:///debug.db
+2022-01-09 16:26:07,899 - INFO - Application startup complete.
+2022-01-09 16:26:07,900 - INFO - Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+2022-01-09 16:26:08,797 - DEBUG - executing <function connect.<locals>.connector at 0x00000286A5B80700>
+2022-01-09 16:26:08,797 - DEBUG - operation <function connect.<locals>.connector at 0x00000286A5B80700> completed
+2022-01-09 16:26:08,799 - DEBUG - Query: SELECT walks.id, walks.user_id, walks.title_id, walks.status, walks.comment, walks.rate, walks.created_at, users.id AS id_1, users.username, users.avatar FROM walks JOIN users ON users.id = walks.user_id WHERE walks.title_id = ? Args: (1,)
+2022-01-09 16:26:08,799 - DEBUG - executing functools.partial(<built-in method execute of sqlite3.Connection object at 0x00000286A5B206C0>, 'SELECT walks.id, walks.user_id, walks.title_id, walks.status, walks.comment, walks.rate, walks.created_at, users.id AS id_1, users.username, users.avatar \nFROM walks JOIN users ON users.id = walks.user_id \nWHERE walks.title_id = ?', [1])
+2022-01-09 16:26:08,799 - DEBUG - operation functools.partial(<built-in method execute of sqlite3.Connection object at 0x00000286A5B206C0>, 'SELECT walks.id, walks.user_id, walks.title_id, walks.status, walks.comment, walks.rate, walks.created_at, users.id AS id_1, users.username, users.avatar \nFROM walks JOIN users ON users.id = walks.user_id \nWHERE walks.title_id = ?', [1]) completed
+2022-01-09 16:26:08,800 - DEBUG - executing functools.partial(<built-in method fetchall of sqlite3.Cursor object at 0x00000286A59C46C0>)
+2022-01-09 16:26:08,800 - DEBUG - operation functools.partial(<built-in method fetchall of sqlite3.Cursor object at 0x00000286A59C46C0>) completed
+2022-01-09 16:26:08,800 - DEBUG - executing functools.partial(<built-in method close of sqlite3.Cursor object at 0x00000286A59C46C0>)
+2022-01-09 16:26:08,801 - DEBUG - operation functools.partial(<built-in method close of sqlite3.Cursor object at 0x00000286A59C46C0>) completed
+2022-01-09 16:26:08,801 - DEBUG - executing functools.partial(<built-in method close of sqlite3.Connection object at 0x00000286A5B206C0>)
+2022-01-09 16:26:08,801 - DEBUG - operation functools.partial(<built-in method close of sqlite3.Connection object at 0x00000286A5B206C0>) completed
+2022-01-09 16:26:08,819 - ERROR - Exception in ASGI application
+Traceback (most recent call last):
+  File "d:\github.com\prohojemba\venv\lib\site-packages\uvicorn\protocols\http\h11_impl.py", line 373, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "d:\github.com\prohojemba\venv\lib\site-packages\uvicorn\middleware\proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "d:\github.com\prohojemba\venv\lib\site-packages\fastapi\applications.py", line 208, in __call__
+    await super().__call__(scope, receive, send)
+  File "d:\github.com\prohojemba\venv\lib\site-packages\starlette\applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "d:\github.com\prohojemba\venv\lib\site-packages\starlette\middleware\errors.py", line 181, in __call__
+    raise exc
+  File "d:\github.com\prohojemba\venv\lib\site-packages\starlette\middleware\errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "d:\github.com\prohojemba\venv\lib\site-packages\starlette\exceptions.py", line 82, in __call__
+    raise exc
+  File "d:\github.com\prohojemba\venv\lib\site-packages\starlette\exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "d:\github.com\prohojemba\venv\lib\site-packages\starlette\routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "d:\github.com\prohojemba\venv\lib\site-packages\starlette\routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "d:\github.com\prohojemba\venv\lib\site-packages\starlette\routing.py", line 61, in app
+    response = await func(request)
+  File "d:\github.com\prohojemba\venv\lib\site-packages\fastapi\routing.py", line 226, in app
+    raw_response = await run_endpoint_function(
+  File "d:\github.com\prohojemba\venv\lib\site-packages\fastapi\routing.py", line 159, in run_endpoint_function
+    return await dependant.call(**values)
+  File "D:\github.com\prohojemba\.\back\routes\walks.py", line 53, in get_title_walks
+    return await walks.get_by_title_id(title_id)
+  File "D:\github.com\prohojemba\.\back\crud\walks.py", line 30, in get_by_title_id
+    return [WalkWithUserInfo.parse_obj(d) for d in data]
+  File "D:\github.com\prohojemba\.\back\crud\walks.py", line 30, in <listcomp>
+    return [WalkWithUserInfo.parse_obj(d) for d in data]
+  File "pydantic\main.py", line 578, in pydantic.main.BaseModel.parse_obj
+  File "pydantic\main.py", line 406, in pydantic.main.BaseModel.__init__
+pydantic.error_wrappers.ValidationError: 1 validation error for WalkWithUserInfo
+user
+  field required (type=value_error.missing)
+2022-01-09 16:27:32,466 - INFO - Shutting down
+2022-01-09 16:27:32,567 - INFO - Waiting for application shutdown.
+2022-01-09 16:27:32,568 - INFO - Disconnected from database sqlite:///debug.db
+2022-01-09 16:27:32,568 - INFO - Application shutdown complete.
+2022-01-09 16:27:32,568 - INFO - Finished server process [1484]
+2022-01-09 16:27:34,029 - INFO - Started server process [3172]
+2022-01-09 16:27:34,030 - INFO - Waiting for application startup.
+2022-01-09 16:27:34,030 - INFO - Connected to database sqlite:///debug.db
+2022-01-09 16:27:34,030 - INFO - Application startup complete.
+2022-01-09 16:27:34,031 - INFO - Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+2022-01-09 16:27:36,513 - DEBUG - executing <function connect.<locals>.connector at 0x000001C044FE0700>
+2022-01-09 16:27:36,513 - DEBUG - operation <function connect.<locals>.connector at 0x000001C044FE0700> completed
+2022-01-09 16:27:36,514 - DEBUG - Query: SELECT walks.id, walks.user_id, walks.title_id, walks.status, walks.comment, walks.rate, walks.created_at, users.id AS id_1, users.username, users.avatar FROM walks JOIN users ON users.id = walks.user_id WHERE walks.title_id = ? Args: (1,)
+2022-01-09 16:27:36,514 - DEBUG - executing functools.partial(<built-in method execute of sqlite3.Connection object at 0x000001C044F806C0>, 'SELECT walks.id, walks.user_id, walks.title_id, walks.status, walks.comment, walks.rate, walks.created_at, users.id AS id_1, users.username, users.avatar \nFROM walks JOIN users ON users.id = walks.user_id \nWHERE walks.title_id = ?', [1])
+2022-01-09 16:27:36,515 - DEBUG - operation functools.partial(<built-in method execute of sqlite3.Connection object at 0x000001C044F806C0>, 'SELECT walks.id, walks.user_id, walks.title_id, walks.status, walks.comment, walks.rate, walks.created_at, users.id AS id_1, users.username, users.avatar \nFROM walks JOIN users ON users.id = walks.user_id \nWHERE walks.title_id = ?', [1]) completed
+2022-01-09 16:27:36,515 - DEBUG - executing functools.partial(<built-in method fetchall of sqlite3.Cursor object at 0x000001C044E256C0>)
+2022-01-09 16:27:36,515 - DEBUG - operation functools.partial(<built-in method fetchall of sqlite3.Cursor object at 0x000001C044E256C0>) completed
+2022-01-09 16:27:36,515 - DEBUG - executing functools.partial(<built-in method close of sqlite3.Cursor object at 0x000001C044E256C0>)
+2022-01-09 16:27:36,515 - DEBUG - operation functools.partial(<built-in method close of sqlite3.Cursor object at 0x000001C044E256C0>) completed
+2022-01-09 16:27:36,516 - DEBUG - executing functools.partial(<built-in method close of sqlite3.Connection object at 0x000001C044F806C0>)
+2022-01-09 16:27:36,516 - DEBUG - operation functools.partial(<built-in method close of sqlite3.Connection object at 0x000001C044F806C0>) completed
+2022-01-09 16:27:36,517 - ERROR - Exception in ASGI application
+Traceback (most recent call last):
+  File "d:\github.com\prohojemba\venv\lib\site-packages\uvicorn\protocols\http\h11_impl.py", line 373, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "d:\github.com\prohojemba\venv\lib\site-packages\uvicorn\middleware\proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "d:\github.com\prohojemba\venv\lib\site-packages\fastapi\applications.py", line 208, in __call__
+    await super().__call__(scope, receive, send)
+  File "d:\github.com\prohojemba\venv\lib\site-packages\starlette\applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "d:\github.com\prohojemba\venv\lib\site-packages\starlette\middleware\errors.py", line 181, in __call__
+    raise exc
+  File "d:\github.com\prohojemba\venv\lib\site-packages\starlette\middleware\errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "d:\github.com\prohojemba\venv\lib\site-packages\starlette\exceptions.py", line 82, in __call__
+    raise exc
+  File "d:\github.com\prohojemba\venv\lib\site-packages\starlette\exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "d:\github.com\prohojemba\venv\lib\site-packages\starlette\routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "d:\github.com\prohojemba\venv\lib\site-packages\starlette\routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "d:\github.com\prohojemba\venv\lib\site-packages\starlette\routing.py", line 61, in app
+    response = await func(request)
+  File "d:\github.com\prohojemba\venv\lib\site-packages\fastapi\routing.py", line 226, in app
+    raw_response = await run_endpoint_function(
+  File "d:\github.com\prohojemba\venv\lib\site-packages\fastapi\routing.py", line 159, in run_endpoint_function
+    return await dependant.call(**values)
+  File "D:\github.com\prohojemba\.\back\routes\walks.py", line 53, in get_title_walks
+    return await walks.get_by_title_id(title_id)
+  File "D:\github.com\prohojemba\.\back\crud\walks.py", line 31, in get_by_title_id
+    return [WalkWithUserInfo.parse_obj(d) for d in data]
+  File "D:\github.com\prohojemba\.\back\crud\walks.py", line 31, in <listcomp>
+    return [WalkWithUserInfo.parse_obj(d) for d in data]
+  File "pydantic\main.py", line 578, in pydantic.main.BaseModel.parse_obj
+  File "pydantic\main.py", line 406, in pydantic.main.BaseModel.__init__
+pydantic.error_wrappers.ValidationError: 1 validation error for WalkWithUserInfo
+user
+  field required (type=value_error.missing)
+2022-01-09 16:33:50,389 - INFO - Shutting down
+2022-01-09 16:33:50,490 - INFO - Waiting for application shutdown.
+2022-01-09 16:33:50,490 - INFO - Disconnected from database sqlite:///debug.db
+2022-01-09 16:33:50,490 - INFO - Application shutdown complete.
+2022-01-09 16:33:50,491 - INFO - Finished server process [3172]
+2022-01-09 16:33:52,297 - INFO - Started server process [1724]
+2022-01-09 16:33:52,298 - INFO - Waiting for application startup.
+2022-01-09 16:33:52,298 - INFO - Connected to database sqlite:///debug.db
+2022-01-09 16:33:52,298 - INFO - Application startup complete.
+2022-01-09 16:33:52,299 - INFO - Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+2022-01-09 16:33:55,987 - DEBUG - executing <function connect.<locals>.connector at 0x000001D1B6161700>
+2022-01-09 16:33:55,987 - DEBUG - operation <function connect.<locals>.connector at 0x000001D1B6161700> completed
+2022-01-09 16:33:55,989 - DEBUG - Query: SELECT walks.id, walks.user_id, walks.title_id, walks.status, walks.comment, walks.rate, walks.created_at, users.id AS id_1, users.username, users.avatar FROM walks JOIN users ON users.id = walks.user_id WHERE walks.title_id = ? Args: (1,)
+2022-01-09 16:33:55,989 - DEBUG - executing functools.partial(<built-in method execute of sqlite3.Connection object at 0x000001D1B61006C0>, 'SELECT walks.id, walks.user_id, walks.title_id, walks.status, walks.comment, walks.rate, walks.created_at, users.id AS id_1, users.username, users.avatar \nFROM walks JOIN users ON users.id = walks.user_id \nWHERE walks.title_id = ?', [1])
+2022-01-09 16:33:55,990 - DEBUG - operation functools.partial(<built-in method execute of sqlite3.Connection object at 0x000001D1B61006C0>, 'SELECT walks.id, walks.user_id, walks.title_id, walks.status, walks.comment, walks.rate, walks.created_at, users.id AS id_1, users.username, users.avatar \nFROM walks JOIN users ON users.id = walks.user_id \nWHERE walks.title_id = ?', [1]) completed
+2022-01-09 16:33:55,990 - DEBUG - executing functools.partial(<built-in method fetchall of sqlite3.Cursor object at 0x000001D1B5FA66C0>)
+2022-01-09 16:33:55,991 - DEBUG - operation functools.partial(<built-in method fetchall of sqlite3.Cursor object at 0x000001D1B5FA66C0>) completed
+2022-01-09 16:33:55,991 - DEBUG - executing functools.partial(<built-in method close of sqlite3.Cursor object at 0x000001D1B5FA66C0>)
+2022-01-09 16:33:55,991 - DEBUG - operation functools.partial(<built-in method close of sqlite3.Cursor object at 0x000001D1B5FA66C0>) completed
+2022-01-09 16:33:55,991 - DEBUG - executing functools.partial(<built-in method close of sqlite3.Connection object at 0x000001D1B61006C0>)
+2022-01-09 16:33:55,991 - DEBUG - operation functools.partial(<built-in method close of sqlite3.Connection object at 0x000001D1B61006C0>) completed
+2022-01-09 16:33:55,995 - ERROR - Exception in ASGI application
+Traceback (most recent call last):
+  File "d:\github.com\prohojemba\venv\lib\site-packages\uvicorn\protocols\http\h11_impl.py", line 373, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "d:\github.com\prohojemba\venv\lib\site-packages\uvicorn\middleware\proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "d:\github.com\prohojemba\venv\lib\site-packages\fastapi\applications.py", line 208, in __call__
+    await super().__call__(scope, receive, send)
+  File "d:\github.com\prohojemba\venv\lib\site-packages\starlette\applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "d:\github.com\prohojemba\venv\lib\site-packages\starlette\middleware\errors.py", line 181, in __call__
+    raise exc
+  File "d:\github.com\prohojemba\venv\lib\site-packages\starlette\middleware\errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "d:\github.com\prohojemba\venv\lib\site-packages\starlette\exceptions.py", line 82, in __call__
+    raise exc
+  File "d:\github.com\prohojemba\venv\lib\site-packages\starlette\exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "d:\github.com\prohojemba\venv\lib\site-packages\starlette\routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "d:\github.com\prohojemba\venv\lib\site-packages\starlette\routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "d:\github.com\prohojemba\venv\lib\site-packages\starlette\routing.py", line 61, in app
+    response = await func(request)
+  File "d:\github.com\prohojemba\venv\lib\site-packages\fastapi\routing.py", line 226, in app
+    raw_response = await run_endpoint_function(
+  File "d:\github.com\prohojemba\venv\lib\site-packages\fastapi\routing.py", line 159, in run_endpoint_function
+    return await dependant.call(**values)
+  File "D:\github.com\prohojemba\.\back\routes\walks.py", line 53, in get_title_walks
+    return await walks.get_by_title_id(title_id)
+  File "D:\github.com\prohojemba\.\back\crud\walks.py", line 31, in get_by_title_id
+    return [WalkWithUserInfo.from_orm(d) for d in data]
+  File "D:\github.com\prohojemba\.\back\crud\walks.py", line 31, in <listcomp>
+    return [WalkWithUserInfo.from_orm(d) for d in data]
+  File "pydantic\main.py", line 631, in pydantic.main.BaseModel.from_orm
+pydantic.error_wrappers.ValidationError: 1 validation error for WalkWithUserInfo
+user
+  field required (type=value_error.missing)
+2022-01-09 16:36:47,028 - INFO - Shutting down
+2022-01-09 16:36:47,129 - INFO - Waiting for application shutdown.
+2022-01-09 16:36:47,129 - INFO - Disconnected from database sqlite:///debug.db
+2022-01-09 16:36:47,129 - INFO - Application shutdown complete.
+2022-01-09 16:36:47,129 - INFO - Finished server process [1724]
+2022-01-09 16:50:24,629 - INFO - Started server process [1540]
+2022-01-09 16:50:24,630 - INFO - Waiting for application startup.
+2022-01-09 16:50:24,630 - INFO - Connected to database sqlite:///debug.db
+2022-01-09 16:50:24,630 - INFO - Application startup complete.
+2022-01-09 16:50:24,631 - INFO - Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+2022-01-09 16:51:04,119 - DEBUG - executing <function connect.<locals>.connector at 0x00000204BF3EC040>
+2022-01-09 16:51:04,120 - DEBUG - operation <function connect.<locals>.connector at 0x00000204BF3EC040> completed
+2022-01-09 16:51:04,121 - DEBUG - Query: SELECT walks.id, walks.user_id, walks.title_id, walks.status, walks.comment, walks.rate, walks.created_at, users.id AS id_1, users.username, users.avatar FROM walks JOIN users ON users.id = walks.user_id WHERE walks.title_id = ? Args: (1,)
+2022-01-09 16:51:04,121 - DEBUG - executing functools.partial(<built-in method execute of sqlite3.Connection object at 0x00000204BF3106C0>, 'SELECT walks.id, walks.user_id, walks.title_id, walks.status, walks.comment, walks.rate, walks.created_at, users.id AS id_1, users.username, users.avatar \nFROM walks JOIN users ON users.id = walks.user_id \nWHERE walks.title_id = ?', [1])
+2022-01-09 16:51:04,122 - DEBUG - operation functools.partial(<built-in method execute of sqlite3.Connection object at 0x00000204BF3106C0>, 'SELECT walks.id, walks.user_id, walks.title_id, walks.status, walks.comment, walks.rate, walks.created_at, users.id AS id_1, users.username, users.avatar \nFROM walks JOIN users ON users.id = walks.user_id \nWHERE walks.title_id = ?', [1]) completed
+2022-01-09 16:51:04,122 - DEBUG - executing functools.partial(<built-in method fetchall of sqlite3.Cursor object at 0x00000204BF394DC0>)
+2022-01-09 16:51:04,122 - DEBUG - operation functools.partial(<built-in method fetchall of sqlite3.Cursor object at 0x00000204BF394DC0>) completed
+2022-01-09 16:51:04,123 - DEBUG - executing functools.partial(<built-in method close of sqlite3.Cursor object at 0x00000204BF394DC0>)
+2022-01-09 16:51:04,123 - DEBUG - operation functools.partial(<built-in method close of sqlite3.Cursor object at 0x00000204BF394DC0>) completed
+2022-01-09 16:51:04,123 - DEBUG - executing functools.partial(<built-in method close of sqlite3.Connection object at 0x00000204BF3106C0>)
+2022-01-09 16:51:04,123 - DEBUG - operation functools.partial(<built-in method close of sqlite3.Connection object at 0x00000204BF3106C0>) completed
+2022-01-09 16:51:25,805 - DEBUG - executing <function connect.<locals>.connector at 0x00000204BF3EC0D0>
+2022-01-09 16:51:25,805 - DEBUG - operation <function connect.<locals>.connector at 0x00000204BF3EC0D0> completed
+2022-01-09 16:51:25,807 - DEBUG - Query: SELECT walks.id, walks.user_id, walks.title_id, walks.status, walks.comment, walks.rate, walks.created_at, titles.id AS id_1, titles.name, titles.cover, titles.type, titles.release_year, titles.positive_rates_count, titles.negative_rates_count FROM titles, walks JOIN users ON users.id = walks.user_id WHERE walks.user_id = ? Args: (1,)
+2022-01-09 16:51:25,807 - DEBUG - executing functools.partial(<built-in method execute of sqlite3.Connection object at 0x00000204BF310B70>, 'SELECT walks.id, walks.user_id, walks.title_id, walks.status, walks.comment, walks.rate, walks.created_at, titles.id AS id_1, titles.name, titles.cover, titles.type, titles.release_year, titles.positive_rates_count, titles.negative_rates_count \nFROM titles, walks JOIN users ON users.id = walks.user_id \nWHERE walks.user_id = ?', [1])
+2022-01-09 16:51:25,808 - DEBUG - operation functools.partial(<built-in method execute of sqlite3.Connection object at 0x00000204BF310B70>, 'SELECT walks.id, walks.user_id, walks.title_id, walks.status, walks.comment, walks.rate, walks.created_at, titles.id AS id_1, titles.name, titles.cover, titles.type, titles.release_year, titles.positive_rates_count, titles.negative_rates_count \nFROM titles, walks JOIN users ON users.id = walks.user_id \nWHERE walks.user_id = ?', [1]) completed
+2022-01-09 16:51:25,808 - DEBUG - executing functools.partial(<built-in method fetchall of sqlite3.Cursor object at 0x00000204BF394CE0>)
+2022-01-09 16:51:25,809 - DEBUG - operation functools.partial(<built-in method fetchall of sqlite3.Cursor object at 0x00000204BF394CE0>) completed
+2022-01-09 16:51:25,809 - DEBUG - executing functools.partial(<built-in method close of sqlite3.Cursor object at 0x00000204BF394CE0>)
+2022-01-09 16:51:25,809 - DEBUG - operation functools.partial(<built-in method close of sqlite3.Cursor object at 0x00000204BF394CE0>) completed
+2022-01-09 16:51:25,809 - DEBUG - executing functools.partial(<built-in method close of sqlite3.Connection object at 0x00000204BF310B70>)
+2022-01-09 16:51:25,809 - DEBUG - operation functools.partial(<built-in method close of sqlite3.Connection object at 0x00000204BF310B70>) completed
+2022-01-09 16:52:04,940 - INFO - Shutting down
+2022-01-09 16:52:05,040 - INFO - Waiting for application shutdown.
+2022-01-09 16:52:05,041 - INFO - Disconnected from database sqlite:///debug.db
+2022-01-09 16:52:05,041 - INFO - Application shutdown complete.
+2022-01-09 16:52:05,048 - INFO - Finished server process [1540]
