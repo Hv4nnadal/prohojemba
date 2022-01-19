@@ -34,6 +34,9 @@ class SignInModel(BaseModel):
 
 
 class LogInModel(BaseModel):
+    """
+        Форма аутентификации
+    """
     email: EmailStr
     password: str
     code: Optional[constr(regex=r"\d{6}")] # 6-значный код, отправляемый на почту пользователя, необходимо только если профиль не активирован
