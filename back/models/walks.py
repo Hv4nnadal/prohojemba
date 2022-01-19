@@ -1,4 +1,4 @@
-from typing import Optional
+from typing import List, Optional, Sequence
 from datetime import date
 from pydantic import BaseModel, ValidationError
 from fastapi import Form
@@ -10,6 +10,9 @@ from .titles import TitleForWalk
 
 
 class WalkForm(BaseModel):
+    """
+        Форма добавления или редактирования информации о проходжембе
+    """
     status: str
     comment: str
     rate: Optional[bool]
@@ -33,13 +36,10 @@ class WalkForm(BaseModel):
             )
 
 
-class WalkBase(BaseModel):
-    id: int
-    title_id: int
-    rate: Optional[bool] = None
-
-
 class WalkWithUserInfo(BaseModel):
+    """
+        Запись о прохождении с информацией о тайтле
+    """
     id: int
     user: Optional[UserForWalk]
     status: str
@@ -49,7 +49,19 @@ class WalkWithUserInfo(BaseModel):
 
 
 class WalkWithTitleInfo(BaseModel):
+    """
+        Запись о прохождении с информацией о тайтле
+    """
     id: int
     title: Optional[TitleForWalk]
     status: str
+    comment: str
     rate: Optional[bool]
+    created_at: date
+
+
+class WalksList(BaseModel):
+    """
+        Список проходжемб
+    """
+    items: List[Sequence[WalkWithTitleInfo, WalkWithUserInfo]]

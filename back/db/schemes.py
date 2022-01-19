@@ -36,7 +36,7 @@ walks = sqlalchemy.Table(
     sqlalchemy.Column("comment", sqlalchemy.String(1024), nullable=True),
     sqlalchemy.Column("rate", sqlalchemy.Boolean, nullable=True),
 
-    sqlalchemy.Column("created_at", sqlalchemy.Date)
+    sqlalchemy.Column("updated_at", sqlalchemy.Date)
 )
 
 
