@@ -1,10 +1,13 @@
-from typing import Optional
+from typing import List, Optional
 from fastapi import Form, status
 from fastapi.exceptions import HTTPException
 from pydantic import BaseModel, ValidationError, Field
 
 
 class TitleForm(BaseModel):
+    """
+    Форма добавления и редактирования информации о тайтле
+    """
     name: str
     cover: Optional[str]
     description: Optional[str]
@@ -33,6 +36,9 @@ class TitleForm(BaseModel):
 
 
 class TitlePreview(BaseModel):
+    """
+        Краткая информация о тайтле
+    """
     id: int
     name: str
     cover: Optional[str]
@@ -47,6 +53,9 @@ class TitleForWalk(TitlePreview):
 
 
 class TitleInfo(BaseModel):
+    """
+        Общая модель тайтла
+    """
     id: int
     name: str
     cover: Optional[str]
@@ -55,3 +64,10 @@ class TitleInfo(BaseModel):
     release_year: int
     positive_rates_count: int
     negative_rates_count: int
+
+
+class TitlesList(BaseModel):
+    """
+        Список тайтлов
+    """
+    items: List[TitlePreview]
