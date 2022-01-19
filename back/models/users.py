@@ -4,8 +4,25 @@ from pydantic import ValidationError, Field
 from fastapi import Form, status
 from fastapi.exceptions import HTTPException
 
+"""
+    Модель пользователя для показа в собственном профиле
+    Модель пользователя для показа другим пользователям
+    Модель для превью
+"""
+class UserAuth(BaseModel):
+    """
+        Основная информация о пользователе
+    """
+    id: int
+    email: str
+    password: str
+    is_validated: str
+
 
 class ChangeUserModel(BaseModel):
+    """
+        Форма изменения пользовательских данных
+    """
     username: str
     avatar: Optional[str]
 
@@ -23,15 +40,20 @@ class ChangeUserModel(BaseModel):
 
 
 class UserOutput(BaseModel):
+    """
+        Общая модель пользователя
+    """
     id: int
     username: str
     email: str
     avatar: Optional[str]
     is_validated: bool
-    password: str
 
 
 class UserPreview(BaseModel):
+    """
+        Краткая информация о пользователе
+    """
     id: int
     username: str
     avatar: Optional[str]

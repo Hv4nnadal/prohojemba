@@ -6,9 +6,12 @@ from fastapi.exceptions import HTTPException
 
 
 class SignInModel(BaseModel):
-    username: str
+    """
+        Форма регистрации нового пользователя
+    """
+    username: str 
     email: EmailStr
-    password: str
+    password: str 
     is_validated: bool = False
 
     @classmethod
@@ -33,7 +36,7 @@ class SignInModel(BaseModel):
 class LogInModel(BaseModel):
     email: EmailStr
     password: str
-    code: Optional[constr(regex=r"\d{6}")]
+    code: Optional[constr(regex=r"\d{6}")] # 6-значный код, отправляемый на почту пользователя, необходимо только если профиль не активирован
 
     @classmethod
     def as_form(cls,
@@ -55,6 +58,9 @@ class LogInModel(BaseModel):
 
 
 class ChangeEmailModel(BaseModel):
+    """
+
+    """
     email: EmailStr
     password: str
     code: Optional[constr(regex=r"\d{6}")]
@@ -100,6 +106,9 @@ class ChangePasswordModel(BaseModel):
 
 
 class TokensResponse(BaseModel):
+    """
+        Модель токенов авторизации
+    """
     access_token: str
     refresh_token: str
     token_type: str = "Bearer"
