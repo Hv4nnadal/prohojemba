@@ -1,73 +1,16 @@
-from typing import List, Optional
-from fastapi import Form, status
-from fastapi.exceptions import HTTPException
-from pydantic import BaseModel, ValidationError, Field
+from sqlalchemy import Column, Integer, String
+
+from back.common.db import Base
 
 
-class TitleForm(BaseModel):
-    """
-    Форма добавления и редактирования информации о тайтле
-    """
-    name: str
-    cover: Optional[str]
-    description: Optional[str]
-    type: str
-    release_year: int
+class Title(Base):
+    __tablename__ = "titles"
+    id = Column("id", Integer, autoincrement=True, primary_key=True)
+    name = Column("name", String(128), nullable=False)
+    cover = Column("cover", String(128))
+    description = Column("description", String(1024))
+    type = Column("type", String(32), nullable=False)
+    release_year = Column("release_year", Integer)
 
-    @classmethod
-    def as_form(cls,
-                name: str = Form(None),
-                description: str = Form(None),
-                type: str = Form(None),
-                release_year: int = Form(None)
-                ):
-        try:
-            return cls(
-                name=name,
-                description=description,
-                type=type,
-                release_year=release_year
-            )
-        except ValidationError as e:
-            raise HTTPException(
-                status_code=status.HTTP_422_UNPROCESSABLE_ENTITY,
-                detail=e.errors()
-            )
-
-
-class TitlePreview(BaseModel):
-    """
-        Краткая информация о тайтле
-    """
-    id: int
-    name: str
-    cover: Optional[str]
-    type: str
-    release_year: int
-    positive_rates_count: int
-    negative_rates_count: int
-
-
-class TitleForWalk(TitlePreview):
-    id: int = Field(..., alias="title_id")
-
-
-class TitleInfo(BaseModel):
-    """
-        Общая модель тайтла
-    """
-    id: int
-    name: str
-    cover: Optional[str]
-    description: Optional[str]
-    type: str
-    release_year: int
-    positive_rates_count: int
-    negative_rates_count: int
-
-
-class TitlesList(BaseModel):
-    """
-        Список тайтлов
-    """
-    items: List[TitlePreview]
+    positive_rates_count = Column("positive_rates_count", Integer, default=0)
+    negative_rates_count = Column("negative_rates_count", Integer, default=0)

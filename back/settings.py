@@ -1,13 +1,22 @@
 from os import environ
 
 # Базовая информация о приложении
+DEBUG = True
+if DEBUG:
+    from dotenv import load_dotenv
+    load_dotenv(".env")
+
 TITLE = "Prohojemba"
 VERSION = "0.0.1"
 
-SECRET_KEY = environ.get("SECRET_KEY", "debug-secret-key")
+LOGS_FILE_PATH = "server.logs"
 
-# Настройки подключения к базе денных
-DATABASE_URI = environ.get("DATABASE_URI", "sqlite:///debug.db")
+# Безопасность
+SECRET_KEY = environ.get("SECRET_KEY")
+
+# Настройки подключения к базе денных(По умолчанию тестовая БД)
+DATABASE_URI = environ.get("DATABASE_URI")
+print(DATABASE_URI)
 
 # Настройка подключения к почтовому сервису
 MAIL_CONFIG = {

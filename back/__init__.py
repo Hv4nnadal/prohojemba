@@ -1,29 +1,21 @@
 from fastapi import FastAPI
-import uvicorn
-import logging
 
-from . import settings
-from .db.base import database
-from .routes import routes
-
-logging.basicConfig(
-    filename="server.logs",
-    format="%(asctime)s - %(levelname)s - %(message)s",
-    level=logging.DEBUG
-)
+from back.core import config
+from back.api.v1.api import v1_router
 
 
 async def _on_startup():
-    await database.connect()
-
+    # await database.connect()
+    pass
 
 async def _on_shutdown():
-    await database.disconnect()
+    # await database.disconnect()
+    pass
 
 # Инициализация экземпляра приложения
 app = FastAPI(
-    title=settings.TITLE,
-    version=settings.VERSION,
+    title=config.TITLE,
+    version=config.VERSION,
     on_startup=[
         _on_startup
     ],
@@ -32,10 +24,7 @@ app = FastAPI(
     ]
 )
 
-# Подлключение обработчиков
-for path, router in routes.items():
-    app.include_router(router, prefix=path)
+app.include_router(v1_router, prefix="/api/v1")
 
-if __name__ == "__main__":
-    uvicorn.run(app)
+
 

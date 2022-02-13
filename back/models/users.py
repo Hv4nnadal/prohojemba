@@ -1,63 +1,18 @@
-from typing import Optional
-from pydantic import BaseModel
-from pydantic import ValidationError, Field
-from fastapi import Form, status
-from fastapi.exceptions import HTTPException
+from datetime import date
+from sqlalchemy import Column, Integer, String, Boolean, Date, DateTime
 
-"""
-    Модель пользователя для показа в собственном профиле
-    Модель пользователя для показа другим пользователям
-    Модель для превью
-"""
-class UserAuth(BaseModel):
-    """
-        Основная информация о пользователе
-    """
-    id: int
-    email: str
-    password: str
-    is_validated: str
+from back.common.db import Base
 
 
-class ChangeUserModel(BaseModel):
-    """
-        Форма изменения пользовательских данных
-    """
-    username: str
-    avatar: Optional[str]
+class User(Base):
+    __tablename__ = "users"
+    id = Column("id", Integer, autoincrement=True, primary_key=True)
+    username = Column("username", String(64), unique=True)
+    email = Column("email", String(64), unique=True, index=True)
+    avatar = Column("avatar", String(128), nullable=True)
+    password = Column("password", String(128))
 
-    @classmethod
-    def as_form(cls,
-                username: str = Form(None)
-                ):
-        try:
-            return cls(username=username)
-        except ValidationError as e:
-            raise HTTPException(
-                status_code=status.HTTP_422_UNPROCESSABLE_ENTITY,
-                detail=e.errors()
-            )
-
-
-class UserOutput(BaseModel):
-    """
-        Общая модель пользователя
-    """
-    id: int
-    username: str
-    email: str
-    avatar: Optional[str]
-    is_validated: bool
-
-
-class UserPreview(BaseModel):
-    """
-        Краткая информация о пользователе
-    """
-    id: int
-    username: str
-    avatar: Optional[str]
-
-
-class UserForWalk(UserPreview):
-    id: int = Field(..., alias="user_id")
+    is_validated = Column("is_validated", Boolean, default=False)
+    is_banned = Column("is_banned", Boolean, default=True)
+    created_at = Column("created_at", Date, default=date.today())
+    last_login = Column("last_login", DateTime)

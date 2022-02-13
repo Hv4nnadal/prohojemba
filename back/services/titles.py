@@ -1,5 +1,5 @@
 from back.services.base import BaseService
 
 
-class AuthService(BaseService):
+class TitlesService(BaseService):
     pass
