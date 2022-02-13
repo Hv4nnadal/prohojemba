@@ -12,7 +12,7 @@ from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
 from fastapi.exceptions import HTTPException
 from passlib.context import CryptContext
 
-from back.models.auth import TokensResponse
+# from back.models.auth import TokensResponse
 
 security = HTTPBearer(auto_error=False)
 

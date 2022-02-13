@@ -9,6 +9,14 @@ from back.models.users import UserOutput
 
 
 class UsersCRUD(BaseCRUD):
+    async def create_or_update() -> int:
+        """Обновление или создание новых данных
+
+        Returns:
+            int: Id пользователя в базе данных
+        """
+        pass
+
     async def create(self, user_data: dict) -> int:
         query = users.insert().values(**user_data)
         try:
