@@ -1,5 +1,4 @@
-from datetime import date
-from sqlalchemy import Column, Integer, ForeignKey, String, Boolean, Date, DateTime
+from sqlalchemy import Column, Integer, ForeignKey, String, UniqueConstraint
 
 from back.common.db import Base
 
@@ -10,5 +9,4 @@ class Walk(Base):
     user_id = Column("user_id", Integer, ForeignKey("users.id", ondelete="CASCADE"))
     title_id = Column("title_id", Integer, ForeignKey("titles.id", ondelete="CASCADE"))
     state = Column("state", String(32), nullable=False)
-    comment = Column("comment", String(1024))
-    rate = Column("rate", Boolean, nullable=True)
+    __table_args__ = (UniqueConstraint("user_id", "title_id", name="user_title_uc"),)

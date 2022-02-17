@@ -28,6 +28,13 @@ async def update_title(
     pass
 
 
+@router.delete("/{title_id}")
+async def delete_title_id(
+    title_id: int
+):
+    pass
+
+
 @router.get("/{title_id}/walks")
 async def title_walks(
     title_id: int

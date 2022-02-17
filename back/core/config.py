@@ -19,3 +19,5 @@ DATABASE_URI = os.environ.get("DATABASE_URI")
 # Discord OAuth2
 DISCORD_CLIENT_ID = os.environ.get("DISCORD_CLIENT_ID")
 DISCORD_SECRET_KEY = os.environ.get("DISCORD_SECRET_KEY")
+
+DISCORD_REDIRECT_URL = "http://localhost:8000/auth"

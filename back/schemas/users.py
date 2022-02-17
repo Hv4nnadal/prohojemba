@@ -1,9 +1,18 @@
-from pydantic import BaseModel, EmailStr, constr
+from pydantic import BaseModel, Field
 
 
-class UserCreate(BaseModel):
-    """JSON схема для создания нового пользователя
-    """
-    username: constr(min_length=4, max_length=64)
-    email: EmailStr
-    password: constr(min_length=8)
+class BaseUser(BaseModel):
+    username: str
+    avatar: str
+    discriminator: str
+
+
+class UserIn(BaseUser):
+    discord_id: str = Field(alias="id")
+
+
+class UserOutput(BaseUser):
+    id: int
+
+    class Config:
+        orm_mode = True

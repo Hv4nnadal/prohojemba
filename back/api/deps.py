@@ -7,12 +7,12 @@ from fastapi.exceptions import HTTPException
 from back.core import securiry
 from back.common.db import Session
 
-def get_db_connection() -> Generator:
+async def get_db_connection() -> Generator:
     db = Session()
     try:
         yield db
     finally:
-        db.close()
+        await db.close()
 
 
 def get_user_id_by_access_token(
