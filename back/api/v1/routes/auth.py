@@ -1,8 +1,11 @@
 from fastapi import APIRouter, Depends, status
+from fastapi.exceptions import HTTPException
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from back.api import deps
 from back.core import securiry
+from back.common.log import logger
+from back.exceptions.discord import DiscordGetAccessTokenException, DiscordGetUserProfileException
 from back.schemas.auth import OAuth2Code, TokenData
 from back.services.auth import AuthService
 
@@ -21,9 +24,18 @@ async def auth_from_discord(
     
     """
     auth_service = AuthService(db)
-    user_id = await auth_service.auth_discord(oauth_form)
-
+    try:
+        user_id = await auth_service.auth_discord(oauth_form)
+    except (DiscordGetAccessTokenException, DiscordGetUserProfileException) as e:
+        logger.error(f"{e}: {e.detail}")
+        raise HTTPException(
+            status_code=status.HTTP_401_UNAUTHORIZED,
+            detail=e.detail
+        )
+    # Генерация нового access токена
     access_token_data = securiry.generate_access_token(user_id)
+
+    # Генерация refresh токена
 
 
 @router.post("/token")

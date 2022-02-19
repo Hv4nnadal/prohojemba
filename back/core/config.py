@@ -4,7 +4,7 @@ load_dotenv(".env")
 
 DEBUG = True
 TITLE = "Prohojemba"
-VERSION = "0.0.5"
+VERSION = "0.0.6"
 LOGS_FILE_PATH = "server.logs"
 
 # Безопасность

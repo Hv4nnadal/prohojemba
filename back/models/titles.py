@@ -5,7 +5,7 @@ from back.common.db import Base
 
 class Title(Base):
     __tablename__ = "titles"
-    id = Column("id", Integer, autoincrement=True, primary_key=True)
+    id = Column("id", Integer, primary_key=True)
     name = Column("name", String(128), nullable=False)
     cover = Column("cover", String(128))
     description = Column("description", String(1024))
