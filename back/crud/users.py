@@ -1,3 +1,4 @@
+from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from back.models import User
@@ -9,15 +10,13 @@ class UsersCRUD:
     async def create_or_update(db: AsyncSession, user_in: UserIn) -> int:
         """Обновление или создание новых данных
         """
-        print(db)
-        user = User(
-            discord_id=user_in.discord_id, username=user_in.username,
-            avatar=f"https://cdn.discordapp.com/avatars/{user_in.discord_id}/{user_in.avatar}.webp",
-            discriminator=user_in.discriminator
-        )
-        print(user.avatar)
+        result = await db.execute(select(User).where(User.id==user_in.id))
+        user = result.scalars().first()
+        if not user:
+            user = User(**user_in.dict())
+
+        user.update(**user_in.dict())
         db.add(user)
-        await db.commit()
         return user.id
 
     @staticmethod

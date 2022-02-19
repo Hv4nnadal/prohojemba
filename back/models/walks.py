@@ -11,7 +11,7 @@ class Walk(Base):
     title_id = Column("title_id", Integer, ForeignKey("titles.id", ondelete="CASCADE"))
     state = Column("state", String(32), nullable=False)
 
-    __table_args__ = (UniqueConstraint("user_id", "title_id", name="user_title_uc"),)
+    __table_args__ = (UniqueConstraint("user_id", "title_id", name="walk_user_title_uc"),)
 
-    user = relationship("User")
-    title = relationship("Title")
+    user = relationship("User", uselist=False)
+    title = relationship("Title", uselist=False)

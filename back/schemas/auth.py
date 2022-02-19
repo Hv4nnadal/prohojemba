@@ -4,6 +4,8 @@ class OAuth2Code(BaseModel):
     code: str
 
 
-class TokenData(BaseModel):
+class TokensPair(BaseModel):
     access_token: str
+    expires_at: int
     token_type: str = "Bearer"
+    refresh_token: str

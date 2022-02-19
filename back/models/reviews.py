@@ -12,8 +12,8 @@ class Review(Base):
     text = Column("text", String(512))
     rating = Column("rating", Boolean, nullable=False)
 
-    __table_args__ = (UniqueConstraint("user_id", "title_id", name="user_title_uc"),)
+    __table_args__ = (UniqueConstraint("user_id", "title_id", name="review_user_title_uc"),)
     
-    user = relationship("User")
-    title = relationship("Title")
+    user = relationship("User", uselist=False)
+    title = relationship("Title", uselist=False)
 

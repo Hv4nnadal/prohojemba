@@ -2,17 +2,16 @@ from pydantic import BaseModel, Field
 
 
 class BaseUser(BaseModel):
+    id: int
     username: str
     avatar: str
     discriminator: str
 
 
 class UserIn(BaseUser):
-    discord_id: str = Field(alias="id")
+    pass
 
 
 class UserOutput(BaseUser):
-    id: int
-
     class Config:
         orm_mode = True

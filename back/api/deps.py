@@ -4,7 +4,7 @@ from fastapi import Cookie, Security, status
 from fastapi.security import HTTPAuthorizationCredentials
 from fastapi.exceptions import HTTPException
 
-from back.core import securiry
+from back.core import security
 from back.common.db import Session
 
 async def get_db_connection() -> Generator:
@@ -17,11 +17,11 @@ async def get_db_connection() -> Generator:
 
 
 def get_user_id_by_access_token(
-    credentials: HTTPAuthorizationCredentials = Security(securiry.bearer)
+    credentials: HTTPAuthorizationCredentials = Security(security.bearer)
 ) -> int:
     try:
         token = credentials.credentials
-        return securiry.validate_access_token(token)
+        return security.validate_access_token(token)
     except AttributeError:
         raise HTTPException(
             status_code=status.HTTP_401_UNAUTHORIZED,
@@ -39,6 +39,11 @@ async def get_user_id_by_refresh_token(
 ) -> int:
     if not refresh_token:
         # Выдаем ошибку о том что в печеньках не найдена кука
-        pass
+        raise HTTPException(
+            status_code=status.HTTP_401_UNAUTHORIZED,
+            detail="Refresh токен не обнаружен"
+        )
+
+    return await security.validate_refresh_token(refresh_token)
 
 

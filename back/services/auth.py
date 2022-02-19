@@ -5,7 +5,7 @@ from back.crud.users import UsersCRUD
 from back.schemas.auth import OAuth2Code
 
 class AuthService(BaseService):
-    async def auth_discord(self, oauth_form: OAuth2Code) -> str:
+    async def create_or_update_profile_from_discord(self, oauth_form: OAuth2Code) -> str:
         """Создание или обновление пользователя, возвращение user_id
 
         Args:
