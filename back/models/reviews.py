@@ -1,4 +1,5 @@
 from sqlalchemy import Column, Integer, ForeignKey, String, Boolean, UniqueConstraint
+from sqlalchemy.orm import relationship
 
 from back.common.db import Base
 
@@ -13,3 +14,6 @@ class Review(Base):
 
     __table_args__ = (UniqueConstraint("user_id", "title_id", name="user_title_uc"),)
     
+    user = relationship("User")
+    title = relationship("Title")
+

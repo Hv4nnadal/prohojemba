@@ -12,6 +12,7 @@ async def get_db_connection() -> Generator:
     try:
         yield db
     finally:
+        await db.commit()
         await db.close()
 
 
