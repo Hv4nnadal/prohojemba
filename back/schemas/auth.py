@@ -1,3 +1,4 @@
+from typing import Optional
 from pydantic import BaseModel
 
 class OAuth2Code(BaseModel):
@@ -5,7 +6,7 @@ class OAuth2Code(BaseModel):
 
 
 class RefreshToken(BaseModel):
-    refresh_token: str | None
+    refresh_token: Optional[str]
 
 
 class TokensPair(BaseModel):

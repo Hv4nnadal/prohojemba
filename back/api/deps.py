@@ -22,6 +22,7 @@ def get_user_id_by_access_token(
 ) -> int:
     try:
         token = credentials.credentials
+        print(token)
         return security.validate_access_token(token)
     except AttributeError:
         raise HTTPException(

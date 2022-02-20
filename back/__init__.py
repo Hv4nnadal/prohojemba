@@ -12,13 +12,20 @@ async def _on_startup():
     logging.basicConfig(**config.LOGGING_CONFIG)
 
 
+async def _on_shutdown():
+    from back.common.redis import redis_cache
+    from back.common.db import Session
+    Session.close_all()
+    await redis_cache.close()
+
+
+
 # Инициализация экземпляра приложения
 app = FastAPI(
     title=config.TITLE,
     version=config.VERSION,
-    on_startup=[
-        _on_startup
-    ]
+    on_startup=[_on_startup],
+    on_shutdown=[_on_shutdown]
 )
 
 app.include_router(v1_router, prefix="/api/v1")

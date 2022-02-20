@@ -20,5 +20,8 @@ class UsersCRUD:
         return user.id
 
     @staticmethod
-    async def get(db: AsyncSession, user_id: int) -> UserOutput:
-        pass
+    async def get(db: AsyncSession, user_id: int) -> User:
+        result = await db.execute(select(User).where(User.id==user_id))
+        user = result.scalars().first()
+        print(user)
+        return user

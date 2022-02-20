@@ -1,7 +1,7 @@
 import jwt
 from fastapi.security import HTTPBearer
 from passlib.context import CryptContext
-from datetime import datetime, timedelta
+from datetime import datetime
 
 from back.schemas.auth import TokensPair
 from back.core import config
@@ -27,7 +27,8 @@ def validate_access_token(token: str) -> int:
     """Расшифровка access токена, его валидация и получение id пользователя
     """
     payload = jwt.decode(token, config.SECRET_KEY, algorithms=["HS256"])
-    if user_id := payload.get("user_Id"):
+    print(payload)
+    if user_id := payload.get("user_id"):
         return user_id
     raise jwt.InvalidTokenError
 
@@ -49,8 +50,8 @@ async def validate_refresh_token(token: str) -> int:
     payload = jwt.decode(token, config.SECRET_KEY, algorithms=["HS256"])
     user_id = payload.get("user_id")
     
-    saved_token = await redis_cache.get(user_id)
-    if saved_token == token:
+    saved_token: bytes = await redis_cache.get(str(user_id))
+    if saved_token.decode("utf-8") == token:
         return user_id
     
     raise jwt.InvalidTokenError
