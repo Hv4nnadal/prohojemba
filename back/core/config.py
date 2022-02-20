@@ -39,5 +39,5 @@ DISCORD_SECRET_KEY = os.environ.get("DISCORD_SECRET_KEY")
 DISCORD_REDIRECT_URL = "http://localhost:8000/auth"
 
 # Токен бота, отправляющиего уведомления о критических ошибках
-DISCORD_BOT_LOGGER = "ODg3OTgwNTYyMzE1MzcwNTA2.YUMCVw.VRUwAbd71tSH5XBlscGhabYSLz8"
-DISCORD_LOG_CHANNEL_ID = 944917385759035432
+DISCORD_BOT_LOGGER = os.environ.get("DISCORD_BOT_TOKEN")
+DISCORD_LOG_CHANNEL_ID = os.environ.get("DISCORD_LOG_CHANNEL")
