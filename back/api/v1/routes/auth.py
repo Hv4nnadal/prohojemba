@@ -41,7 +41,7 @@ async def auth_from_discord(
         )   
 
 
-@router.post("/token")
+@router.post("/token", response_model=TokensPair)
 async def update_token(
     user_id: int = Depends(deps.get_user_id_by_refresh_token)
 ):
