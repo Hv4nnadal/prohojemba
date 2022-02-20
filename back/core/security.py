@@ -5,7 +5,7 @@ from datetime import datetime, timedelta
 
 from back.schemas.auth import TokensPair
 from back.core import config
-from back.common.redis import RedisConnection
+from back.common.redis import redis_cache
 
 
 hasher = CryptContext(schemes=["bcrypt"])
@@ -40,9 +40,7 @@ async def _generate_refresh_token(user_id: int) -> str:
             "type": "refresh_token"
         }, key=config.SECRET_KEY
     )
-    async with RedisConnection() as redis:
-        print(str(user_id))
-        await redis.set(str(user_id), token)
+    await redis_cache.set(str(user_id), token)
 
     return token
 
@@ -50,15 +48,14 @@ async def _generate_refresh_token(user_id: int) -> str:
 async def validate_refresh_token(token: str) -> int:
     payload = jwt.decode(token, config.SECRET_KEY, algorithms=["HS256"])
     user_id = payload.get("user_id")
-    async with RedisConnection() as redis:
-        saved_token = await redis.get(user_id)
-        if saved_token == token:
-            return payload[user_id]
+    
+    saved_token = await redis_cache.get(user_id)
+    if saved_token == token:
+        return user_id
+    
+    raise jwt.InvalidTokenError
     
         
-        
-
-
 async def generate_tokens_pair(user_id: int) -> TokensPair:
     """Генерация новой пары токенов
     """

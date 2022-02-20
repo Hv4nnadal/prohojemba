@@ -6,10 +6,11 @@ from fastapi.exceptions import HTTPException
 
 from back.core import security
 from back.common.db import Session
+from back.schemas.auth import RefreshToken
 
 async def get_db_connection() -> Generator:
-    db = Session()
     try:
+        db = Session()
         yield db
     finally:
         await db.commit()
@@ -30,20 +31,31 @@ def get_user_id_by_access_token(
     except jwt.ExpiredSignatureError:
         raise HTTPException(
             status_code=status.HTTP_401_UNAUTHORIZED,
+            detail="Данный access токен уже недействителен"
+        )
+    except jwt.InvalidTokenError:
+        raise HTTPException(
+            status_code=status.HTTP_401_UNAUTHORIZED,
             detail="Неверный access токен"
         )
 
 
 async def get_user_id_by_refresh_token(
-    refresh_token: str = Cookie(None)
+    token_in_form: RefreshToken, token_in_cookie: str = Cookie(None) 
 ) -> int:
-    if not refresh_token:
+    token = token_in_cookie if token_in_cookie else token_in_form.refresh_token
+    if not token:
         # Выдаем ошибку о том что в печеньках не найдена кука
         raise HTTPException(
             status_code=status.HTTP_401_UNAUTHORIZED,
             detail="Refresh токен не обнаружен"
         )
-
-    return await security.validate_refresh_token(refresh_token)
+    try:
+        return await security.validate_refresh_token(token)
+    except jwt.InvalidTokenError:
+        raise HTTPException(
+            status_code=status.HTTP_401_UNAUTHORIZED,
+            detail="Неверный refresh токен"
+        )
 
 

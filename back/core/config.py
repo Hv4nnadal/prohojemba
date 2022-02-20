@@ -1,4 +1,5 @@
 import os
+import logging
 from dotenv import load_dotenv
 from datetime import timedelta
 
@@ -7,8 +8,14 @@ load_dotenv(".env")
 DEBUG = True
 TITLE = "Prohojemba"
 VERSION = "0.0.6"
-LOGS_FILE_PATH = "server.logs"
 DOMAIN = "127.0.0.1"
+
+LOGGING_CONFIG = {
+    "filename": "server.logs",
+    "filemode": "w",
+    "level": logging.DEBUG if DEBUG else logging.INFO,
+    "format": "%(levelname)s: %(asctime)s (file: %(filename)s, line: %(lineno)d, func: %(funcName)s) - %(message)s"
+}
 
 # Безопасность
 SECRET_KEY = os.environ.get("SECRET_KEY")
@@ -30,3 +37,7 @@ DISCORD_CLIENT_ID = os.environ.get("DISCORD_CLIENT_ID")
 DISCORD_SECRET_KEY = os.environ.get("DISCORD_SECRET_KEY")
 
 DISCORD_REDIRECT_URL = "http://localhost:8000/auth"
+
+# Токен бота, отправляющиего уведомления о критических ошибках
+DISCORD_BOT_LOGGER = "ODg3OTgwNTYyMzE1MzcwNTA2.YUMCVw.VRUwAbd71tSH5XBlscGhabYSLz8"
+DISCORD_LOG_CHANNEL_ID = 944917385759035432

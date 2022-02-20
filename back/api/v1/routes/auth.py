@@ -5,7 +5,6 @@ from sqlalchemy.ext.asyncio import AsyncSession
 
 from back.api import deps
 from back.core import security
-from back.common.log import logger
 from back.exceptions.discord import DiscordGetAccessTokenException, DiscordGetUserProfileException, DiscordServerNotResponse
 from back.schemas.auth import OAuth2Code, TokensPair
 from back.services.auth import AuthService
@@ -36,7 +35,6 @@ async def auth_from_discord(
 
     # Обработка ошибок Discord
     except (DiscordGetAccessTokenException, DiscordGetUserProfileException, DiscordServerNotResponse) as e:
-        logger.error(f"{e}: {e.detail}")
         raise HTTPException(
             status_code=status.HTTP_401_UNAUTHORIZED,
             detail=e.detail
